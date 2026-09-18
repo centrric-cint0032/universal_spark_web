@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+
+<html lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&amp;family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link class="" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      }
+      body {
+        overscroll-behavior: none;
+      }
+    }
+    ::-webkit-scrollbar { display: none; }
+    .blueprint-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(11, 60, 138, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(11, 60, 138, 0.04) 1px, transparent 1px);
+    }
+    .blueprint-cross {
+      position: relative;
+    }
+    .blueprint-cross::before {
+      content: '+';
+      position: absolute;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(11, 60, 138, 0.35);
+      top: -9px;
+      left: -5px;
+      pointer-events: none;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          scale: {
+            '102': '1.02',
+            '108': '1.08',
+          },
+          colors: {
+            "surface": "#faf8ff",
+            "surface-container-high": "#e2e7ff",
+            "secondary-fixed-dim": "#71df54",
+            "on-error": "#ffffff",
+            "on-secondary-container": "#167500",
+            "primary-fixed-dim": "#b0c6ff",
+            "on-primary": "#ffffff",
+            "inverse-primary": "#b0c6ff",
+            "primary-container": "#0b3c8a",
+            "surface-variant": "#dae2fd",
+            "on-surface-variant": "#434651",
+            "on-tertiary-container": "#56b3f9",
+            "surface-bright": "#faf8ff",
+            "secondary-fixed": "#8cfc6d",
+            "background": "#faf8ff",
+            "outline": "#747782",
+            "surface-tint": "#365baa",
+            "tertiary-fixed": "#cce5ff",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-container": "#004469",
+            "on-primary-fixed": "#001945",
+            "error-container": "#ffdad6",
+            "on-background": "#131b2e",
+            "secondary-container": "#8cfc6d",
+            "on-secondary-fixed-variant": "#0d5300",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#93ccff",
+            "primary": "#002763",
+            "surface-container-highest": "#dae2fd",
+            "on-tertiary-fixed-variant": "#004b73",
+            "outline-variant": "#c4c6d3",
+            "inverse-surface": "#283044",
+            "surface-container-low": "#f2f3ff",
+            "on-primary-container": "#87aaff",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#001d31",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#002d48",
+            "primary-fixed": "#d9e2ff",
+            "surface-dim": "#d2d9f4",
+            "on-error-container": "#93000a",
+            "secondary": "#146e00",
+            "surface-container": "#eaedff",
+            "on-secondary-fixed": "#022100",
+            "on-surface": "#131b2e",
+            "on-primary-fixed-variant": "#174391",
+            "obsidian": "#060e1e"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"],
+            editorial: ["Cinzel", "serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-on-surface antialiased font-sans selection:bg-primary-container selection:text-white">
+<!-- Top Architectural Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#ffffff]/90 backdrop-blur-md border-b border-primary/10"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+<a class="flex items-center gap-3.5 group" href="#">
+<div class="relative w-10 h-10 rounded-lg bg-surface-container-lowest p-1 border border-primary/15 shadow-sm flex items-center justify-center transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-md group-hover:scale-105">
+<img alt="Universal Spark Company Emblem" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO9D7J1zzxBf1QMKbUJV25VlP3hz9p5DdKiqz7et5jgCqvy0tZlIeMpHiQwMH-XWtxJpQSvOtc7doemhh4JldXOVMl-baJMDHTHtxu1ryDkAMmtdwTpT_kwkai-5Vr8CwewBMb2LcuSTBpZTIZGbXf9y4HkZz4PZrjT0ePNxMusScA_ohkwVRgbjBHrYJZy2iU1Y4Qvby2pSvP_e-SirPeJUwOQ4IQUH6f4eDYQ5IoMVqyiKGSmsR7DUGDnb6XmlufoQ"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-secondary rounded-full ring-2 ring-white"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-['Montserrat'] font-bold tracking-wider text-primary text-[16px] leading-tight group-hover:text-primary-container transition-colors">UNIVERSAL SPARK</span>
+<span class="text-[8.5px] font-['Montserrat'] font-semibold tracking-wider text-secondary bg-secondary-fixed/30 border border-secondary/20 px-1.5 py-0.5 rounded leading-none uppercase">KSA A-CLASS</span>
+</div>
+<span class="font-['Montserrat'] text-[9.5px] tracking-[0.2em] text-on-surface-variant/70 uppercase font-medium mt-0.5">
+        INFRASTRUCTURE &amp; EPC • CR-403028190
+      </span>
+</div>
+</a>
+<nav class="hidden lg:flex items-center gap-8 h-full ml-auto">
+<a aria-current="page" class="relative py-2 font-['Montserrat'] text-[11px] font-semibold tracking-wider text-primary flex items-center gap-1.5 transition-colors" href="#">
+<span class="text-secondary text-[10px] font-bold">01</span>
+<span class="">SERVICES</span>
+<span class="absolute bottom-0 left-0 w-full h-[2px] bg-primary"></span>
+</a>
+<a class="py-2 font-['Montserrat'] text-[11px] font-medium tracking-wider text-on-surface-variant hover:text-primary flex items-center gap-1.5 transition-colors" href="#">
+<span class="text-primary-container/40 text-[10px]">02</span>
+<span class="">PROJECTS</span>
+</a>
+<a class="py-2 font-['Montserrat'] text-[11px] font-medium tracking-wider text-on-surface-variant hover:text-primary flex items-center gap-1.5 transition-colors" href="#">
+<span class="text-primary-container/40 text-[10px]">03</span>
+<span class="">CAPABILITIES</span>
+</a>
+<a class="py-2 font-['Montserrat'] text-[11px] font-medium tracking-wider text-on-surface-variant hover:text-primary flex items-center gap-1.5 transition-colors" href="#about-us">
+<span class="text-primary-container/40 text-[10px]">04</span>
+<span class="">ABOUT</span>
+</a>
+<a class="py-2 font-['Montserrat'] text-[11px] font-medium tracking-wider text-on-surface-variant hover:text-primary flex items-center gap-1.5 transition-colors" href="#">
+<span class="text-primary-container/40 text-[10px]">05</span>
+<span class="">CONTACT</span>
+</a>
+</nav>
+<div class="flex items-center ml-8">
+<a class="group relative inline-flex items-center gap-2.5 px-5 py-2.5 rounded bg-obsidian text-white border border-primary-container/30 hover:border-secondary/60 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-secondary/15 hover:-translate-y-0.5 active:translate-y-0" href="#tender-console">
+<span class="relative flex h-1.5 w-1.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-secondary"></span>
+</span>
+<span class="font-['Montserrat'] text-[11px] font-semibold tracking-wider uppercase text-slate-100 group-hover:text-white">Initiate Tender / RFP</span>
+<span class="material-symbols-outlined text-[15px] text-secondary group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
+</a>
+</div>
+</div></header>
+<main class="w-full pt-20">
+<!-- HERO SECTION: Master Architectural Grid & Technical Telemetry -->
+<section class="w-full relative overflow-hidden border-b border-slate-800 bg-obsidian text-white">
+<!-- Background Infrastructure Image with Cinematic Multi-Layered Overlays -->
+<div class="absolute inset-0 z-0">
+<img alt="Saudi Industrial Infrastructure and Port Civil Engineering Project" class="w-full h-full object-cover object-center filter brightness-[0.82] contrast-[1.08]" src="https://lh3.googleusercontent.com/aida/AEtjO1VG3pw7JkYihZCEKV_O0MC8UG8hwwygkocgLO6o_uSCbYBgHdpqbrylAWzTyt6i_T1pIHUNByk31r-mj9du4kKOCxVlPQ2CdyVUKvWRPS8e2NXJcxRQBYy8_SMBf_5zqKgwHimrrWHicroKpomgdDbrmagcA20pBlVF1GyIGj5uhNia1iR3TGwNrYilKFnExpX4J4ud2R_iltdyo9PQOwCIUY_wsM8n-SXgV_f-yiUlnGABmfV5GbFHsHA"/>
+<div class="absolute inset-0 bg-gradient-to-r from-[#050b17]/95 via-[#071328]/85 to-[#050b17]/60"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#060e1e] via-transparent to-[#060e1e]/60"></div>
+<div class="absolute inset-0 bg-[linear-gradient(to_right,#13223f_1px,transparent_1px),linear-gradient(to_bottom,#13223f_1px,transparent_1px)] bg-[size:32px_32px] opacity-20 pointer-events-none"></div>
+</div>
+<!-- WebGL Interactive Shader Background Animation -->
+<!-- STITCH_SHADER_START:ANIMATION_15 class="absolute inset-0 w-full h-full pointer-events-none opacity-80 z-0" -->
+<div class="absolute inset-0 w-full h-full pointer-events-none opacity-80 z-0" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_15" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_15');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `// Fragment shader for Universal Spark hero background
+// Represents giga-infrastructure energy grid, subtle flowing digital telemetry lines, 
+// and dynamic glowing spark nodes that respond to mouse movement in brand navy, cyan (#00a3ff), and emerald green (#10b981).
+precision highp float;
+
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+
+// Simplex/hash utilities
+float hash(vec2 p) {
+    p = fract(p * vec2(123.34, 456.21));
+    p += dot(p, p + 45.32);
+    return fract(p.x * p.y);
+}
+
+// 2D rotation
+mat2 rot(float a) {
+    float c = cos(a);
+    float s = sin(a);
+    return mat2(c, -s, s, c);
+}
+
+void main() {
+    vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution.xy) / min(u_resolution.y, u_resolution.x);
+    vec2 mouseNorm = (u_mouse - 0.5 * u_resolution.xy) / min(u_resolution.y, u_resolution.x);
+    
+    // Deep executive infrastructure background palette
+    // Brand colors: Deep Navy (#030914), Electric Cyan (#00a3ff), Emerald Green (#10b981)
+    vec3 col = vec3(0.012, 0.035, 0.08); // Base deep dark navy
+    
+    // Mouse proximity influence
+    float mouseDist = length(uv - mouseNorm);
+    float mouseGlow = smoothstep(0.45, 0.0, mouseDist);
+    
+    // Perspective grid warping simulating industrial CAD elevation / structural coordinates
+    vec2 gridUv = uv * 2.8;
+    gridUv.y += 0.35;
+    
+    // Slight drift and tilt over time
+    float t = u_time * 0.25;
+    
+    // Dynamic isometric grid lines
+    vec2 gPos = gridUv * 6.0;
+    gPos.x += sin(gPos.y * 0.35 + t * 0.4) * 0.25;
+    gPos.y += t * 0.6;
+    
+    vec2 f = abs(fract(gPos - 0.5) - 0.5) / fwidth(gPos);
+    float line = min(f.x, f.y);
+    float gridIntensity = 1.0 - min(line, 1.0);
+    
+    // Soften grid with vertical distance (fade into distance and top)
+    float gridFade = smoothstep(-1.2, 0.4, -uv.y) * 0.18;
+    col += vec3(0.02, 0.15, 0.35) * gridIntensity * gridFade;
+    
+    // Flowing energy beams / infrastructure fiber traces
+    for (float i = 1.0; i <= 4.0; i++) {
+        float speed = t * (0.35 + i * 0.18);
+        float yOffset = sin(uv.x * (1.5 + i * 0.6) + speed + i * 1.57) * (0.2 + i * 0.06);
+        yOffset += cos(uv.x * 3.0 - speed * 0.8) * 0.05;
+        
+        float distToBeam = abs(uv.y - yOffset - (i - 2.5) * 0.18);
+        
+        // Beam width and glowing intensity
+        float beam = 0.0035 / (distToBeam + 0.015);
+        
+        // Brand color blending: Alternating electric cyan (#00a3ff) & energetic emerald spark (#10b981)
+        vec3 beamColor = (mod(i, 2.0) == 0.0) 
+            ? vec3(0.0, 0.64, 1.0)   // Electric Cyan
+            : vec3(0.06, 0.72, 0.50); // Emerald Green
+            
+        // Pulses propagating along the line
+        float pulse = sin(uv.x * 8.0 - t * (2.5 + i * 1.2)) * 0.5 + 0.5;
+        pulse = pow(pulse, 4.0);
+        
+        col += beamColor * beam * (0.35 + 0.65 * pulse) * 0.65;
+    }
+    
+    // Subtle twinkling/spark nodes at intersections (Universal Spark theme)
+    vec2 sparkCell = floor(gridUv * 4.0 + vec2(t * 0.2, 0.0));
+    float sparkRand = hash(sparkCell);
+    if (sparkRand > 0.82) {
+        vec2 sparkPos = (sparkCell + 0.5) / 4.0 - vec2(t * 0.05, 0.0);
+        float dSpark = length(gridUv - sparkPos * 4.0);
+        float sparkGlow = smoothstep(0.12, 0.0, dSpark);
+        float sparkBlink = sin(u_time * 2.5 + sparkRand * 6.28) * 0.5 + 0.5;
+        col += vec3(0.1, 0.85, 0.55) * sparkGlow * sparkBlink * 0.45;
+    }
+    
+    // Mouse interactive radial energy ripple
+    col += vec3(0.0, 0.55, 0.95) * mouseGlow * 0.22;
+    col += vec3(0.06, 0.8, 0.5) * pow(mouseGlow, 2.5) * 0.35;
+    
+    // Subtle ambient vignette to keep hero typography completely legible
+    float vignette = smoothstep(1.6, 0.3, length(uv));
+    col *= (0.65 + 0.35 * vignette);
+    
+    // Semi-transparent alpha so it gracefully layers on top of or behind the dark industrial hero aesthetic
+    gl_FragColor = vec4(col, 0.85);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_15 -->
+<!-- Live Telemetry Strip -->
+<div class="w-full border-b border-white/10 bg-black/40 backdrop-blur-md px-6 lg:px-12 py-2.5 relative z-10">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between font-['Montserrat'] text-[10.5px] text-slate-300 tracking-widest uppercase">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 text-secondary-fixed font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+          LIVE TELEMETRY
+        </span>
+<span class="text-white/30">/</span>
+<span class="font-light text-slate-300">GRID 24.7136° N, 46.6753° E — RIYADH &amp; EASTERN PROVINCE HQ</span>
+</div>
+<div class="hidden md:flex items-center gap-3 text-[10px]">
+<span class="text-slate-400 font-medium">CLASS-A EPC GENERAL CONTRACTOR</span>
+<span class="text-white/30">•</span>
+<span class="text-secondary-fixed font-semibold tracking-wider">SAUDI VISION 2030 INDUSTRIAL COMPLIANT</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-20 lg:pt-20 lg:pb-28 relative z-10">
+<!-- Editorial Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center py-4">
+<!-- Left Column: Master Architectural Headline & Content -->
+<div class="lg:col-span-7 flex flex-col justify-center pr-0 lg:pr-6">
+<!-- Kicker Badge -->
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-slate-900/80 backdrop-blur-md border border-white/15 rounded-full mb-8 w-fit shadow-lg shadow-black/30">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-['Montserrat'] text-[10px] font-semibold text-slate-200 uppercase tracking-[0.25em]">
+            TURNKEY EPC CONTRACTING &amp; INDUSTRIAL SERVICES
+          </span>
+</div>
+<!-- High-Impact Commanding Headline -->
+<h1 class="font-['Montserrat'] text-4xl sm:text-5xl lg:text-[50px] font-extrabold text-white tracking-tight leading-[1.15] mb-8">
+          Engineering the Structural Backbone of Tomorrow’s <span class="text-[#56b3f9] font-bold">Giga-Infrastructure</span>
+</h1>
+<!-- High-Legibility Subtext -->
+<p class="font-['Montserrat'] text-[16px] text-slate-200 font-normal leading-relaxed max-w-2xl mb-10 tracking-wide drop-shadow-sm">
+          Universal Spark orchestrates mission-critical civil engineering, heavy industrial shutdowns, and high-voltage electrical infrastructure across the Kingdom. Engineered strictly to Aramco, SABIC, and Royal Commission operational benchmarks.
+        </p>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-4 mb-8">
+<a class="inline-flex items-center gap-2.5 bg-secondary hover:bg-emerald-600 text-white font-['Montserrat'] text-[12px] font-semibold tracking-wider uppercase px-7 py-3.5 rounded transition-all duration-300 shadow-lg shadow-secondary/20 hover:shadow-secondary/40 hover:-translate-y-0.5 active:translate-y-0 group" href="#services-matrix">
+<span class="">Explore Engineering Disciplines</span>
+<span class="material-symbols-outlined text-[16px] text-white group-hover:translate-x-1.5 transition-transform duration-300">arrow_right_alt</span>
+</a>
+<a class="inline-flex items-center gap-2 border border-white/25 hover:border-white/60 text-white font-['Montserrat'] text-[12px] font-semibold tracking-wider uppercase px-6 py-3.5 rounded bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0" href="#tender-console">
+<span class="material-symbols-outlined text-[16px] text-slate-300">terminal</span>
+<span class="">RFP Dispatch Console</span>
+</a>
+</div>
+</div>
+<!-- Right Column: Glassmorphic Live Project Telemetry HUD Console Card -->
+<div class="lg:col-span-5 relative mt-4 lg:mt-0">
+<div class="relative bg-slate-900/80 backdrop-blur-xl p-5 rounded-xl shadow-2xl border border-white/15 hover:border-white/30 transition-all duration-500 hover:-translate-y-1 overflow-hidden group">
+<!-- HUD Header -->
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-white/10 font-['Montserrat'] text-[10px] tracking-widest">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="text-slate-200 font-semibold">FIELD EXECUTION // PKG-IV</span>
+</div>
+<div class="text-slate-400 font-mono">
+              26.3927° N, 49.9777° E
+            </div>
+</div>
+<!-- Status Badges -->
+<div class="flex items-center justify-between mb-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-secondary/20 border border-secondary/40 text-secondary-fixed font-mono text-[10px] font-bold rounded">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+              ARAMCO VENDOR CERTIFIED
+            </span>
+<span class="font-mono text-[9.5px] bg-slate-800/90 text-slate-300 px-2 py-0.5 rounded border border-white/10">
+              SPEC REV 4.2
+            </span>
+</div>
+<!-- Main Active Scope Description -->
+<div class="mb-5">
+<span class="font-['Montserrat'] text-[10.5px] text-secondary-fixed uppercase tracking-widest font-semibold flex items-center gap-1 mb-1.5">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+              Structural Steel &amp; Industrial MEP
+            </span>
+<h4 class="font-['Montserrat'] text-[16px] font-bold tracking-tight text-white leading-snug">
+              Port Waterfront Heavy Civil &amp; Chilled Water Substation
+            </h4>
+</div>
+<!-- Telemetry Data Grid -->
+<div class="grid grid-cols-2 gap-2.5 p-3 rounded bg-black/40 border border-white/10 mb-4 font-mono text-[11px]">
+<div>
+<span class="text-slate-400 block text-[9.5px] uppercase">Fabricated Steel</span>
+<span class="text-white font-bold text-[13px]">18,500 MT</span>
+</div>
+<div>
+<span class="text-slate-400 block text-[9.5px] uppercase">QA / NDT Status</span>
+<span class="text-secondary-fixed font-bold text-[13px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 100% Passed
+              </span>
+</div>
+<div class="pt-1 border-t border-white/5">
+<span class="text-slate-400 block text-[9.5px] uppercase">Sector Code</span>
+<span class="text-slate-200 font-medium text-[11px]">MAR-LOG-04</span>
+</div>
+<div class="pt-1 border-t border-white/5">
+<span class="text-slate-400 block text-[9.5px] uppercase">Compliance</span>
+<span class="text-slate-200 font-medium text-[11px]">ASME SEC VIII</span>
+</div>
+</div>
+<!-- HUD Bottom Bar -->
+<div class="flex items-center justify-between text-[10px] text-slate-400 font-['Montserrat'] pt-2 border-t border-white/10">
+<span class="tracking-wider uppercase text-slate-300">INDUSTRIAL WATERFRONT &amp; ENERGY</span>
+<span class="text-secondary font-mono text-[10px]">● LIVE AUDIT LOG</span>
+</div>
+</div>
+<!-- Decorative Framing Accents -->
+<div class="absolute -bottom-4 -left-4 w-16 h-16 border-l border-b border-white/20 pointer-events-none"></div>
+<div class="absolute -top-3 -right-3 w-12 h-12 border-r border-t border-secondary/40 pointer-events-none"></div>
+</div>
+</div>
+<!-- Bottom Floating Executive Metrics Strip -->
+<div class="mt-8 lg:mt-12 pt-8 border-t border-white/10 flex flex-col items-center justify-center">
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto w-full px-2"><div class="flex flex-col justify-between p-4 rounded-xl bg-slate-900/80 backdrop-blur-xl border border-white/15 hover:border-white/30 hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-black/40 group"><div class="flex items-center justify-between mb-3"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-mono text-[9.5px] text-slate-400 tracking-wider uppercase">TRACK RECORD</span></div><div class="mb-1"><span class="font-['Montserrat'] font-extrabold text-white text-2xl tracking-tight block">15+</span></div><span class="font-['Montserrat'] text-[11px] text-slate-300 font-medium tracking-wide uppercase leading-tight">Yrs Execution</span></div><div class="flex flex-col justify-between p-4 rounded-xl bg-slate-900/80 backdrop-blur-xl border border-white/15 hover:border-white/30 hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-black/40 group"><div class="flex items-center justify-between mb-3"><span class="material-symbols-outlined text-[18px] text-secondary">verified_user</span><span class="font-mono text-[9.5px] text-secondary font-semibold tracking-wider">SAFETY</span></div><div class="mb-1"><span class="font-['Montserrat'] font-extrabold text-white text-2xl tracking-tight block">99.98%</span></div><span class="font-['Montserrat'] text-[11px] text-secondary-fixed font-semibold tracking-wide uppercase leading-tight">Zero LTI Protocol</span></div><div class="flex flex-col justify-between p-4 rounded-xl bg-slate-900/80 backdrop-blur-xl border border-white/15 hover:border-white/30 hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-black/40 group"><div class="flex items-center justify-between mb-3"><span class="material-symbols-outlined text-[18px] text-[#56b3f9]">payments</span><span class="font-mono text-[9.5px] text-slate-400 tracking-wider uppercase">VOLUME</span></div><div class="mb-1"><span class="font-['Montserrat'] font-extrabold text-white text-2xl tracking-tight block"><span class="text-xs font-semibold text-slate-400 mr-1">SAR</span>2.4B</span></div><span class="font-['Montserrat'] text-[11px] text-slate-300 font-medium tracking-wide uppercase leading-tight">Civil &amp; Industrial</span></div><div class="flex flex-col justify-between p-4 rounded-xl bg-slate-900/80 backdrop-blur-xl border border-white/15 hover:border-white/30 hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-black/40 group"><div class="flex items-center justify-between mb-3"><span class="material-symbols-outlined text-[18px] text-slate-200">workspace_premium</span><span class="font-mono text-[9.5px] text-secondary-fixed font-semibold tracking-wider">RATING</span></div><div class="mb-1"><span class="font-['Montserrat'] font-extrabold text-white text-2xl tracking-tight block">CLASS-A</span></div><span class="font-['Montserrat'] text-[11px] text-slate-300 font-medium tracking-wide uppercase leading-tight">ISO 9001 / 45001</span></div></div>
+</div>
+</div>
+</section>
+<!-- SECTION: Architectural Capability Index (Replacing generic cards) -->
+<section class="w-full bg-surface-container-low py-20 lg:py-28 border-b border-outline-variant/30 relative overflow-hidden" id="about-us"><div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10"><div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"><div class="lg:col-span-6 flex flex-col justify-center"><h2 class="text-3xl lg:text-4xl font-extrabold text-primary tracking-tight leading-tight mb-5">Pioneering Heavy Industrial Engineering Across the Kingdom</h2><p class="text-on-surface-variant text-[16px] leading-relaxed mb-6 font-normal">Universal Spark operates at the forefront of the Kingdom's industrial transformation as an accredited Tier-1 Class-A EPC general contractor. We engineer, construct, and service critical infrastructure in strict alignment with Saudi Vision 2030, Aramco, and Royal Commission operational benchmarks.</p><div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8"><div class="p-3.5 bg-white border border-primary/15 rounded-lg shadow-sm hover:shadow-md hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col group cursor-pointer"><div class="flex items-center gap-1.5 text-secondary mb-1"><span class="material-symbols-outlined text-[18px] group-hover:scale-110 transition-transform duration-300">verified</span><span class="font-mono text-[10px] font-bold uppercase tracking-wider">ACCURACY</span></div><span class="text-primary font-bold text-[13px] group-hover:text-primary-container transition-colors">Aramco &amp; SABIC</span><span class="text-on-surface-variant/80 text-[11px]">Approved Vendor</span></div><div class="p-3.5 bg-white border border-primary/15 rounded-lg shadow-sm hover:shadow-md hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col group cursor-pointer"><div class="flex items-center gap-1.5 text-primary mb-1"><span class="material-symbols-outlined text-[18px] group-hover:scale-110 transition-transform duration-300">workspace_premium</span><span class="font-mono text-[10px] font-bold uppercase tracking-wider">IKTVA</span></div><span class="text-primary font-bold text-[13px] group-hover:text-primary-container transition-colors">84.2% Rating</span><span class="text-on-surface-variant/80 text-[11px]">Domestic Content</span></div><div class="p-3.5 bg-white border border-primary/15 rounded-lg shadow-sm hover:shadow-md hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col group cursor-pointer"><div class="flex items-center gap-1.5 text-secondary mb-1"><span class="material-symbols-outlined text-[18px] group-hover:scale-110 transition-transform duration-300">health_and_safety</span><span class="font-mono text-[10px] font-bold uppercase tracking-wider">SAFETY</span></div><span class="text-secondary font-bold text-[13px] group-hover:text-emerald-700 transition-colors">Zero LTI Protocol</span><span class="text-on-surface-variant/80 text-[11px]">QHSE Excellence</span></div></div><div class="flex flex-wrap items-center gap-4"><a class="inline-flex items-center gap-2.5 bg-primary hover:bg-primary-container text-white text-[12px] font-semibold tracking-wider uppercase px-7 py-3.5 rounded transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5 active:translate-y-0 group" href="#tender-console"><span class="">Explore Full Corporate Profile &amp; Pre-Qualifications</span><span class="material-symbols-outlined text-[16px] text-secondary group-hover:translate-x-1.5 transition-transform duration-300">arrow_forward</span></a></div></div><div class="lg:col-span-6 relative"><div class="relative rounded-xl overflow-hidden border border-primary/20 shadow-2xl bg-slate-900 group"><img alt="High-end modern corporate headquarters and industrial civil engineering executive operations site in Saudi Arabia" class="w-full h-full object-cover aspect-[4/3] filter brightness-[0.95] contrast-[1.05] group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1XTQr1t3yXLZ8H41cKGmlKZe0SMx4ESklVl23Q1AwM-6NNUQwnIk-vM7PrcDFxduYteillO5SeAKGnOQapSK0W9nfRCPdrxGGAOQOTZHzlI0r2SivWs7iBqN7Gn_UyeDn0D7tcxqPu2vTmqkAMqlgwlgq-qnb3DyesDk0kV5SvSgk5yv7IKVtYPRGW2IezJLVYtui_JE3SSTCQXa_UjGb90OgptCK5u29yRqofEjGHp9eI77PyzhZFB5Q0"/><div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent pointer-events-none"></div><div class="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-mono text-[11px] shadow-lg"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="tracking-wider font-semibold text-white">CLASS-A EPC GENERAL CONTRACTOR</span></div><div class="absolute bottom-4 left-4 right-4 p-4 rounded-lg bg-slate-900/90 backdrop-blur-xl border border-white/15 text-white shadow-xl flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded bg-primary/20 border border-primary-container/30 flex items-center justify-center text-secondary"><span class="material-symbols-outlined text-[20px]">verified</span></div><div><div class="font-['Montserrat'] font-bold text-[13px] text-white">Universal Spark Infrastructure</div><div class="font-mono text-[10px] text-slate-300">CR 4030281902 • Aramco #10084291</div></div></div><div class="hidden sm:flex flex-col items-end"><span class="font-mono text-[9.5px] uppercase text-secondary-fixed font-bold tracking-wider">VISION 2030 PARTNER</span><span class="font-mono text-[9.5px] text-slate-400">EASTERN PROVINCE HQ</span></div></div></div><div class="absolute -bottom-3 -left-3 w-16 h-16 border-l-2 border-b-2 border-primary/20 pointer-events-none rounded-bl-lg"></div><div class="absolute -top-3 -right-3 w-16 h-16 border-r-2 border-t-2 border-secondary/40 pointer-events-none rounded-tr-lg"></div></div></div></div></section><section class="w-full bg-surface py-20 lg:py-28 border-b border-outline-variant/30 relative" id="services-matrix">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header with Technical Editorial Hierarchy -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 pb-6 border-b border-primary/10 gap-6">
+<div>
+<h2 class="text-3xl lg:text-4xl font-extrabold text-primary tracking-tight">
+              Institutional Capabilities &amp; Technical Execution
+            </h2>
+</div>
+<p class="font-sans text-[15px] text-on-surface-variant max-w-md leading-relaxed">
+            Multi-disciplinary industrial EPC operations, precision maintenance shutdowns, and mission-critical power infrastructure delivered with zero-tolerance engineering rigor.
+          </p>
+</div>
+<!-- The Bespoke Technical Blueprint Matrix (Editorial Index Table) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 pt-4">
+<!-- Card 01: Turnaround & Maintenance -->
+<a class="group cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_48px_-12px_rgba(11,60,138,0.18),0_0_24px_rgba(16,185,129,0.12)] hover:border-primary/40 relative overflow-hidden flex flex-col justify-between p-7 lg:p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm" href="#tender-console"><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-[#56b3f9] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div><div class="flex flex-col"><div class="flex items-center justify-between gap-4 mb-4"><div class="flex items-center gap-3"><span class="flex items-center justify-center w-9 h-9 rounded-xl bg-primary/10 text-primary font-bold text-[14px] group-hover:bg-[#0b3c8a] group-hover:text-white transition-colors duration-300 shadow-sm">01</span><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200"><span class="material-symbols-outlined text-[14px]">verified</span><span>Aramco &amp; SABIC Certified</span></div></div><div class="w-10 h-10 rounded-full border border-primary/15 bg-surface flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-[#0b3c8a] group-hover:text-white group-hover:border-[#0b3c8a] group-hover:scale-110 group-hover:rotate-45 group-hover:shadow-md"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></div></div><div class="overflow-hidden rounded-xl relative w-full h-48 mb-5 border border-primary/15 bg-slate-900 shadow-inner"><img alt="Heavy petrochemical turnaround and refinery maintenance complex in Saudi Arabia" class="w-full h-full object-cover filter brightness-[0.95] contrast-[1.05] transition-transform duration-700 ease-out group-hover:scale-108 group-hover:brightness-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XrX7Qoy4xA5ptEhShtLr2QFM4Ug8FdjSvsKh0hSAPLpJzfW8RWFFk2dezQy-QBO2YnyNebgMQhRGyGFZWfJUh1NTBg2Q17fQMdj1YnExPD9g-D7zLHb2S7QyW41RXt1MioGUjhERjxTZsmw8uqSdnqMrVZ9zOPABgfTFx54mbcayjoGNOaOVlhTJKwvyKmnARr5BO2lCvq1dAfgIEyw2bqMKWhKQi62C8Vjhnt4lUx5MbBSYPAhr71tFQ"/><div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent"></div><div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none"></div><div class="absolute bottom-2.5 left-3 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-mono text-[10px] text-white/90 tracking-wider font-semibold uppercase">LIVE TURNAROUND OPS</span></div></div><h3 class="text-xl lg:text-2xl font-bold text-primary group-hover:text-[#0b3c8a] transition-colors duration-300 tracking-tight mb-3 leading-snug">Heavy Industrial Turnaround &amp; Plant Maintenance</h3><p class="text-[14px] text-on-surface-variant leading-relaxed mb-6 font-normal">Turnkey turnaround management, dynamic rotating equipment overhaul, heat exchanger retubing, high-pressure piping verification, and continuous emergency mechanical intervention for petrochemical hubs.</p></div><div class="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-2"><span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-low border border-primary/10 text-on-surface text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>24/7 Rapid Dispatch</span><span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-low border border-primary/10 text-on-surface text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200">Ultrasonic NDT &amp; PMI</span><span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-low border border-primary/10 text-on-surface text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200">ASME Section VIII</span></div></a>
+<!-- Card 02: Turnkey MEP & Substations -->
+<a class="group cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_48px_-12px_rgba(11,60,138,0.18),0_0_24px_rgba(16,185,129,0.12)] hover:border-primary/40 relative overflow-hidden flex flex-col justify-between p-7 lg:p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm" href="#tender-console"><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-[#56b3f9] to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div><div class="flex flex-col"><div class="flex items-center justify-between gap-4 mb-4"><div class="flex items-center gap-3"><span class="flex items-center justify-center w-9 h-9 rounded-xl bg-primary/10 text-primary font-bold text-[14px] group-hover:bg-[#0b3c8a] group-hover:text-white transition-colors duration-300 shadow-sm">02</span><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200"><span class="material-symbols-outlined text-[14px] text-secondary">bolt</span><span>Saudi Electricity Standards</span></div></div><div class="w-10 h-10 rounded-full border border-primary/15 bg-surface flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-[#0b3c8a] group-hover:text-white group-hover:border-[#0b3c8a] group-hover:scale-110 group-hover:rotate-45 group-hover:shadow-md"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></div></div><div class="overflow-hidden rounded-xl relative w-full h-48 mb-5 border border-primary/15 bg-slate-900 shadow-inner"><img alt="High-voltage electrical substation and SCADA transmission control facility" class="w-full h-full object-cover filter brightness-[0.95] contrast-[1.05] transition-transform duration-700 ease-out group-hover:scale-108 group-hover:brightness-105" src="https://lh3.googleusercontent.com/aida/AEtjO1UejliTBuLdcmku0vB4eYQkhsBy1H7SU4BNUDkhJyzV1fZoSr-Up6b9Ayf6Q_9zypTHCnqfhb2ZMPjJOZjbB0zstRtuL1XdAFHidztPWLxr66DTUeT6I5eO0P2x-g6eSkaOu6a6SuoG03805hvHj6JSHMUPg-TwT2DFD4CB-saw0elcBvD006DR60lO87D6PG8cc5N7Mcj_o3hhcLTIBLZZPBaxmFr4WY0xCE1CXt4q4TqlEsCMaG99CNo"/><div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent"></div><div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none"></div><div class="absolute bottom-2.5 left-3 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#56b3f9] animate-pulse"></span><span class="font-mono text-[10px] text-white/90 tracking-wider font-semibold uppercase">GIS / AIS 115kV SUBSTATION</span></div></div><h3 class="text-xl lg:text-2xl font-bold text-primary group-hover:text-[#0b3c8a] transition-colors duration-300 tracking-tight mb-3 leading-snug">Turnkey MEP &amp; High-Voltage Substations (13.8kV–115kV)</h3><p class="text-[14px] text-on-surface-variant leading-relaxed mb-6 font-normal">Full-scope engineering and installation of indoor GIS/AIS substations, transformer commissioning, automated central chiller plants, ducting networks, and SCADA telemetry systems for large-scale facilities.</p></div><div class="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-2"><span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-low border border-primary/10 text-on-surface text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>SEC Certified Engineers</span><span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-low border border-primary/10 text-on-surface text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200">BMS &amp; PLC Automation</span><span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-low border border-primary/10 text-on-surface text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200">NFPA Fire Deluge</span></div></a>
+<!-- Card 03: Civil & Steel -->
+<a class="group cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_48px_-12px_rgba(11,60,138,0.18),0_0_24px_rgba(16,185,129,0.12)] hover:border-primary/40 relative overflow-hidden flex flex-col justify-between p-7 lg:p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm" href="#tender-console"><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-[#56b3f9] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div><div class="flex flex-col"><div class="flex items-center justify-between gap-4 mb-4"><div class="flex items-center gap-3"><span class="flex items-center justify-center w-9 h-9 rounded-xl bg-primary/10 text-primary font-bold text-[14px] group-hover:bg-[#0b3c8a] group-hover:text-white transition-colors duration-300 shadow-sm">03</span><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200"><span class="material-symbols-outlined text-[14px]">apartment</span><span>Royal Commission Approved</span></div></div><div class="w-10 h-10 rounded-full border border-primary/15 bg-surface flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-[#0b3c8a] group-hover:text-white group-hover:border-[#0b3c8a] group-hover:scale-110 group-hover:rotate-45 group-hover:shadow-md"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></div></div><div class="overflow-hidden rounded-xl relative w-full h-48 mb-5 border border-primary/15 bg-slate-900 shadow-inner"><img alt="Massive civil engineering foundation and structural steel erection in Saudi Arabia" class="w-full h-full object-cover filter brightness-[0.95] contrast-[1.05] transition-transform duration-700 ease-out group-hover:scale-108 group-hover:brightness-105" src="https://lh3.googleusercontent.com/aida/AEtjO1VsDWTW6gxB2AfqdASrRpBewPH0MeT5z3SvYF6PbyquNt4mxQItW6ler5WEAHKsgMebkQdUchaNP_tDmGWz8UPLaZVCCh7FHBsak_qFK7AtxXEWnflH-NC2w-7nB8WPfIv9H_s9qjhuH8roFIbIqWSEc11HEzF4J15lm-Uon4PC6N6ZqTBCOr6tTVHknXpWUK5P_otEiV8xK7nOwrusLCDLXq45sS_OPRh6TSCH_ezMBdSABHXgyHbkSds"/><div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent"></div><div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none"></div><div class="absolute bottom-2.5 left-3 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-mono text-[10px] text-white/90 tracking-wider font-semibold uppercase">HEAVY CIVIL &amp; PILING ERECTION</span></div></div><h3 class="text-xl lg:text-2xl font-bold text-primary group-hover:text-[#0b3c8a] transition-colors duration-300 tracking-tight mb-3 leading-snug">Civil, Foundation &amp; Super-Structural Steel</h3><p class="text-[14px] text-on-surface-variant leading-relaxed mb-6 font-normal">Deep geotechnical piling, heavy machine foundation casting, blast-resistant control room civil construction, and wide-span heavy structural steel erection for high-hazard and maritime industrial zones.</p></div><div class="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-2"><span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-low border border-primary/10 text-on-surface text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>SBC 301-306 Code</span><span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-low border border-primary/10 text-on-surface text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200">Blast-Resistant Enclosures</span><span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-low border border-primary/10 text-on-surface text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200">AISC &amp; AWS D1.1</span></div></a>
+<!-- Card 04: Process Skid Assemblies -->
+<a class="group cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_48px_-12px_rgba(11,60,138,0.18),0_0_24px_rgba(16,185,129,0.12)] hover:border-primary/40 relative overflow-hidden flex flex-col justify-between p-7 lg:p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm" href="#tender-console"><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-[#56b3f9] to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div><div class="flex flex-col"><div class="flex items-center justify-between gap-4 mb-4"><div class="flex items-center gap-3"><span class="flex items-center justify-center w-9 h-9 rounded-xl bg-primary/10 text-primary font-bold text-[14px] group-hover:bg-[#0b3c8a] group-hover:text-white transition-colors duration-300 shadow-sm">04</span><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200"><span class="material-symbols-outlined text-[14px] text-secondary">precision_manufacturing</span><span>ISO 3834-2 Accredited</span></div></div><div class="w-10 h-10 rounded-full border border-primary/15 bg-surface flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-[#0b3c8a] group-hover:text-white group-hover:border-[#0b3c8a] group-hover:scale-110 group-hover:rotate-45 group-hover:shadow-md"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></div></div><div class="overflow-hidden rounded-xl relative w-full h-48 mb-5 border border-primary/15 bg-slate-900 shadow-inner"><img alt="Advanced robotic heavy industrial fabrication and pressure vessel workshop in Saudi Arabia" class="w-full h-full object-cover filter brightness-[0.95] contrast-[1.05] transition-transform duration-700 ease-out group-hover:scale-108 group-hover:brightness-105" src="https://lh3.googleusercontent.com/aida/AEtjO1VfsnS6l6ENYJotDiXp3_PPRckLP8uIYnzqtUpvQJg-XNuAwWMTpySxrSsh5bCp5nEe0QzUCrIcHFILJu42mlrdAb0nKocxFW1Bbt1vG5zgS7fCQkmLfJQDMb7MWHkEJyjP-QJpVePMbRO1s5TuNCJWpfET7bQBAYReEpG2M2q4ul7k9-nsEUjqpJUPkCExe-p2yJRYn9fc6-MX3b7kQAissI3pOpvZVdm1cJW5hJQVkKNIqmhZGPqOa-w"/><div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent"></div><div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none"></div><div class="absolute bottom-2.5 left-3 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-mono text-[10px] text-white/90 tracking-wider font-semibold uppercase">ASME 'U' &amp; 'S' FABRICATION BAY</span></div></div><h3 class="text-xl lg:text-2xl font-bold text-primary group-hover:text-[#0b3c8a] transition-colors duration-300 tracking-tight mb-3 leading-snug">Heavy Fabrication &amp; Process Skid Assemblies</h3><p class="text-[14px] text-on-surface-variant leading-relaxed mb-6 font-normal">Dedicated offsite fabrication facility producing certified chemical dosing skids, high-pressure carbon and duplex stainless manifolds, pressure vessels, and modular pipe-rack modules for rapid site integration.</p></div><div class="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-2"><span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-low border border-primary/10 text-on-surface text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>ASME 'U' &amp; 'S' Stamps</span><span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-low border border-primary/10 text-on-surface text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200">National Board 'R' Certified</span><span class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-low border border-primary/10 text-on-surface text-[11px] font-semibold tracking-wide hover:border-primary/40 hover:bg-white hover:scale-102 transition-all duration-200">Hydrotest to 15,000 PSI</span></div></a>
+</div>
+</div>
+</section>
+<!-- SECTION: Verification, Client Sectors & Assurance -->
+<section class="w-full bg-surface-container-lowest py-20 border-b border-outline-variant/30">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-5">
+<h2 class="text-3xl font-extrabold text-primary tracking-tight mb-4">
+              Engineering Verification &amp; Procurement Assurance
+            </h2>
+<p class="text-[15px] text-on-surface-variant leading-relaxed mb-6">
+              Our projects operate under stringent Kingdom regulatory frameworks. From initial tender vetting through EPC commissioning, our multi-tier QA/QC auditing ensures unconditional compliance.
+            </p>
+<!-- Certified Stamp Grid -->
+<div class="grid grid-cols-2 gap-3 pt-2 font-mono text-[11px]">
+<div class="p-3 border border-primary/15 rounded bg-surface flex flex-col hover:border-primary/40 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300">
+<span class="text-primary font-bold">ISO 9001:2015</span>
+<span class="text-on-surface-variant text-[10px]">Quality Management</span>
+</div>
+<div class="p-3 border border-primary/15 rounded bg-surface flex flex-col hover:border-primary/40 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300">
+<span class="text-primary font-bold">ISO 45001:2018</span>
+<span class="text-on-surface-variant text-[10px]">Occupational Health &amp; Safety</span>
+</div>
+<div class="p-3 border border-primary/15 rounded bg-surface flex flex-col hover:border-primary/40 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300">
+<span class="text-primary font-bold">ISO 14001:2015</span>
+<span class="text-on-surface-variant text-[10px]">Environmental Standard</span>
+</div>
+<div class="p-3 border border-primary/15 rounded bg-surface flex flex-col hover:border-primary/40 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300">
+<span class="text-primary font-bold">IKTVA COMMITTED</span>
+<span class="text-secondary text-[10px] font-semibold">Local Content Compliant</span>
+</div>
+</div>
+</div>
+<!-- Client Industry Sector Breakdown -->
+<div class="lg:col-span-7 bg-surface-container-low p-8 rounded-lg border border-primary/10">
+<div class="font-mono text-[11px] font-bold text-primary uppercase tracking-widest mb-6 flex items-center justify-between">
+<span class="">ACTIVE CLIENT SECTORS &amp; TENDER CODES</span>
+<span class="text-secondary">● AUDIT COMPLETE</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="bg-white p-5 rounded border border-primary/10 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30 transition-all duration-300 cursor-pointer group">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-[20px] group-hover:scale-110 transition-transform duration-300">local_fire_department</span>
+<h4 class="font-bold text-primary text-[15px] group-hover:text-primary-container transition-colors">Energy &amp; Petrochemicals</h4>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-3">
+                  Refinery maintenance, pipeline headers, gas compressor stations, ASME pressure containment.
+                </p>
+<span class="font-mono text-[10px] text-primary-container font-semibold">SEC-REF: KSA-ENG-88</span>
+</div>
+<div class="bg-white p-5 rounded border border-primary/10 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30 transition-all duration-300 cursor-pointer group">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-[20px] group-hover:scale-110 transition-transform duration-300">domain</span>
+<h4 class="font-bold text-primary text-[15px] group-hover:text-primary-container transition-colors">Urban Giga-Projects</h4>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-3">
+                  District cooling plants, central utility tunnels (CUT), high-spec commercial structures.
+                </p>
+<span class="font-mono text-[10px] text-primary-container font-semibold">SEC-REF: GIGA-V2030</span>
+</div>
+<div class="bg-white p-5 rounded border border-primary/10 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30 transition-all duration-300 cursor-pointer group">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-[20px] group-hover:scale-110 transition-transform duration-300">directions_boat</span>
+<h4 class="font-bold text-primary text-[15px] group-hover:text-primary-container transition-colors">Port &amp; Maritime Facilities</h4>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-3">
+                  Quay structural repair, industrial seawater intake piping, heavy marine logistics aprons.
+                </p>
+<span class="font-mono text-[10px] text-primary-container font-semibold">SEC-REF: MAR-LOG-04</span>
+</div>
+<div class="bg-white p-5 rounded border border-primary/10 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30 transition-all duration-300 cursor-pointer group">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-[20px] group-hover:scale-110 transition-transform duration-300">bolt</span>
+<h4 class="font-bold text-primary text-[15px] group-hover:text-primary-container transition-colors">National Grid &amp; Substations</h4>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-3">
+                  HV transmission interconnects, capacitor banks, primary industrial feeder distribution.
+                </p>
+<span class="font-mono text-[10px] text-primary-container font-semibold">SEC-REF: ELEC-GRID-115</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BESPOKE TENDER INQUIRY & RFP DISPATCH CONSOLE -->
+<section class="w-full bg-obsidian py-20 text-white relative overflow-hidden" id="tender-console">
+<!-- Background subtle engineering grid -->
+<div class="absolute inset-0 bg-[linear-gradient(to_right,#13223f_1px,transparent_1px),linear-gradient(to_bottom,#13223f_1px,transparent_1px)] bg-[size:32px_32px] opacity-20 pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-6">
+<h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+              Initiate an Engineering RFP or Technical Dispatch
+            </h2>
+<p class="text-slate-300 text-[16px] leading-relaxed mb-8">
+              Submit your project tender packages, technical requisitions, or emergency shutdown notices directly to our Senior Project Directors for immediate technical assessment.
+            </p>
+<div class="space-y-4 font-mono text-[12px] text-slate-300">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+<span class="">Direct NDA-Protected Procurement Vetting</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[18px]">alarm_on</span>
+<span class="">Guaranteed 24-Hour Technical Dispatch Response</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[18px]">location_on</span>
+<span class="">Riyadh Central Operations • Al Khobar Eastern Province Depot</span>
+</div>
+</div>
+</div>
+<!-- High-End Procurement Desk Card -->
+<div class="lg:col-span-6">
+<div class="bg-slate-900/95 border border-slate-700/80 hover:border-slate-600 rounded-lg p-8 shadow-2xl backdrop-blur-md transition-all duration-300">
+<div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-800">
+<span class="font-mono text-[11px] text-slate-400 uppercase tracking-widest font-semibold">TRANSMISSION DESK // RFP-PORTAL</span>
+<span class="font-mono text-[10px] text-secondary font-bold">ONLINE</span>
+</div>
+<form class="space-y-4" onsubmit="event.preventDefault()">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block font-mono text-[10px] uppercase text-slate-400 tracking-wider mb-1.5">Official Name</label>
+<input class="w-full bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm rounded px-3 py-2.5 focus:outline-none focus:border-secondary transition-colors font-sans" placeholder="Eng. Fahad Al-Otaibi" type="text"/>
+</div>
+<div>
+<label class="block font-mono text-[10px] uppercase text-slate-400 tracking-wider mb-1.5">Corporate / Entity Domain</label>
+<input class="w-full bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm rounded px-3 py-2.5 focus:outline-none focus:border-secondary transition-colors font-sans" placeholder="name@organization.sa" type="email"/>
+</div>
+</div>
+<div>
+<label class="block font-mono text-[10px] uppercase text-slate-400 tracking-wider mb-1.5">Engineering Discipline</label>
+<select class="w-full bg-slate-800/80 border border-slate-700 text-white text-sm rounded px-3 py-2.5 focus:outline-none focus:border-secondary transition-colors font-sans">
+<option>Heavy Industrial Turnaround / Plant Shutdown</option>
+<option>Turnkey MEP &amp; Power Substation (13.8kV - 115kV)</option>
+<option>Civil Structural &amp; Giga-Infrastructure EPC</option>
+<option>Fabrication, Piping Skids &amp; Pressure Vessels</option>
+</select>
+</div>
+<div>
+<label class="block font-mono text-[10px] uppercase text-slate-400 tracking-wider mb-1.5">Scope Brief / Project Location</label>
+<textarea class="w-full bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm rounded px-3 py-2.5 focus:outline-none focus:border-secondary transition-colors font-sans" placeholder="Describe package size, location (e.g., Jubail, Ras Al-Khair, Riyadh), and timeline requirements..." rows="3"></textarea>
+</div>
+<div class="pt-2">
+<button class="w-full bg-secondary hover:bg-emerald-600 active:scale-[0.99] text-white font-mono text-[12px] uppercase tracking-wider font-bold py-3.5 px-6 rounded transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-secondary/10 hover:shadow-secondary/30 group" type="submit">
+<span class="">Dispatch Tender Package For Review</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1.5 transition-transform duration-300">send</span>
+</button>
+<span class="block text-center font-mono text-[10px] text-slate-400 mt-3">
+                    STRICT CONFIDENTIALITY GOVERNED BY SAUDI COMMERCE LAW
+                  </span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- High-End Publication Footer -->
+<footer class="w-full bg-surface-container-lowest border-t border-primary/15 py-14">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-primary/10">
+<!-- Identity Column -->
+<div class="md:col-span-5 flex flex-col items-start">
+<div class="flex items-center gap-3 mb-3">
+<img alt="Universal Spark Company Logo" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC18kk79O9R3J7sd3f-wJ8XaYiKn4VTZ0rbt2ybBrG9GHlNytR6Es5MAbTRbjC1Ay932FPEn0XMK2uxy-vCRmzygKLaBI5K2ncCu4rG7yfY_-AQVomxsNZwjxkqLYh50G58R01rWN0F1GYL6LBRE_gx_JtpznDX5z1CI6DMUdLvTOkpz6BYFNGRPphFj6ptmeAZ9G28JX-RnR3SGmXGY534_Q4vQcKgSn-AMFzQ6RhKpxmxveTsurnWEE3Ryc6Fa5LGpQ"/>
+<span class="font-extrabold text-primary text-[17px] tracking-tight">UNIVERSAL SPARK</span>
+</div>
+<p class="font-sans text-[13px] text-on-surface-variant leading-relaxed max-w-sm mb-4">
+            Universal Spark Infrastructure &amp; Contracting Co. Ltd. — A Tier-1 general engineering contractor committed to Kingdom Vision 2030 industrial resilience.
+          </p>
+<div class="font-mono text-[10px] text-on-surface-variant/80 space-y-1">
+<p class="">CR NO. 4030281902 • CHAMBER OF COMMERCE KSA</p>
+<p class="">EASTERN PROVINCE / RIYADH METROPOLITAN BRANCHES</p>
+</div>
+</div>
+<!-- Quick Navigation -->
+<div class="md:col-span-3">
+<span class="font-mono text-[11px] font-bold text-primary uppercase tracking-widest block mb-4">DISCIPLINES</span>
+<div class="flex flex-col gap-2 font-mono text-[11px] text-on-surface-variant">
+<a class="hover:text-secondary transition-colors" href="#services-matrix">Civil &amp; Foundation EPC</a>
+<a class="hover:text-secondary transition-colors" href="#services-matrix">Plant Shutdown &amp; Turnaround</a>
+<a class="hover:text-secondary transition-colors" href="#services-matrix">MEP &amp; Substation Infrastructure</a>
+<a class="hover:text-secondary transition-colors" href="#services-matrix">ASME Vessel &amp; Skid Fabrication</a>
+</div>
+</div>
+<!-- Legal & Compliance -->
+<div class="md:col-span-4">
+<span class="font-mono text-[11px] font-bold text-primary uppercase tracking-widest block mb-4">COMPLIANCE &amp; ACCREDITATION</span>
+<div class="flex flex-col gap-2 font-mono text-[11px] text-on-surface-variant">
+<span class="">Aramco Approved Vendor System</span>
+<span class="">SABIC Registered Contractor Code</span>
+<span class="">Saudi Council of Engineers Certified</span>
+<span class="">ISO 9001:2015 / ISO 45001:2018 Standards</span>
+</div>
+</div>
+</div>
+<!-- Legal Copyright Strip -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between font-mono text-[11px] text-on-surface-variant/70 gap-4">
+<div class="">
+          © 2025 Universal Spark Contracting &amp; Maintenance Co. Ltd. All rights reserved.
+        </div>
+<div class="flex items-center gap-6">
+<a class="hover:text-primary transition-colors" href="#">Safety Code Manual</a>
+<a class="hover:text-primary transition-colors" href="#">IKTVA Status</a>
+<a class="hover:text-primary transition-colors" href="#">Tender Terms</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
