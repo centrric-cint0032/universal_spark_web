@@ -115,63 +115,64 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Clean, High-End Consultation Form */}
+          {/* Right Column: Clean, Minimalist Consultation Form */}
           <div className="lg:col-span-6">
-            <div className="bg-slate-900/90 border border-white/15 rounded-3xl p-7 sm:p-9 shadow-2xl backdrop-blur-xl">
-              {/* Form Header */}
-              <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
-                <div className="flex items-center gap-2">
-                  <MessageSquare className="w-4 h-4 text-secondary" />
-                  <span className="font-mono text-[11px] text-slate-300 uppercase tracking-widest font-semibold">
-                    PROJECT INQUIRY &amp; CONSULTATION
-                  </span>
+            <div className="bg-slate-900/80 border border-white/10 rounded-2xl p-7 sm:p-9 shadow-2xl backdrop-blur-xl">
+              {/* Clean Form Header */}
+              <div className="mb-6 pb-4 border-b border-white/10 flex items-center justify-between">
+                <div>
+                  <h3 className="font-montserrat font-bold text-lg text-white">
+                    Send an Inquiry
+                  </h3>
+                  <p className="text-slate-400 text-[13px] font-sans mt-0.5">
+                    Our engineering team will review and get back to you promptly.
+                  </p>
                 </div>
-                <span className="font-mono text-[10.5px] text-secondary bg-secondary/10 px-2.5 py-0.5 rounded border border-secondary/20 font-bold">
-                  DIRECT RESPONSE
-                </span>
+                <div className="w-8 h-8 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center">
+                  <MessageSquare className="w-4 h-4" />
+                </div>
               </div>
 
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
-                  <div className="w-14 h-14 rounded-full bg-secondary/20 text-secondary mx-auto flex items-center justify-center">
-                    <CheckCircle2 className="w-8 h-8" />
+                  <div className="w-12 h-12 rounded-full bg-secondary/20 text-secondary mx-auto flex items-center justify-center">
+                    <CheckCircle2 className="w-6 h-6" />
                   </div>
                   <h3 className="text-xl font-bold font-montserrat text-white">
-                    Project Requirements Received
+                    Message Sent
                   </h3>
                   <p className="font-sans text-[14px] text-slate-300 max-w-sm mx-auto">
-                    Thank you. Our engineering estimating team will review your specifications and
-                    coordinate with you promptly.
+                    Thank you. We have received your project details and will contact you shortly.
                   </p>
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="inline-flex items-center gap-2 text-secondary hover:text-white font-mono text-[12px] font-semibold transition-colors mt-4"
+                    className="inline-flex items-center gap-2 text-secondary hover:text-white font-mono text-[12px] font-semibold transition-colors mt-2 cursor-pointer"
                   >
-                    <span>Send Another Inquiry</span>
+                    <span>Submit another request</span>
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4 font-sans">
                   {/* Name */}
                   <div>
-                    <label className="block font-mono text-[10.5px] uppercase text-slate-400 tracking-wider mb-1.5 font-semibold">
-                      Full Name / Representative
+                    <label className="block text-[12.5px] font-medium text-slate-300 mb-1.5">
+                      Full Name
                     </label>
                     <input
                       type="text"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="e.g. Eng. Fahad Al-Otaibi"
-                      className="w-full bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-[14px] rounded-xl px-4 py-3 focus:outline-none focus:border-secondary transition-colors font-sans"
+                      placeholder="Your name"
+                      className="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 text-[14px] rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-secondary transition-colors"
                     />
                   </div>
 
                   {/* Email & Phone */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block font-mono text-[10.5px] uppercase text-slate-400 tracking-wider mb-1.5 font-semibold">
+                      <label className="block text-[12.5px] font-medium text-slate-300 mb-1.5">
                         Email Address
                       </label>
                       <input
@@ -179,12 +180,12 @@ export const ContactSection: React.FC = () => {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="name@organization.sa"
-                        className="w-full bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-[14px] rounded-xl px-4 py-3 focus:outline-none focus:border-secondary transition-colors font-sans"
+                        placeholder="yourname@company.com"
+                        className="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 text-[14px] rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-secondary transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block font-mono text-[10.5px] uppercase text-slate-400 tracking-wider mb-1.5 font-semibold">
+                      <label className="block text-[12.5px] font-medium text-slate-300 mb-1.5">
                         Phone / WhatsApp
                       </label>
                       <input
@@ -192,21 +193,21 @@ export const ContactSection: React.FC = () => {
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+966 5X XXX XXXX"
-                        className="w-full bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-[14px] rounded-xl px-4 py-3 focus:outline-none focus:border-secondary transition-colors font-sans"
+                        placeholder="Contact number"
+                        className="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 text-[14px] rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-secondary transition-colors"
                       />
                     </div>
                   </div>
 
                   {/* Discipline Selector */}
                   <div>
-                    <label className="block font-mono text-[10.5px] uppercase text-slate-400 tracking-wider mb-1.5 font-semibold">
-                      Project Discipline
+                    <label className="block text-[12.5px] font-medium text-slate-300 mb-1.5">
+                      Discipline
                     </label>
                     <select
                       value={formData.discipline}
                       onChange={(e) => setFormData({ ...formData, discipline: e.target.value })}
-                      className="w-full bg-slate-800/80 border border-slate-700 text-white text-[14px] rounded-xl px-4 py-3 focus:outline-none focus:border-secondary transition-colors font-sans cursor-pointer"
+                      className="w-full bg-slate-950/60 border border-slate-800 text-white text-[14px] rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-secondary transition-colors cursor-pointer"
                     >
                       {disciplines.map((d) => (
                         <option key={d} value={d} className="bg-slate-900 text-white">
@@ -216,17 +217,17 @@ export const ContactSection: React.FC = () => {
                     </select>
                   </div>
 
-                  {/* Scope / Location Brief */}
+                  {/* Project Details */}
                   <div>
-                    <label className="block font-mono text-[10.5px] uppercase text-slate-400 tracking-wider mb-1.5 font-semibold">
-                      Scope Brief / Drawings / BOQ / Location
+                    <label className="block text-[12.5px] font-medium text-slate-300 mb-1.5">
+                      Project Details
                     </label>
                     <textarea
                       rows={3}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Briefly describe project requirements, drawings, location (e.g. Eastern Province, Riyadh, Jubail), and schedule..."
-                      className="w-full bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-[14px] rounded-xl px-4 py-3 focus:outline-none focus:border-secondary transition-colors font-sans resize-none"
+                      placeholder="Scope, location, or requirements..."
+                      className="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 text-[14px] rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-secondary transition-colors resize-none"
                     />
                   </div>
 
@@ -234,15 +235,15 @@ export const ContactSection: React.FC = () => {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full bg-secondary hover:bg-emerald-600 active:scale-[0.99] text-white font-montserrat text-[13px] uppercase tracking-wider font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-secondary/20 hover:shadow-secondary/35 cursor-pointer group"
+                      className="w-full bg-secondary hover:bg-emerald-600 active:scale-[0.99] text-white font-montserrat text-[12.5px] uppercase tracking-wider font-bold py-3.5 px-5 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-secondary/25 cursor-pointer"
                     >
-                      <span>Send Project Requirements</span>
-                      <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      <span>Send Inquiry</span>
+                      <Send className="w-3.5 h-3.5" />
                     </button>
 
-                    <div className="flex items-center justify-center gap-1.5 font-mono text-[10.5px] text-slate-400 mt-3 text-center">
+                    <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-400 mt-3 text-center">
                       <Lock className="w-3 h-3 text-secondary" />
-                      <span>Confidentiality Protected Under Saudi Commercial Law</span>
+                      <span>Commercial confidentiality assured</span>
                     </div>
                   </div>
                 </form>
