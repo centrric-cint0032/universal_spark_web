@@ -533,10 +533,10 @@ export const ProjectsPage: React.FC = () => {
 
           <div className="flex flex-wrap items-center gap-4 shrink-0">
             <Link
-              to="/#tender-console"
+              to="/contact"
               className="inline-flex items-center gap-2.5 bg-secondary hover:bg-emerald-600 text-white text-[12px] font-montserrat font-bold tracking-wider uppercase px-7 py-3.5 rounded-xl shadow-lg transition-all"
             >
-              <span>Initiate Tender / RFP</span>
+              <span>Contact Our Team</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link

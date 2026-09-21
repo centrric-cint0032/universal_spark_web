@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useScrollHeader } from '@/hooks/useScrollHeader';
 import type { NavItem } from '@/types';
 import logoImg from '@/assets/images/logo.png';
@@ -9,7 +9,7 @@ const NAV_ITEMS: NavItem[] = [
   { number: '02', label: 'PROJECTS', href: '/projects' },
   { number: '03', label: 'EXECUTION', href: '/#projects' },
   { number: '04', label: 'ABOUT', href: '/#about-us' },
-  { number: '05', label: 'CONTACT', href: '/#tender-console' },
+  { number: '05', label: 'CONTACT', href: '/#contact' },
 ];
 
 export const Header: React.FC = () => {
@@ -50,7 +50,7 @@ export const Header: React.FC = () => {
           </div>
         </a>
 
-        {/* Right End: Desktop Navigation + Action Button + Mobile Toggle */}
+        {/* Right End: Desktop Navigation + Mobile Toggle */}
         <div className="flex items-center gap-6 xl:gap-8 ml-auto">
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-7 xl:gap-9 h-full">
@@ -77,31 +77,15 @@ export const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Action Button & Mobile Toggle */}
-          <div className="flex items-center gap-4">
-            <a
-              href="#tender-console"
-              className="group relative hidden sm:inline-flex items-center gap-2.5 px-5 py-2.5 rounded bg-obsidian text-white border border-primary-container/30 hover:border-secondary/60 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-secondary/15 hover:-translate-y-0.5 active:translate-y-0 shrink-0"
-            >
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-secondary" />
-              </span>
-              <span className="font-montserrat text-[11px] font-semibold tracking-wider uppercase text-slate-100 group-hover:text-white">
-                Initiate Tender / RFP
-              </span>
-              <ArrowRight className="w-3.5 h-3.5 text-secondary group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
-
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-on-surface-variant hover:text-primary rounded-md focus:outline-none"
-              aria-label="Toggle navigation menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+          {/* Mobile Toggle */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 text-on-surface-variant hover:text-primary rounded-md focus:outline-none cursor-pointer"
+            aria-label="Toggle navigation menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </div>
 
@@ -120,16 +104,6 @@ export const Header: React.FC = () => {
                 <span className="text-[10px] text-secondary font-bold">{item.number}</span>
               </a>
             ))}
-            <div className="pt-2">
-              <a
-                href="#tender-console"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded bg-obsidian text-white font-montserrat text-[11px] font-semibold uppercase tracking-wider"
-              >
-                <span>Initiate Tender / RFP</span>
-                <ArrowRight className="w-3.5 h-3.5 text-secondary" />
-              </a>
-            </div>
           </nav>
         </div>
       )}

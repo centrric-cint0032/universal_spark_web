@@ -185,11 +185,11 @@ export const HeroSection: React.FC = () => {
 
               {/* High-Tech Terminal Secondary CTA */}
               <a
-                href="#tender-console"
+                href="#contact"
                 className="group relative inline-flex items-center gap-2.5 px-6 py-3.5 rounded-lg bg-slate-900/80 hover:bg-slate-800/90 text-white font-montserrat text-[12px] font-semibold tracking-wider uppercase border border-slate-700/80 hover:border-cyan-400/70 backdrop-blur-xl transition-all duration-300 shadow-md hover:shadow-[0_0_22px_rgba(6,182,212,0.25)] hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span className="font-mono text-cyan-400 font-bold group-hover:animate-pulse">&gt;_</span>
-                <span className="text-slate-100 group-hover:text-white">Initiate Tender / RFP Console</span>
+                <span className="text-slate-100 group-hover:text-white">Contact Our Team</span>
               </a>
             </div>
           </div>

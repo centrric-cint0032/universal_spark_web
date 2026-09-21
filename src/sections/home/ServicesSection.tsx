@@ -248,10 +248,10 @@ export const ServicesSection: React.FC = () => {
               {/* Action Buttons */}
               <div className="mt-8 pt-6 border-t border-slate-100 flex flex-wrap items-center gap-4">
                 <a
-                  href="#tender-console"
+                  href="#contact"
                   className="group relative inline-flex items-center gap-2.5 bg-secondary hover:bg-emerald-600 text-white font-montserrat text-[12px] font-bold tracking-wider uppercase px-7 py-3.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-secondary/25 hover:-translate-y-0.5 active:translate-y-0"
                 >
-                  <span>Request Scope Proposal / RFP</span>
+                  <span>Request Scope Proposal</span>
                   <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
 
