@@ -1,6 +1,8 @@
 import React from 'react';
 import { CheckCircle2, Award, ShieldCheck, ArrowRight } from 'lucide-react';
 import aboutHqImg from '@/assets/images/about-hq.jpg';
+import aboutReelVideo from '@/assets/videos/about-reel.webm';
+import { OptimizedVideo } from '@/components/common/OptimizedVideo';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -16,7 +18,7 @@ export const AboutSection: React.FC = () => {
             <div className="flex items-center gap-2 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
               <span className="font-mono text-[11px] font-bold text-primary uppercase tracking-widest">
-                02 // ABOUT UNIVERSAL SPARK
+                ABOUT UNIVERSAL SPARK
               </span>
             </div>
 
@@ -98,26 +100,19 @@ export const AboutSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Architectural Corporate Site Showcase */}
+          {/* Right Column: Architectural Corporate Site Video Showcase */}
           <div className="lg:col-span-6 relative">
-            <div className="relative rounded-2xl overflow-hidden border border-primary/20 shadow-2xl bg-slate-900 group">
-              <img
-                src={aboutHqImg}
-                alt="High-end modern corporate headquarters and industrial civil engineering executive operations site in Saudi Arabia"
-                className="w-full h-full object-cover aspect-[4/3] filter brightness-[0.96] contrast-[1.04] group-hover:scale-105 transition-transform duration-700"
+            <div className="relative">
+              <OptimizedVideo
+                src={aboutReelVideo}
+                poster={aboutHqImg}
+                alt="Universal Spark industrial site engineering, machinery, and civil operations in Saudi Arabia"
+                aspectRatio="aspect-[4/3]"
+                title="Universal Spark Executive Site Operations"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent pointer-events-none" />
-
-              {/* Top Floating Badge */}
-              <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-mono text-[11px] shadow-lg">
-                <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-                <span className="tracking-wider font-semibold text-white">
-                  CLASS-A GENERAL CONTRACTOR
-                </span>
-              </div>
 
               {/* Bottom Glassmorphic Overlay Card */}
-              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-xl border border-white/15 text-white shadow-xl flex flex-wrap items-center justify-between gap-3">
+              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-xl border border-white/15 text-white shadow-xl flex flex-wrap items-center justify-between gap-3 z-20">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-primary/30 border border-primary-container/40 flex items-center justify-center text-secondary">
                     <CheckCircle2 className="w-5 h-5 text-secondary" />
@@ -143,8 +138,8 @@ export const AboutSection: React.FC = () => {
             </div>
 
             {/* Decorative Blueprint Corner Brackets */}
-            <div className="absolute -bottom-3 -left-3 w-16 h-16 border-l-2 border-b-2 border-primary/20 pointer-events-none rounded-bl-xl" />
-            <div className="absolute -top-3 -right-3 w-16 h-16 border-r-2 border-t-2 border-secondary/40 pointer-events-none rounded-tr-xl" />
+            <div className="absolute -bottom-3 -left-3 w-16 h-16 border-l-2 border-b-2 border-primary/20 pointer-events-none rounded-bl-xl z-0" />
+            <div className="absolute -top-3 -right-3 w-16 h-16 border-r-2 border-t-2 border-secondary/40 pointer-events-none rounded-tr-xl z-0" />
           </div>
         </div>
       </div>
