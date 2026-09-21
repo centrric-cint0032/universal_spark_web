@@ -4,7 +4,6 @@ import {
   CheckCircle2,
   Wrench,
   ArrowRight,
-  Sparkles,
   Award,
 } from 'lucide-react';
 
@@ -184,31 +183,6 @@ export const HseQualitySection: React.FC = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Dedicated Call-To-Action Bar */}
-        <div className="rounded-2xl bg-surface-container-low border border-primary/15 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-          <div className="flex items-center gap-4 text-left">
-            <div className="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center shrink-0 border border-secondary/20">
-              <Sparkles className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="text-lg sm:text-xl font-bold font-montserrat text-primary">
-                Explore Comprehensive HSE Policies &amp; Inspection Plans
-              </h4>
-              <p className="font-sans text-[13.5px] text-on-surface-variant mt-0.5">
-                Review detailed QA/QC ITP matrices, risk assessment workflows, and industrial maintenance turnaround agreements.
-              </p>
-            </div>
-          </div>
-
-          <a
-            href="#tender-console"
-            className="inline-flex items-center gap-2.5 bg-primary hover:bg-primary-navy text-white font-montserrat text-[12px] font-bold tracking-wider uppercase px-7 py-3.5 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 shrink-0 group"
-          >
-            <span>Request Inspection Matrix / RFP</span>
-            <ArrowRight className="w-4 h-4 text-secondary group-hover:translate-x-1 transition-transform duration-300" />
-          </a>
         </div>
       </div>
     </section>
