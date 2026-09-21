@@ -16,18 +16,23 @@ export const AboutSection: React.FC = () => {
             <div className="flex items-center gap-2 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
               <span className="font-mono text-[11px] font-bold text-primary uppercase tracking-widest">
-                02 // CORPORATE PROFILE &amp; PRE-QUALIFICATIONS
+                02 // ABOUT UNIVERSAL SPARK
               </span>
             </div>
 
             {/* Section Headline */}
             <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-primary tracking-tight leading-tight mb-5 font-montserrat">
-              Pioneering Heavy Industrial Engineering Across the Kingdom
+              Your Trusted Contracting Partner in Saudi Arabia
             </h2>
 
-            {/* Narrative */}
-            <p className="text-on-surface-variant text-[15.5px] sm:text-[16.5px] leading-relaxed mb-8 font-normal font-sans">
-              Universal Spark operates at the forefront of the Kingdom's industrial transformation as an accredited general service contracting company. We engineer, construct, and service critical infrastructure in strict alignment with Saudi Vision 2030, Aramco, and Royal Commission operational benchmarks.
+            {/* Primary Client Narrative */}
+            <p className="text-on-surface-variant text-[15.5px] sm:text-[16.5px] leading-relaxed mb-4 font-normal font-sans">
+              Universal Spark is a general service contracting and project execution company serving clients across Saudi Arabia. We provide comprehensive contracting solutions covering Mechanical, Electrical, MEP, Instrumentation, Civil Construction, Maintenance, and Project Management.
+            </p>
+
+            {/* Strategic Execution Approach Callout */}
+            <p className="text-[14px] sm:text-[14.5px] text-on-surface-variant/90 leading-relaxed mb-7 font-sans border-l-2 border-primary pl-4 py-1 bg-white/60 rounded-r-lg">
+              Our approach is built around understanding our client’s technical requirements, developing practical execution plans, managing resources effectively, and completing projects safely and professionally.
             </p>
 
             {/* 3 Pre-Qualification & Credential Cards */}
