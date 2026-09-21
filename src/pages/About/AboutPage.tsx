@@ -190,10 +190,10 @@ export const AboutPage: React.FC = () => {
             </p>
           </div>
           <Link
-            to="/#tender-console"
+            to="/contact"
             className="inline-flex items-center gap-2 bg-secondary hover:bg-emerald-600 text-white font-montserrat font-bold text-[12px] tracking-wider uppercase px-7 py-3.5 rounded-lg shadow-lg hover:shadow-secondary/25 transition-all"
           >
-            <span>Initiate Tender Inquiry</span>
+            <span>Request a Project Consultation</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

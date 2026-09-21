@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Award, CheckCircle2 } from 'lucide-react';
 import aboutHqImg from '@/assets/images/about-hq.jpg';
 import aboutReelVideo from '@/assets/videos/about-reel.webm';
@@ -95,15 +96,15 @@ export const AboutSection: React.FC = () => {
               </div>
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Button to Detailed Company Profile */}
             <div className="flex flex-wrap items-center gap-4">
-              <a
-                href="#contact"
+              <Link
+                to="/about"
                 className="group relative inline-flex items-center gap-3 bg-primary hover:bg-primary-navy text-white text-[12px] font-bold font-montserrat tracking-wider uppercase px-7 py-3.5 rounded-xl transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0 overflow-hidden"
               >
-                <span>Connect With Our Team</span>
+                <span>Detailed Company Profile</span>
                 <ArrowRight className="w-4 h-4 text-secondary group-hover:translate-x-1.5 transition-transform duration-300" />
-              </a>
+              </Link>
             </div>
           </div>
 
