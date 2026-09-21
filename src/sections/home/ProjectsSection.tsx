@@ -140,23 +140,20 @@ export const ProjectsSection: React.FC = () => {
                           : 'bg-white/5 hover:bg-white/10 text-slate-300 border border-white/5 hover:border-white/15'
                       }`}
                     >
-                      <div className="flex items-center justify-between w-full mb-1">
-                        <div
-                          className={`w-6 h-6 rounded-md flex items-center justify-center transition-colors ${
-                            isSelected
-                              ? 'bg-white/20 text-white'
-                              : 'bg-white/5 text-secondary group-hover:bg-white/10'
-                          }`}
-                        >
-                          <Icon className="w-3.5 h-3.5" />
-                        </div>
-                        <span
-                          className={`w-1.5 h-1.5 rounded-full ${
-                            isSelected ? 'bg-white' : 'bg-secondary/40'
-                          }`}
-                        />
+                      <div
+                        className={`w-8 h-8 rounded-lg flex items-center justify-center mb-2.5 transition-all ${
+                          isSelected
+                            ? 'bg-white/20 text-white'
+                            : 'bg-white/5 text-secondary group-hover:bg-white/10 group-hover:scale-105'
+                        }`}
+                      >
+                        <Icon className="w-4 h-4" />
                       </div>
-                      <span className="text-[11px] font-montserrat font-bold truncate w-full hidden sm:block">
+                      <span
+                        className={`text-[12px] font-montserrat font-bold truncate w-full ${
+                          isSelected ? 'text-white' : 'text-slate-200'
+                        }`}
+                      >
                         {stg.title.split(' ')[0]}
                       </span>
                     </button>
