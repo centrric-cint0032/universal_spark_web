@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { RootLayout } from '@/layouts/RootLayout';
 import { HomePage } from '@/pages/Home/HomePage';
-import { AboutPage } from '@/pages/About/AboutPage';
+import { ProjectsPage } from '@/pages/Projects/ProjectsPage';
 import { NotFoundPage } from '@/pages/NotFound/NotFoundPage';
 
 /**
@@ -18,10 +18,23 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
+        path: 'projects',
+        element: <ProjectsPage />,
+      },
+      /* Additional pages can be cleanly registered here in future phases:
+      {
+        path: 'services',
+        element: <ServicesPage />,
+      },
+      {
         path: 'about',
         element: <AboutPage />,
       },
-
+      {
+        path: 'contact',
+        element: <ContactPage />,
+      },
+      */
       {
         path: '*',
         element: <NotFoundPage />,

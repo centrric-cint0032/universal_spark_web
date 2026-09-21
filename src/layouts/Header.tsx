@@ -5,11 +5,11 @@ import type { NavItem } from '@/types';
 import logoImg from '@/assets/images/logo.png';
 
 const NAV_ITEMS: NavItem[] = [
-  { number: '01', label: 'SERVICES', href: '#services', isActive: true },
-  { number: '02', label: 'PROJECTS', href: '#projects' },
-  { number: '03', label: 'CAPABILITIES', href: '#capabilities' },
-  { number: '04', label: 'ABOUT', href: '#about-us' },
-  { number: '05', label: 'CONTACT', href: '#contact' },
+  { number: '01', label: 'SERVICES', href: '/#services-matrix' },
+  { number: '02', label: 'PROJECTS', href: '/projects' },
+  { number: '03', label: 'EXECUTION', href: '/#projects' },
+  { number: '04', label: 'ABOUT', href: '/#about-us' },
+  { number: '05', label: 'CONTACT', href: '/#tender-console' },
 ];
 
 export const Header: React.FC = () => {
