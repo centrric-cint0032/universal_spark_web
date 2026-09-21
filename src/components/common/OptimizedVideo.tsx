@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Play, Pause, Volume2 } from 'lucide-react';
 
 interface OptimizedVideoProps {
   src: string;
@@ -25,7 +24,6 @@ export const OptimizedVideo: React.FC<OptimizedVideoProps> = ({
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const [hasLoaded, setHasLoaded] = useState(false);
-  const [showFeedback, setShowFeedback] = useState(false);
 
   // Lazy load video stream ONLY when user scrolls near the section
   useEffect(() => {
@@ -68,11 +66,6 @@ export const OptimizedVideo: React.FC<OptimizedVideoProps> = ({
       setIsPlaying(true);
       setIsMuted(false);
     }
-
-    // Brief tactile feedback badge
-    setShowFeedback(true);
-    const timer = setTimeout(() => setShowFeedback(false), 1500);
-    return () => clearTimeout(timer);
   };
 
   return (
@@ -119,34 +112,6 @@ export const OptimizedVideo: React.FC<OptimizedVideoProps> = ({
           {hasLoaded ? 'LIVE FIELD OPERATIONS REEL' : 'CLASS-A GENERAL CONTRACTOR'}
         </span>
       </div>
-
-      {/* Momentary Click Feedback / Status Pill */}
-      <div
-        className={`absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-mono text-[10.5px] shadow-lg transition-opacity duration-300 pointer-events-none ${
-          showFeedback || !isPlaying ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        {isPlaying ? (
-          <>
-            <Volume2 className="w-3.5 h-3.5 text-secondary" />
-            <span className="text-secondary-fixed font-semibold">PLAYING • AUDIO ON</span>
-          </>
-        ) : (
-          <>
-            <Pause className="w-3.5 h-3.5 text-slate-300" />
-            <span className="text-slate-200">PAUSED • MUTED</span>
-          </>
-        )}
-      </div>
-
-      {/* Center Paused Watermark Icon */}
-      {!isPlaying && (
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-          <div className="w-16 h-16 rounded-full bg-slate-900/85 border border-white/25 backdrop-blur-md flex items-center justify-center text-white shadow-2xl animate-in zoom-in-90 duration-200">
-            <Play className="w-7 h-7 ml-1 text-secondary" />
-          </div>
-        </div>
-      )}
     </div>
   );
 };
