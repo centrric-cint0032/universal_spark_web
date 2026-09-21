@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import { Play, Pause, Volume2 } from 'lucide-react';
 
 interface OptimizedVideoProps {
   src: string;
@@ -25,6 +25,7 @@ export const OptimizedVideo: React.FC<OptimizedVideoProps> = ({
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [showFeedback, setShowFeedback] = useState(false);
 
   // Lazy load video stream ONLY when user scrolls near the section
   useEffect(() => {
@@ -50,29 +51,47 @@ export const OptimizedVideo: React.FC<OptimizedVideoProps> = ({
     return () => observer.disconnect();
   }, []);
 
-  const togglePlay = () => {
+  // Click on the video toggles: [Play + Sound ON] <-> [Pause + Mute]
+  const handleTogglePlayMute = () => {
     if (!videoRef.current) return;
+
     if (isPlaying) {
+      // Pause and mute
       videoRef.current.pause();
+      videoRef.current.muted = true;
       setIsPlaying(false);
+      setIsMuted(true);
     } else {
+      // Play with sound on
+      videoRef.current.muted = false;
       videoRef.current.play().catch(() => {});
       setIsPlaying(true);
+      setIsMuted(false);
     }
-  };
 
-  const toggleMute = () => {
-    if (!videoRef.current) return;
-    videoRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
+    // Brief tactile feedback badge
+    setShowFeedback(true);
+    const timer = setTimeout(() => setShowFeedback(false), 1500);
+    return () => clearTimeout(timer);
   };
 
   return (
     <div
       ref={containerRef}
-      className={`relative rounded-2xl overflow-hidden border border-primary/20 shadow-2xl bg-slate-950 group ${aspectRatio} ${className}`}
+      onClick={handleTogglePlayMute}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          handleTogglePlayMute();
+        }
+      }}
+      className={`relative rounded-2xl overflow-hidden border border-primary/20 shadow-2xl bg-slate-950 cursor-pointer select-none ${aspectRatio} ${className}`}
+      title={isPlaying ? 'Click to Pause & Mute' : 'Click to Play with Sound'}
+      aria-label={isPlaying ? 'Pause and Mute Video' : 'Play Video with Sound'}
     >
-      {/* Video element with lazy loading */}
+      {/* Video element with lazy loading - No hover zoom */}
       <video
         ref={videoRef}
         poster={poster}
@@ -82,7 +101,7 @@ export const OptimizedVideo: React.FC<OptimizedVideoProps> = ({
         loop
         preload="none"
         onLoadedData={() => setHasLoaded(true)}
-        className="w-full h-full object-cover filter brightness-[0.95] contrast-[1.05] group-hover:scale-105 transition-transform duration-700"
+        className="w-full h-full object-cover filter brightness-[0.95] contrast-[1.05]"
         title={title}
         aria-label={alt}
       >
@@ -101,28 +120,33 @@ export const OptimizedVideo: React.FC<OptimizedVideoProps> = ({
         </span>
       </div>
 
-      {/* Video Interactive Controls (Play/Pause & Sound Toggle) */}
-      <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
-        <button
-          type="button"
-          onClick={togglePlay}
-          className="w-9 h-9 rounded-lg bg-slate-900/80 hover:bg-slate-900 text-white/90 hover:text-white backdrop-blur-md border border-white/15 flex items-center justify-center transition-all duration-200 hover:scale-105 shadow-md"
-          title={isPlaying ? 'Pause Reel' : 'Play Reel'}
-          aria-label={isPlaying ? 'Pause Video' : 'Play Video'}
-        >
-          {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
-        </button>
-
-        <button
-          type="button"
-          onClick={toggleMute}
-          className="w-9 h-9 rounded-lg bg-slate-900/80 hover:bg-slate-900 text-white/90 hover:text-white backdrop-blur-md border border-white/15 flex items-center justify-center transition-all duration-200 hover:scale-105 shadow-md"
-          title={isMuted ? 'Unmute Audio' : 'Mute Audio'}
-          aria-label={isMuted ? 'Unmute Audio' : 'Mute Audio'}
-        >
-          {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-        </button>
+      {/* Momentary Click Feedback / Status Pill */}
+      <div
+        className={`absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-mono text-[10.5px] shadow-lg transition-opacity duration-300 pointer-events-none ${
+          showFeedback || !isPlaying ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        {isPlaying ? (
+          <>
+            <Volume2 className="w-3.5 h-3.5 text-secondary" />
+            <span className="text-secondary-fixed font-semibold">PLAYING • AUDIO ON</span>
+          </>
+        ) : (
+          <>
+            <Pause className="w-3.5 h-3.5 text-slate-300" />
+            <span className="text-slate-200">PAUSED • MUTED</span>
+          </>
+        )}
       </div>
+
+      {/* Center Paused Watermark Icon */}
+      {!isPlaying && (
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+          <div className="w-16 h-16 rounded-full bg-slate-900/85 border border-white/25 backdrop-blur-md flex items-center justify-center text-white shadow-2xl animate-in zoom-in-90 duration-200">
+            <Play className="w-7 h-7 ml-1 text-secondary" />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
