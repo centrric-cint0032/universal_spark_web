@@ -13,7 +13,7 @@ import mechanicalImg from '@/assets/images/services-mechanical.jpg';
 
 interface ServiceDivision {
   id: string;
-  number: string;
+  icon: React.ComponentType<{ className?: string }>;
   title: string;
   subtitle: string;
   description: string;
@@ -26,7 +26,7 @@ interface ServiceDivision {
 const SERVICES_DATA: ServiceDivision[] = [
   {
     id: 'mechanical',
-    number: '01',
+    icon: Wrench,
     title: 'Mechanical Works',
     subtitle: 'Industrial Installation, Fabrication & Shutdown Support',
     description:
@@ -49,7 +49,7 @@ const SERVICES_DATA: ServiceDivision[] = [
   },
   {
     id: 'electrical',
-    number: '02',
+    icon: Zap,
     title: 'Electrical Works',
     subtitle: 'High & Low Voltage Power Distribution & Systems',
     description:
@@ -67,7 +67,7 @@ const SERVICES_DATA: ServiceDivision[] = [
   },
   {
     id: 'civil',
-    number: '03',
+    icon: Building2,
     title: 'Civil Construction',
     subtitle: 'Heavy Foundations, Earthworks & Structural Works',
     description:
@@ -85,7 +85,7 @@ const SERVICES_DATA: ServiceDivision[] = [
   },
   {
     id: 'mep-instrumentation',
-    number: '04',
+    icon: Cpu,
     title: 'MEP & Instrumentation',
     subtitle: 'Process Automation, Telemetry & Building Services',
     description:
@@ -121,7 +121,7 @@ export const ServicesSection: React.FC = () => {
             <div className="flex items-center gap-2 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
               <span className="font-mono text-[11px] font-bold text-primary uppercase tracking-widest">
-                03 // ENGINEERING &amp; CONTRACTING SERVICES
+                ENGINEERING &amp; CONTRACTING SERVICES
               </span>
             </div>
 
@@ -142,6 +142,7 @@ export const ServicesSection: React.FC = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
           {SERVICES_DATA.map((service) => {
             const isSelected = service.id === selectedServiceId;
+            const ServiceIcon = service.icon;
             return (
               <button
                 key={service.id}
@@ -154,13 +155,15 @@ export const ServicesSection: React.FC = () => {
                 }`}
               >
                 <div className="flex items-center justify-between mb-3 w-full">
-                  <span
-                    className={`font-mono text-[12px] font-bold ${
-                      isSelected ? 'text-secondary-fixed' : 'text-primary/50'
+                  <div
+                    className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${
+                      isSelected
+                        ? 'bg-white/15 text-secondary-fixed'
+                        : 'bg-primary/5 text-primary group-hover:bg-primary/10'
                     }`}
                   >
-                    {service.number}
-                  </span>
+                    <ServiceIcon className="w-4 h-4" />
+                  </div>
                   {service.id === 'mechanical' && (
                     <span
                       className={`inline-flex items-center gap-1 text-[9.5px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
@@ -202,9 +205,9 @@ export const ServicesSection: React.FC = () => {
             {/* Left Column: Scope & 10 Capabilities Checklist */}
             <div className="lg:col-span-7 flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-4">
-                <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary text-white font-bold text-[15px] font-montserrat shadow-sm">
-                  {activeService.number}
-                </span>
+                <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary text-secondary shadow-sm">
+                  <activeService.icon className="w-5 h-5" />
+                </div>
                 <div>
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-[11px] font-semibold">
                     <ShieldCheck className="w-3.5 h-3.5" />
@@ -281,10 +284,7 @@ export const ServicesSection: React.FC = () => {
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-xl border border-white/15 text-white shadow-xl flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-lg bg-primary/30 border border-primary-container/40 flex items-center justify-center text-secondary">
-                      {activeService.id === 'mechanical' && <Wrench className="w-5 h-5" />}
-                      {activeService.id === 'electrical' && <Zap className="w-5 h-5" />}
-                      {activeService.id === 'civil' && <Building2 className="w-5 h-5" />}
-                      {activeService.id === 'mep-instrumentation' && <Cpu className="w-5 h-5" />}
+                      <activeService.icon className="w-5 h-5" />
                     </div>
                     <div>
                       <div className="font-montserrat font-bold text-[13px] text-white">
@@ -312,3 +312,4 @@ export const ServicesSection: React.FC = () => {
     </section>
   );
 };
+
