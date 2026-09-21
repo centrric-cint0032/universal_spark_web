@@ -19,7 +19,6 @@ import {
 } from 'lucide-react';
 import aboutHqImg from '@/assets/images/about-hq.jpg';
 import aboutReelVideo from '@/assets/videos/about-reel.webm';
-import { OptimizedVideo } from '@/components/common/OptimizedVideo';
 
 interface CoreValue {
   id: string;
@@ -200,13 +199,27 @@ export const AboutPage: React.FC = () => {
   return (
     <div className="w-full bg-surface min-h-screen pt-20">
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 1: HERO & EXECUTIVE OVERVIEW (Obsidian Architectural Dark)
+          SECTION 1: HERO & EXECUTIVE OVERVIEW (Full-Bleed Ambient Video Background)
       ────────────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#060e1e] text-white py-20 lg:py-28 overflow-hidden border-b border-slate-800">
-        {/* Subtle Ambient Blueprint Grid */}
-        <div className="absolute inset-0 blueprint-grid opacity-20 pointer-events-none" />
-        <div className="absolute -top-32 -left-32 w-96 h-96 bg-primary/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-32 right-0 w-96 h-96 bg-secondary/15 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative min-h-[600px] lg:min-h-[680px] bg-[#060e1e] text-white py-20 lg:py-28 overflow-hidden border-b border-slate-800 flex items-center">
+        {/* Full-Bleed Ambient Background Video */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            poster={aboutHqImg}
+            className="w-full h-full object-cover object-center scale-105 filter brightness-[0.38] contrast-[1.15]"
+          >
+            <source src={aboutReelVideo} type="video/webm" />
+          </video>
+          {/* Multi-layered cinematic gradient overlays for pristine legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#060e1e] via-[#060e1e]/92 to-[#060e1e]/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#060e1e]/90 via-transparent to-[#060e1e]" />
+          <div className="absolute inset-0 blueprint-grid opacity-25" />
+        </div>
 
         <div className="w-full max-w-[1536px] mx-auto px-6 lg:px-12 xl:px-16 relative z-10">
           {/* Breadcrumb Navigation */}
@@ -222,7 +235,7 @@ export const AboutPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Column: Authoritative Editorial Statement */}
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-secondary/15 border border-secondary/30 text-secondary-fixed text-[11px] font-sans font-semibold uppercase tracking-wider mb-5">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-secondary/15 border border-secondary/30 text-secondary-fixed text-[11px] font-sans font-semibold uppercase tracking-wider mb-5 backdrop-blur-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
                 Corporate Profile &amp; Overview
               </div>
@@ -235,57 +248,84 @@ export const AboutPage: React.FC = () => {
                 Your Trusted Contracting Partner in Saudi Arabia
               </h2>
 
-              <p className="font-sans text-base sm:text-lg text-slate-300 leading-relaxed font-normal mb-8">
+              <p className="font-sans text-base sm:text-lg text-slate-200 leading-relaxed font-normal mb-8 max-w-2xl">
                 Universal Spark is a general service contracting and project execution company serving clients across Saudi Arabia. We provide comprehensive contracting solutions covering Mechanical, Electrical, MEP, Instrumentation, Civil Construction, Maintenance, and Project Management. Our approach is built around understanding client technical requirements, developing practical execution plans, managing resources effectively, and completing projects safely and professionally.
               </p>
 
-              {/* Quick Credentials Strip */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800 font-sans text-xs">
-                <div>
-                  <span className="text-slate-400 block mb-1">Commercial Registration</span>
-                  <span className="font-bold text-white text-sm">CR-4030281902</span>
-                </div>
-                <div>
-                  <span className="text-slate-400 block mb-1">Contractor Status</span>
-                  <span className="font-bold text-secondary text-sm">KSA Class-A EPC</span>
-                </div>
-                <div className="col-span-2 sm:col-span-1">
-                  <span className="text-slate-400 block mb-1">Regional Reach</span>
-                  <span className="font-bold text-white text-sm">Kingdom-Wide Mobilization</span>
-                </div>
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 bg-secondary hover:bg-emerald-600 text-white font-montserrat font-bold text-xs tracking-wider uppercase px-7 py-3.5 rounded-xl shadow-lg hover:shadow-secondary/25 transition-all"
+                >
+                  <span>Request a Project Consultation</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href="#values"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('values')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white font-montserrat font-semibold text-xs tracking-wider uppercase px-6 py-3.5 rounded-xl border border-white/15 backdrop-blur-sm transition-all"
+                >
+                  <span>Explore Core Values</span>
+                </a>
               </div>
             </div>
 
-            {/* Right Column: Site Video Reel & Operational Proof */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-primary/30 bg-slate-950">
-                <OptimizedVideo
-                  src={aboutReelVideo}
-                  poster={aboutHqImg}
-                  alt="Universal Spark engineering, project execution, and industrial site operations across Saudi Arabia"
-                  aspectRatio="aspect-[4/3]"
-                  title="Universal Spark Operational Reel"
-                />
-              </div>
-
-              {/* Floating Architectural Badge */}
-              <div className="mt-4 p-4 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-800 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary">
-                    <ShieldCheck className="w-5 h-5" />
+            {/* Right Column: Architectural Credentials & Live Operational Status Card */}
+            <div className="lg:col-span-5">
+              <div className="p-7 sm:p-8 rounded-2xl bg-slate-900/75 backdrop-blur-xl border border-white/10 shadow-2xl relative overflow-hidden">
+                <div className="flex items-center justify-between pb-5 mb-5 border-b border-white/10">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-secondary/15 border border-secondary/30 flex items-center justify-center text-secondary">
+                      <ShieldCheck className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-montserrat font-bold text-sm text-white uppercase tracking-wider">
+                        Executive Pre-Qualification
+                      </h3>
+                      <p className="font-sans text-xs text-slate-400">
+                        Kingdom of Saudi Arabia
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-montserrat font-bold text-xs text-white uppercase tracking-wider">
-                      Integrated Project Delivery
-                    </h4>
-                    <p className="font-sans text-[11px] text-slate-400">
-                      Engineering, Construction, Commissioning &amp; Maintenance
-                    </p>
+                  <span className="flex items-center gap-1.5 text-[10px] font-sans font-bold text-secondary uppercase px-2.5 py-1 bg-secondary/10 rounded-full border border-secondary/25">
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
+                    Class-A Verified
+                  </span>
+                </div>
+
+                <div className="space-y-4 font-sans text-xs">
+                  <div className="flex justify-between py-2 border-b border-white/5">
+                    <span className="text-slate-400">Commercial Registration (CR):</span>
+                    <span className="font-bold text-white">4030281902</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-white/5">
+                    <span className="text-slate-400">Contractor Classification:</span>
+                    <span className="font-bold text-secondary">Tier-1 General Contracting</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-white/5">
+                    <span className="text-slate-400">Client Compliance:</span>
+                    <span className="font-bold text-white">Saudi Aramco, SABIC, SEC</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-white/5">
+                    <span className="text-slate-400">Geographic Coverage:</span>
+                    <span className="font-bold text-white">Kingdom-Wide Mobilization</span>
+                  </div>
+                  <div className="flex justify-between py-2">
+                    <span className="text-slate-400">Core Disciplines:</span>
+                    <span className="font-bold text-secondary text-right max-w-[200px]">
+                      Mechanical, Electrical, MEP, Civil, Instrumentation
+                    </span>
                   </div>
                 </div>
-                <span className="text-[10px] font-sans font-bold text-secondary uppercase px-2 py-1 bg-secondary/10 rounded border border-secondary/20">
-                  Turnkey
-                </span>
+
+                <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-sans text-slate-400">
+                  <span>Safety Record:</span>
+                  <span className="text-emerald-400 font-semibold">Zero LTI Protocol Enforced</span>
+                </div>
               </div>
             </div>
           </div>
@@ -390,7 +430,7 @@ export const AboutPage: React.FC = () => {
       {/* ─────────────────────────────────────────────────────────────
           SECTION 3: OUR VALUES — Architectural Interactive Spectrum
       ────────────────────────────────────────────────────────────── */}
-      <section className="py-24 lg:py-32 bg-[#060e1e] text-white relative overflow-hidden border-b border-slate-800">
+      <section id="values" className="py-24 lg:py-32 bg-[#060e1e] text-white relative overflow-hidden border-b border-slate-800 scroll-mt-20">
         <div className="absolute inset-0 blueprint-grid opacity-15 pointer-events-none" />
 
         <div className="w-full max-w-[1536px] mx-auto px-6 lg:px-12 xl:px-16 relative z-10">
