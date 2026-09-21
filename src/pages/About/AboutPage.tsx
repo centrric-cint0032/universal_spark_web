@@ -199,9 +199,9 @@ export const AboutPage: React.FC = () => {
   return (
     <div className="w-full bg-surface min-h-screen pt-20">
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 1: HERO & EXECUTIVE OVERVIEW (Full-Bleed Ambient Video Background)
+          SECTION 1: HERO & EXECUTIVE OVERVIEW (Centered Full-Bleed Ambient Video Hero)
       ────────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[600px] lg:min-h-[680px] bg-[#060e1e] text-white py-20 lg:py-28 overflow-hidden border-b border-slate-800 flex items-center">
+      <section className="relative min-h-[640px] lg:min-h-[720px] bg-[#060e1e] text-white py-24 lg:py-32 overflow-hidden border-b border-slate-800 flex items-center justify-center">
         {/* Full-Bleed Ambient Background Video */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <video
@@ -211,121 +211,87 @@ export const AboutPage: React.FC = () => {
             playsInline
             preload="auto"
             poster={aboutHqImg}
-            className="w-full h-full object-cover object-center scale-105 filter brightness-[0.38] contrast-[1.15]"
+            className="w-full h-full object-cover object-center scale-105 filter brightness-[0.32] contrast-[1.15]"
           >
             <source src={aboutReelVideo} type="video/webm" />
           </video>
-          {/* Multi-layered cinematic gradient overlays for pristine legibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#060e1e] via-[#060e1e]/92 to-[#060e1e]/70" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#060e1e]/90 via-transparent to-[#060e1e]" />
-          <div className="absolute inset-0 blueprint-grid opacity-25" />
+          {/* Multi-layered cinematic gradient overlays for pristine legibility and depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#060e1e]/90 via-[#060e1e]/75 to-[#060e1e]" />
+          <div className="absolute inset-0 bg-[#060e1e]/40" />
+          <div className="absolute inset-0 blueprint-grid opacity-20" />
         </div>
 
         <div className="w-full max-w-[1536px] mx-auto px-6 lg:px-12 xl:px-16 relative z-10">
-          {/* Breadcrumb Navigation */}
-          <div className="flex items-center gap-2 text-[12.5px] font-sans text-slate-400 mb-8">
-            <Link to="/" className="hover:text-secondary flex items-center gap-1.5 transition-colors">
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>HOME</span>
-            </Link>
-            <ChevronRight className="w-3 h-3 text-slate-600" />
-            <span className="text-secondary-fixed font-semibold">ABOUT UNIVERSAL SPARK</span>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left Column: Authoritative Editorial Statement */}
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-secondary/15 border border-secondary/30 text-secondary-fixed text-[11px] font-sans font-semibold uppercase tracking-wider mb-5 backdrop-blur-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
-                Corporate Profile &amp; Overview
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-montserrat tracking-tight text-white mb-4 leading-tight">
-                About Universal Spark
-              </h1>
-
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-montserrat text-secondary-fixed mb-6 leading-snug">
-                Your Trusted Contracting Partner in Saudi Arabia
-              </h2>
-
-              <p className="font-sans text-base sm:text-lg text-slate-200 leading-relaxed font-normal mb-8 max-w-2xl">
-                Universal Spark is a general service contracting and project execution company serving clients across Saudi Arabia. We provide comprehensive contracting solutions covering Mechanical, Electrical, MEP, Instrumentation, Civil Construction, Maintenance, and Project Management. Our approach is built around understanding client technical requirements, developing practical execution plans, managing resources effectively, and completing projects safely and professionally.
-              </p>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 bg-secondary hover:bg-emerald-600 text-white font-montserrat font-bold text-xs tracking-wider uppercase px-7 py-3.5 rounded-xl shadow-lg hover:shadow-secondary/25 transition-all"
-                >
-                  <span>Request a Project Consultation</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <a
-                  href="#values"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('values')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white font-montserrat font-semibold text-xs tracking-wider uppercase px-6 py-3.5 rounded-xl border border-white/15 backdrop-blur-sm transition-all"
-                >
-                  <span>Explore Core Values</span>
-                </a>
-              </div>
+          <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+            {/* Breadcrumb Navigation - Centered */}
+            <div className="flex items-center justify-center gap-2 text-[12.5px] font-sans text-slate-400 mb-6">
+              <Link to="/" className="hover:text-secondary flex items-center gap-1.5 transition-colors">
+                <ArrowLeft className="w-3.5 h-3.5" />
+                <span>HOME</span>
+              </Link>
+              <ChevronRight className="w-3 h-3 text-slate-600" />
+              <span className="text-secondary-fixed font-semibold">ABOUT UNIVERSAL SPARK</span>
             </div>
 
-            {/* Right Column: Architectural Credentials & Live Operational Status Card */}
-            <div className="lg:col-span-5">
-              <div className="p-7 sm:p-8 rounded-2xl bg-slate-900/75 backdrop-blur-xl border border-white/10 shadow-2xl relative overflow-hidden">
-                <div className="flex items-center justify-between pb-5 mb-5 border-b border-white/10">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-secondary/15 border border-secondary/30 flex items-center justify-center text-secondary">
-                      <ShieldCheck className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-montserrat font-bold text-sm text-white uppercase tracking-wider">
-                        Executive Pre-Qualification
-                      </h3>
-                      <p className="font-sans text-xs text-slate-400">
-                        Kingdom of Saudi Arabia
-                      </p>
-                    </div>
-                  </div>
-                  <span className="flex items-center gap-1.5 text-[10px] font-sans font-bold text-secondary uppercase px-2.5 py-1 bg-secondary/10 rounded-full border border-secondary/25">
-                    <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
-                    Class-A Verified
-                  </span>
-                </div>
+            {/* Eyebrow Badge - Centered */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-secondary/15 border border-secondary/30 text-secondary-fixed text-[11px] font-sans font-semibold uppercase tracking-wider mb-6 backdrop-blur-sm shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
+              Corporate Profile &amp; Overview
+            </div>
 
-                <div className="space-y-4 font-sans text-xs">
-                  <div className="flex justify-between py-2 border-b border-white/5">
-                    <span className="text-slate-400">Commercial Registration (CR):</span>
-                    <span className="font-bold text-white">4030281902</span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-white/5">
-                    <span className="text-slate-400">Contractor Classification:</span>
-                    <span className="font-bold text-secondary">Tier-1 General Contracting</span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-white/5">
-                    <span className="text-slate-400">Client Compliance:</span>
-                    <span className="font-bold text-white">Saudi Aramco, SABIC, SEC</span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-white/5">
-                    <span className="text-slate-400">Geographic Coverage:</span>
-                    <span className="font-bold text-white">Kingdom-Wide Mobilization</span>
-                  </div>
-                  <div className="flex justify-between py-2">
-                    <span className="text-slate-400">Core Disciplines:</span>
-                    <span className="font-bold text-secondary text-right max-w-[200px]">
-                      Mechanical, Electrical, MEP, Civil, Instrumentation
-                    </span>
-                  </div>
-                </div>
+            {/* Main Headline - Centered */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-montserrat tracking-tight text-white mb-4 leading-tight">
+              About Universal Spark
+            </h1>
 
-                <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-sans text-slate-400">
-                  <span>Safety Record:</span>
-                  <span className="text-emerald-400 font-semibold">Zero LTI Protocol Enforced</span>
-                </div>
+            {/* Subheading - Centered */}
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-montserrat text-secondary-fixed mb-6 leading-snug">
+              Your Trusted Contracting Partner in Saudi Arabia
+            </h2>
+
+            {/* Lead Narrative - Centered */}
+            <p className="font-sans text-base sm:text-lg text-slate-200 leading-relaxed font-normal mb-10 max-w-3xl">
+              Universal Spark is a general service contracting and project execution company serving clients across Saudi Arabia. We provide comprehensive contracting solutions covering Mechanical, Electrical, MEP, Instrumentation, Civil Construction, Maintenance, and Project Management. Our approach is built around understanding client technical requirements, developing practical execution plans, managing resources effectively, and completing projects safely and professionally.
+            </p>
+
+            {/* Centered CTA Buttons */}
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-secondary hover:bg-emerald-600 text-white font-montserrat font-bold text-xs tracking-wider uppercase px-8 py-4 rounded-xl shadow-lg hover:shadow-secondary/25 transition-all hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <span>Request a Project Consultation</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <a
+                href="#values"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('values')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-montserrat font-semibold text-xs tracking-wider uppercase px-7 py-4 rounded-xl border border-white/20 backdrop-blur-md transition-all hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <span>Explore Core Values</span>
+              </a>
+            </div>
+
+            {/* Subtle Centered Horizontal Credentials Strip */}
+            <div className="w-full max-w-3xl pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 font-sans text-xs">
+              <div className="flex flex-col items-center">
+                <span className="text-slate-400 block mb-1">Commercial Registration</span>
+                <span className="font-bold text-white text-sm">CR-4030281902</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-slate-400 block mb-1">Contractor Rating</span>
+                <span className="font-bold text-secondary text-sm">KSA Class-A EPC</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-slate-400 block mb-1">Compliance Standard</span>
+                <span className="font-bold text-white text-sm">Aramco &amp; SABIC</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-slate-400 block mb-1">Regional Deployment</span>
+                <span className="font-bold text-secondary text-sm">Kingdom-Wide</span>
               </div>
             </div>
           </div>
