@@ -2,6 +2,7 @@ import React from 'react';
 import { HeroSection } from '@/sections/home/HeroSection';
 import { AboutSection } from '@/sections/home/AboutSection';
 import { ServicesSection } from '@/sections/home/ServicesSection';
+import { ProjectsSection } from '@/sections/home/ProjectsSection';
 
 export const HomePage: React.FC = () => {
   return (
@@ -15,7 +16,10 @@ export const HomePage: React.FC = () => {
       {/* Phase 3: Engineering & Contracting Services Matrix */}
       <ServicesSection />
 
-      {/* Subsequent phases (Projects, Tender Console) will mount here */}
+      {/* Phase 4: Projects & Project Management (From Planning to Completion) */}
+      <ProjectsSection />
+
+      {/* Subsequent phases (Verification, Tender Console) will mount here */}
     </div>
   );
 };
