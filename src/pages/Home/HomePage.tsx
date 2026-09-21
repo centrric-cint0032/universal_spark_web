@@ -3,6 +3,7 @@ import { HeroSection } from '@/sections/home/HeroSection';
 import { AboutSection } from '@/sections/home/AboutSection';
 import { ServicesSection } from '@/sections/home/ServicesSection';
 import { ProjectsSection } from '@/sections/home/ProjectsSection';
+import { HseQualitySection } from '@/sections/home/HseQualitySection';
 
 export const HomePage: React.FC = () => {
   return (
@@ -18,6 +19,9 @@ export const HomePage: React.FC = () => {
 
       {/* Phase 4: Projects & Project Management (From Planning to Completion) */}
       <ProjectsSection />
+
+      {/* Phase 5: Quality & HSE + Maintenance Services (Safety, Quality & Responsibility) */}
+      <HseQualitySection />
 
       {/* Subsequent phases (Verification, Tender Console) will mount here */}
     </div>
