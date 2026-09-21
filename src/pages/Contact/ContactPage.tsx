@@ -14,6 +14,7 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import contactBgImg from '@/assets/images/contact-infrastructure.jpg';
 
 export const ContactPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -33,9 +34,20 @@ export const ContactPage: React.FC = () => {
   return (
     <div className="w-full bg-surface min-h-screen pt-24 pb-28">
       {/* Hero Header */}
-      <section className="w-full bg-[#080E16] text-white py-20 relative overflow-hidden border-b border-slate-800">
+      <section className="w-full bg-[#060e1e] text-white py-20 relative overflow-hidden border-b border-slate-800">
+        {/* Background Infrastructure Project Image with Overlays */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img
+            src={contactBgImg}
+            alt="Universal Spark Contracting Project Operations"
+            className="w-full h-full object-cover object-center filter brightness-[0.65] contrast-[1.12]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050b17]/95 via-[#060e1e]/85 to-[#050b17]/75" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#060e1e] via-transparent to-[#060e1e]/90" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#13223f_1px,transparent_1px),linear-gradient(to_bottom,#13223f_1px,transparent_1px)] bg-[size:32px_32px] opacity-15" />
+        </div>
+
         <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-secondary/15 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute inset-0 blueprint-grid opacity-20 pointer-events-none" />
 
         <div className="w-full max-w-[1536px] mx-auto px-6 lg:px-12 xl:px-16 relative z-10">
           {/* Breadcrumbs */}

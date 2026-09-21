@@ -6,6 +6,7 @@ import {
   Lock,
   ArrowRight,
 } from 'lucide-react';
+import contactBgImg from '@/assets/images/contact-infrastructure.jpg';
 
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -35,15 +36,29 @@ export const ContactSection: React.FC = () => {
   return (
     <section
       id="contact"
-      className="w-full bg-[#080E16] text-white py-24 lg:py-32 relative overflow-hidden border-b border-slate-800"
+      className="w-full bg-[#060e1e] text-white py-24 lg:py-32 relative overflow-hidden border-b border-slate-800"
     >
+      {/* Background Infrastructure Project Image with Multi-Layered Overlays */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img
+          src={contactBgImg}
+          alt="Universal Spark Contracting Project Operations and Site Engineering in Saudi Arabia"
+          className="w-full h-full object-cover object-center filter brightness-[0.70] contrast-[1.12]"
+        />
+        {/* Horizontal gradient to balance text contrast on the left and form card on the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050b17]/95 via-[#060e1e]/85 to-[#050b17]/75" />
+        {/* Vertical gradient to smoothly blend with adjacent sections */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1e] via-transparent to-[#060e1e]/90" />
+        {/* Subtle CAD Blueprint Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#13223f_1px,transparent_1px),linear-gradient(to_bottom,#13223f_1px,transparent_1px)] bg-[size:32px_32px] opacity-15" />
+      </div>
+
       {/* Anchor for existing tender-console links */}
       <div id="tender-console" className="absolute -top-20" />
 
-      {/* Ambient Radial Lights & Grid */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute inset-0 blueprint-grid opacity-15 pointer-events-none" />
+      {/* Ambient Lighting Orbs */}
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-secondary/15 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-primary/25 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="w-full max-w-[1536px] mx-auto px-6 lg:px-12 xl:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
