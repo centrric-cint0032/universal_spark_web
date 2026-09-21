@@ -5,11 +5,11 @@ import type { NavItem } from '@/types';
 import logoImg from '@/assets/images/logo.png';
 
 const NAV_ITEMS: NavItem[] = [
-  { number: '01', label: 'SERVICES', href: '/#services-matrix' },
-  { number: '02', label: 'PROJECTS', href: '/projects' },
-  { number: '03', label: 'EXECUTION', href: '/#projects' },
-  { number: '04', label: 'ABOUT', href: '/#about-us' },
-  { number: '05', label: 'CONTACT', href: '/#contact' },
+  { label: 'ABOUT', href: '/#about-us' },
+  { label: 'SERVICES', href: '/#services-matrix' },
+  { label: 'PROJECTS', href: '/#projects' },
+  { label: 'HSE & QUALITY', href: '/#capabilities' },
+  { label: 'CONTACT', href: '/#contact' },
 ];
 
 export const Header: React.FC = () => {
@@ -56,23 +56,11 @@ export const Header: React.FC = () => {
           <nav className="hidden lg:flex items-center gap-7 xl:gap-9 h-full">
             {NAV_ITEMS.map((item) => (
               <a
-                key={item.number}
+                key={item.label}
                 href={item.href}
-                className={`relative py-2 font-montserrat text-[11px] font-semibold tracking-wider flex items-center gap-1.5 transition-colors ${
-                  item.isActive ? 'text-primary' : 'text-on-surface-variant hover:text-primary'
-                }`}
+                className="relative py-2 font-montserrat text-[12px] font-semibold tracking-wider text-on-surface-variant hover:text-primary transition-colors"
               >
-                <span
-                  className={`text-[10px] font-bold ${
-                    item.isActive ? 'text-secondary' : 'text-primary/40'
-                  }`}
-                >
-                  {item.number}
-                </span>
                 <span>{item.label}</span>
-                {item.isActive && (
-                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-primary" />
-                )}
               </a>
             ))}
           </nav>
@@ -95,13 +83,12 @@ export const Header: React.FC = () => {
           <nav className="flex flex-col gap-3">
             {NAV_ITEMS.map((item) => (
               <a
-                key={item.number}
+                key={item.label}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-between py-2 font-montserrat text-[12px] font-semibold tracking-wider text-on-surface hover:text-primary border-b border-slate-100 last:border-0"
+                className="flex items-center justify-between py-2.5 font-montserrat text-[13px] font-semibold tracking-wider text-on-surface hover:text-primary border-b border-slate-100 last:border-0"
               >
                 <span>{item.label}</span>
-                <span className="text-[10px] text-secondary font-bold">{item.number}</span>
               </a>
             ))}
           </nav>

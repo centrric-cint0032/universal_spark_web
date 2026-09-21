@@ -1,5 +1,5 @@
 export interface NavItem {
-  number: string;
+  number?: string;
   label: string;
   href: string;
   isActive?: boolean;
