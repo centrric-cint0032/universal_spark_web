@@ -364,12 +364,10 @@ export const ProjectsPage: React.FC = () => {
                   <div>
                     {/* Header */}
                     <div className="flex items-center justify-between mb-4">
-                      <span className="font-mono text-[13px] font-bold text-secondary bg-secondary/10 px-2.5 py-1 rounded-md border border-secondary/20">
-                        STAGE {step.step}
-                      </span>
-                      <div className="w-10 h-10 rounded-xl bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white flex items-center justify-center transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-primary/5 text-primary group-hover:bg-secondary group-hover:text-white flex items-center justify-center transition-colors">
                         <Icon className="w-5 h-5" />
                       </div>
+                      <span className="w-2 h-2 rounded-full bg-secondary/40 group-hover:bg-secondary group-hover:scale-125 transition-all" />
                     </div>
 
                     <h3 className="font-montserrat font-extrabold text-[18px] text-primary group-hover:text-primary-navy transition-colors mb-1">
