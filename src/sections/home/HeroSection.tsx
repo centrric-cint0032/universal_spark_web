@@ -58,7 +58,7 @@ export const HeroSection: React.FC = () => {
             {/* Category Kicker */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 self-start backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-secondary" />
-              <span className="font-mono text-[11px] font-bold tracking-widest text-slate-200 uppercase">
+              <span className="font-sans text-[11px] font-bold tracking-wider text-slate-200 uppercase">
                 General Service Contracting &amp; Project Solutions
               </span>
             </div>
@@ -103,7 +103,7 @@ export const HeroSection: React.FC = () => {
             <div className="relative rounded-2xl p-6 sm:p-8 bg-slate-900/60 backdrop-blur-xl border border-white/15 shadow-2xl">
               <div className="flex items-center justify-between pb-5 mb-5 border-b border-white/10">
                 <div>
-                  <span className="font-mono text-[11px] font-bold text-secondary uppercase tracking-widest block mb-1">
+                  <span className="font-sans text-[11px] font-bold text-secondary uppercase tracking-wider block mb-1">
                     Kingdom of Saudi Arabia
                   </span>
                   <h3 className="font-montserrat font-bold text-lg text-white">
@@ -117,7 +117,7 @@ export const HeroSection: React.FC = () => {
                 Supporting clients throughout the project lifecycle—from planning and engineering to procurement, installation, testing, commissioning, and maintenance—with uncompromised focus on quality and safety.
               </p>
 
-              <div className="space-y-3 font-mono text-xs">
+              <div className="space-y-3 font-sans text-xs">
                 <div className="flex items-center justify-between py-2.5 px-3.5 rounded-lg bg-white/5 border border-white/5">
                   <span className="text-slate-400">Core Disciplines</span>
                   <span className="text-white font-medium">Mechanical • Electrical • Civil</span>

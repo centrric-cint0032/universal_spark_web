@@ -89,7 +89,7 @@ export const ProjectsSection: React.FC = () => {
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 mb-4">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-              <span className="font-mono text-[11px] font-bold tracking-widest text-secondary uppercase">
+              <span className="font-sans text-[11px] font-bold tracking-wider text-secondary uppercase">
                 PROJECT EXECUTION &amp; MANAGEMENT
               </span>
             </div>
@@ -115,10 +115,10 @@ export const ProjectsSection: React.FC = () => {
             {/* Stage Selector Pills */}
             <div className="bg-slate-900/80 backdrop-blur-xl p-3 rounded-2xl border border-white/10 shadow-2xl">
               <div className="flex items-center justify-between px-3 py-2 border-b border-white/10 mb-3">
-                <span className="font-mono text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                <span className="font-sans text-[11px] font-bold text-slate-400 uppercase tracking-wider">
                   6-Stage Execution Lifecycle
                 </span>
-                <span className="font-mono text-[10.5px] text-secondary flex items-center gap-1.5 font-bold">
+                <span className="font-sans text-[10.5px] text-secondary flex items-center gap-1.5 font-bold">
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-ping" />
                   INTERACTIVE STAGES
                 </span>
@@ -168,11 +168,11 @@ export const ProjectsSection: React.FC = () => {
 
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="inline-flex items-center gap-2 font-mono text-[11px] font-bold text-secondary uppercase bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">
+                  <div className="inline-flex items-center gap-2 font-sans text-[11px] font-bold text-secondary uppercase bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">
                     <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
                     {activeStage.tagline}
                   </div>
-                  <span className="font-mono text-[11px] text-slate-400">
+                  <span className="font-sans text-[11px] text-slate-400">
                     Quality Gate Verified
                   </span>
                 </div>
@@ -195,15 +195,15 @@ export const ProjectsSection: React.FC = () => {
               {/* Metric Highlights */}
               <div className="grid grid-cols-3 gap-3 pt-6 border-t border-white/10 mt-6">
                 <div className="p-2.5 rounded-lg bg-white/5 border border-white/5">
-                  <div className="font-mono text-[10px] text-slate-400 uppercase">Disciplines</div>
+                  <div className="font-sans text-[10px] text-slate-400 uppercase">Disciplines</div>
                   <div className="font-montserrat font-bold text-[14px] text-white">13 Handled</div>
                 </div>
                 <div className="p-2.5 rounded-lg bg-white/5 border border-white/5">
-                  <div className="font-mono text-[10px] text-slate-400 uppercase">Sectors</div>
+                  <div className="font-sans text-[10px] text-slate-400 uppercase">Sectors</div>
                   <div className="font-montserrat font-bold text-[14px] text-secondary">12 Types</div>
                 </div>
                 <div className="p-2.5 rounded-lg bg-white/5 border border-white/5">
-                  <div className="font-mono text-[10px] text-slate-400 uppercase">Safety</div>
+                  <div className="font-sans text-[10px] text-slate-400 uppercase">Safety</div>
                   <div className="font-montserrat font-bold text-[14px] text-white">Zero LTI</div>
                 </div>
               </div>
@@ -221,7 +221,7 @@ export const ProjectsSection: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
 
               {/* Floating Top Tag */}
-              <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-mono text-[10.5px] shadow-lg">
+              <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-sans text-[10.5px] shadow-lg">
                 <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
                 <span className="tracking-wider font-semibold uppercase">
                   ACTIVE KINGDOM-WIDE SITES
@@ -231,18 +231,18 @@ export const ProjectsSection: React.FC = () => {
               {/* Floating Bottom Console */}
               <div className="absolute bottom-4 left-4 right-4 p-5 rounded-xl bg-slate-900/95 backdrop-blur-xl border border-white/15 text-white shadow-2xl">
                 <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2 text-secondary font-mono text-[11px] font-bold uppercase">
+                  <div className="flex items-center gap-2 text-secondary font-sans text-[11px] font-bold uppercase">
                     <Activity className="w-4 h-4" />
                     <span>Project Types Covered</span>
                   </div>
-                  <span className="font-mono text-[10px] text-slate-400">KSA Standard</span>
+                  <span className="font-sans text-[10px] text-slate-400">KSA Standard</span>
                 </div>
 
                 <div className="text-[13px] font-sans text-slate-200 leading-snug mb-3">
                   Industrial Facilities • Commercial Buildings • Warehouses • Infrastructure • Plant Shutdowns
                 </div>
 
-                <div className="flex items-center gap-2 pt-2 border-t border-white/10 font-mono text-[10.5px] text-secondary">
+                <div className="flex items-center gap-2 pt-2 border-t border-white/10 font-sans text-[10.5px] text-secondary">
                   <ShieldCheck className="w-3.5 h-3.5" />
                   <span>Direct Site Leadership &amp; Turnkey Execution</span>
                 </div>

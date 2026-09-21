@@ -25,7 +25,7 @@ export const AboutPage: React.FC = () => {
         <div className="absolute inset-0 blueprint-grid opacity-20 pointer-events-none" />
         <div className="w-full max-w-[1536px] mx-auto px-6 lg:px-12 xl:px-16 relative z-10">
           {/* Breadcrumb Navigation */}
-          <div className="flex items-center gap-2 text-[12px] font-mono text-slate-400 mb-6">
+          <div className="flex items-center gap-2 text-[12.5px] font-sans text-slate-400 mb-6">
             <Link to="/" className="hover:text-secondary flex items-center gap-1 transition-colors">
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>HOME</span>
@@ -35,7 +35,7 @@ export const AboutPage: React.FC = () => {
           </div>
 
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 border border-secondary/30 text-secondary-fixed text-[11px] font-mono font-semibold uppercase tracking-wider mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 border border-secondary/30 text-secondary-fixed text-[11px] font-sans font-semibold uppercase tracking-wider mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
               Corporate Profile &amp; Governance
             </div>
@@ -59,7 +59,7 @@ export const AboutPage: React.FC = () => {
             <div className="lg:col-span-7">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full bg-secondary" />
-                <span className="font-mono text-[11px] font-bold text-primary uppercase tracking-widest">
+                <span className="font-sans text-[11px] font-bold text-primary uppercase tracking-wider">
                   OUR EXECUTION PHILOSOPHY
                 </span>
               </div>
@@ -151,10 +151,10 @@ export const AboutPage: React.FC = () => {
 
               {/* Registration & Pre-Qualification Badges */}
               <div className="mt-6 p-6 rounded-2xl bg-surface-container-low border border-primary/15">
-                <h4 className="font-mono text-[11px] font-bold text-primary uppercase tracking-wider mb-4">
+                <h4 className="font-sans text-[11px] font-bold text-primary uppercase tracking-wider mb-4">
                   OFFICIAL COMMERCIAL REGISTRATION &amp; ACCREDITATIONS
                 </h4>
-                <div className="space-y-3 font-mono text-[12px]">
+                <div className="space-y-3 font-sans text-[12.5px]">
                   <div className="flex justify-between py-1.5 border-b border-slate-200">
                     <span className="text-on-surface-variant">Commercial Registration (CR):</span>
                     <span className="font-bold text-primary">4030281902</span>

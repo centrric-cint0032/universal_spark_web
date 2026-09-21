@@ -39,7 +39,7 @@ export const ContactPage: React.FC = () => {
 
         <div className="w-full max-w-[1536px] mx-auto px-6 lg:px-12 xl:px-16 relative z-10">
           {/* Breadcrumbs */}
-          <div className="flex items-center gap-2 font-mono text-[12px] text-slate-400 mb-6">
+          <div className="flex items-center gap-2 font-sans text-[12.5px] text-slate-400 mb-6">
             <Link to="/" className="hover:text-secondary flex items-center gap-1 transition-colors">
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Home</span>
@@ -51,7 +51,7 @@ export const ContactPage: React.FC = () => {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 mb-4">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-              <span className="font-mono text-[11px] font-bold tracking-widest text-secondary uppercase">
+              <span className="font-sans text-[11px] font-bold tracking-wider text-secondary uppercase">
                 DIRECT CONTACT &amp; TENDERS
               </span>
             </div>
@@ -86,7 +86,7 @@ export const ContactPage: React.FC = () => {
                   <p className="font-sans text-[13px] text-on-surface-variant">
                     General Service Contracting Company
                   </p>
-                  <span className="font-mono text-[11px] text-secondary font-semibold">
+                  <span className="font-sans text-[11.5px] text-secondary font-semibold">
                     Saudi Arabia
                   </span>
                 </div>
@@ -99,7 +99,7 @@ export const ContactPage: React.FC = () => {
                     <MapPin className="w-4 h-4 text-secondary" />
                   </div>
                   <div>
-                    <div className="font-mono text-[11px] font-bold uppercase text-slate-400">
+                    <div className="font-sans text-[11px] font-bold uppercase text-slate-400">
                       Official Address
                     </div>
                     <div className="text-[14px] text-on-surface font-medium mt-0.5">
@@ -116,7 +116,7 @@ export const ContactPage: React.FC = () => {
                     <Phone className="w-4 h-4 text-secondary" />
                   </div>
                   <div>
-                    <div className="font-mono text-[11px] font-bold uppercase text-slate-400">
+                    <div className="font-sans text-[11px] font-bold uppercase text-slate-400">
                       Telephone
                     </div>
                     <a
@@ -133,7 +133,7 @@ export const ContactPage: React.FC = () => {
                     <MessageCircle className="w-4 h-4 text-secondary" />
                   </div>
                   <div>
-                    <div className="font-mono text-[11px] font-bold uppercase text-slate-400">
+                    <div className="font-sans text-[11px] font-bold uppercase text-slate-400">
                       WhatsApp Direct
                     </div>
                     <a
@@ -152,7 +152,7 @@ export const ContactPage: React.FC = () => {
                     <Mail className="w-4 h-4 text-secondary" />
                   </div>
                   <div>
-                    <div className="font-mono text-[11px] font-bold uppercase text-slate-400">
+                    <div className="font-sans text-[11px] font-bold uppercase text-slate-400">
                       Email Address
                     </div>
                     <a
@@ -169,7 +169,7 @@ export const ContactPage: React.FC = () => {
                     <Globe className="w-4 h-4 text-secondary" />
                   </div>
                   <div>
-                    <div className="font-mono text-[11px] font-bold uppercase text-slate-400">
+                    <div className="font-sans text-[11px] font-bold uppercase text-slate-400">
                       Website
                     </div>
                     <a
@@ -200,7 +200,7 @@ export const ContactPage: React.FC = () => {
                 <div className="font-montserrat font-extrabold text-[15px] text-primary tracking-wider uppercase">
                   Build. Install. Maintain. Deliver.
                 </div>
-                <div className="font-mono text-[11px] text-secondary font-bold mt-1">
+                <div className="font-sans text-[11px] text-secondary font-bold mt-1">
                   Universal Spark
                 </div>
               </div>
@@ -247,7 +247,7 @@ export const ContactPage: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block font-mono text-[11px] uppercase text-primary tracking-wider mb-1.5 font-bold">
+                    <label className="block font-sans text-[11.5px] uppercase text-primary tracking-wider mb-1.5 font-bold">
                       Full Name
                     </label>
                     <input
@@ -261,7 +261,7 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block font-mono text-[11px] uppercase text-primary tracking-wider mb-1.5 font-bold">
+                    <label className="block font-sans text-[11.5px] uppercase text-primary tracking-wider mb-1.5 font-bold">
                       Corporate Email
                     </label>
                     <input
@@ -277,7 +277,7 @@ export const ContactPage: React.FC = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block font-mono text-[11px] uppercase text-primary tracking-wider mb-1.5 font-bold">
+                    <label className="block font-sans text-[11.5px] uppercase text-primary tracking-wider mb-1.5 font-bold">
                       Phone / WhatsApp Number
                     </label>
                     <input
@@ -291,7 +291,7 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block font-mono text-[11px] uppercase text-primary tracking-wider mb-1.5 font-bold">
+                    <label className="block font-sans text-[11.5px] uppercase text-primary tracking-wider mb-1.5 font-bold">
                       Enquiry Purpose
                     </label>
                     <select
@@ -309,7 +309,7 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block font-mono text-[11px] uppercase text-primary tracking-wider mb-1.5 font-bold">
+                  <label className="block font-sans text-[11.5px] uppercase text-primary tracking-wider mb-1.5 font-bold">
                     Project Scope Details &amp; Specifications
                   </label>
                   <textarea
@@ -331,7 +331,7 @@ export const ContactPage: React.FC = () => {
                     <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </button>
 
-                  <div className="flex items-center justify-center gap-1.5 font-mono text-[11px] text-on-surface-variant/80 mt-3 text-center">
+                  <div className="flex items-center justify-center gap-1.5 font-sans text-[11.5px] text-on-surface-variant/80 mt-3 text-center">
                     <ShieldCheck className="w-3.5 h-3.5 text-secondary" />
                     <span>Kingdom of Saudi Arabia Commercial Privacy Assured</span>
                   </div>

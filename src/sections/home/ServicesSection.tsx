@@ -120,7 +120,7 @@ export const ServicesSection: React.FC = () => {
             {/* Section Eyebrow */}
             <div className="flex items-center gap-2 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-              <span className="font-mono text-[11px] font-bold text-primary uppercase tracking-widest">
+              <span className="font-sans text-[11px] font-bold text-primary uppercase tracking-wider">
                 ENGINEERING &amp; CONTRACTING SERVICES
               </span>
             </div>
@@ -166,7 +166,7 @@ export const ServicesSection: React.FC = () => {
                   </div>
                   {service.id === 'mechanical' && (
                     <span
-                      className={`inline-flex items-center gap-1 text-[9.5px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
+                      className={`inline-flex items-center gap-1 text-[9.5px] font-sans font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
                         isSelected
                           ? 'bg-secondary text-white'
                           : 'bg-secondary/15 text-secondary border border-secondary/20'
@@ -255,7 +255,7 @@ export const ServicesSection: React.FC = () => {
                   <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
 
-                <div className="text-[11.5px] font-mono text-on-surface-variant/80">
+                <div className="text-[11.5px] font-sans text-on-surface-variant/80">
                   <span className="text-secondary font-bold">✓</span> Fast Deployment &amp;
                   Direct Engineering Supervision
                 </div>
@@ -273,7 +273,7 @@ export const ServicesSection: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent pointer-events-none" />
 
                 {/* Floating Top Tag */}
-                <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-mono text-[10.5px] shadow-lg">
+                <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-sans text-[11px] shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
                   <span className="tracking-wider font-semibold text-white uppercase">
                     {activeService.title} DIVISION
@@ -290,13 +290,13 @@ export const ServicesSection: React.FC = () => {
                       <div className="font-montserrat font-bold text-[13px] text-white">
                         Turnkey Execution Ready
                       </div>
-                      <div className="font-mono text-[9.5px] text-slate-300">
+                      <div className="font-sans text-[11px] text-slate-300">
                         Aramco &amp; Royal Commission Spec
                       </div>
                     </div>
                   </div>
 
-                  <span className="font-mono text-[10px] text-secondary-fixed font-bold uppercase tracking-wider hidden sm:inline">
+                  <span className="font-sans text-[10.5px] text-secondary-fixed font-bold uppercase tracking-wider hidden sm:inline">
                     ACTIVE SITES
                   </span>
                 </div>

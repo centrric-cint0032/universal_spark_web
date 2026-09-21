@@ -267,7 +267,7 @@ export const ProjectsPage: React.FC = () => {
 
         <div className="w-full max-w-[1536px] mx-auto px-6 lg:px-12 xl:px-16 relative z-10">
           {/* Breadcrumb Navigation */}
-          <div className="flex items-center gap-2 font-mono text-[12px] text-slate-400 mb-6">
+          <div className="flex items-center gap-2 font-sans text-[12.5px] text-slate-400 mb-6">
             <Link to="/" className="hover:text-secondary flex items-center gap-1 transition-colors">
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Home</span>
@@ -280,7 +280,7 @@ export const ProjectsPage: React.FC = () => {
             <div className="lg:col-span-8">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 mb-4">
                 <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-                <span className="font-mono text-[11px] font-bold tracking-widest text-secondary uppercase">
+                <span className="font-sans text-[11px] font-bold tracking-wider text-secondary uppercase">
                   PROJECT EXECUTION &amp; MANAGEMENT
                 </span>
               </div>
@@ -306,7 +306,7 @@ export const ProjectsPage: React.FC = () => {
                   <div className="font-montserrat font-bold text-white text-[15px]">
                     Zero LTI Benchmark
                   </div>
-                  <div className="font-mono text-[11px] text-slate-400">
+                  <div className="font-sans text-[11px] text-slate-400">
                     Aramco &amp; SEC Rigorous Safety
                   </div>
                 </div>
@@ -315,11 +315,11 @@ export const ProjectsPage: React.FC = () => {
               <div className="grid grid-cols-2 gap-3 text-center">
                 <div className="p-3 bg-white/5 rounded-xl border border-white/5">
                   <div className="text-2xl font-black font-montserrat text-secondary">6</div>
-                  <div className="font-mono text-[10.5px] text-slate-400 uppercase">Quality Gates</div>
+                  <div className="font-sans text-[10.5px] text-slate-400 uppercase font-medium">Quality Gates</div>
                 </div>
                 <div className="p-3 bg-white/5 rounded-xl border border-white/5">
                   <div className="text-2xl font-black font-montserrat text-white">13</div>
-                  <div className="font-mono text-[10.5px] text-slate-400 uppercase">Disciplines</div>
+                  <div className="font-sans text-[10.5px] text-slate-400 uppercase font-medium">Disciplines</div>
                 </div>
               </div>
             </div>
@@ -333,7 +333,7 @@ export const ProjectsPage: React.FC = () => {
         <section>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-primary/10 gap-4">
             <div>
-              <span className="font-mono text-[11px] font-bold text-secondary uppercase tracking-widest block mb-1">
+              <span className="font-sans text-[11px] font-bold text-secondary uppercase tracking-wider block mb-1">
                 STRUCTURED WORKFLOW
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-primary font-montserrat tracking-tight">
@@ -365,7 +365,7 @@ export const ProjectsPage: React.FC = () => {
                     <h3 className="font-montserrat font-extrabold text-[18px] text-primary group-hover:text-primary-navy transition-colors mb-1">
                       {step.title}
                     </h3>
-                    <div className="font-mono text-[11px] text-secondary font-semibold mb-3">
+                    <div className="font-sans text-[11.5px] text-secondary font-semibold mb-3">
                       {step.subtitle}
                     </div>
 
@@ -376,7 +376,7 @@ export const ProjectsPage: React.FC = () => {
 
                   {/* Deliverables Checklist */}
                   <div className="pt-4 border-t border-slate-100 space-y-2">
-                    <span className="font-mono text-[10.5px] font-bold uppercase text-primary tracking-wider block mb-2">
+                    <span className="font-sans text-[10.5px] font-bold uppercase text-primary tracking-wider block mb-2">
                       Key Deliverables:
                     </span>
                     {step.deliverables.map((item) => (
@@ -396,7 +396,7 @@ export const ProjectsPage: React.FC = () => {
         <section className="bg-surface-container-low p-8 sm:p-12 rounded-3xl border border-primary/15 shadow-sm">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 pb-4 border-b border-primary/10 gap-6">
             <div>
-              <span className="font-mono text-[11px] font-bold text-secondary uppercase tracking-widest block mb-1">
+              <span className="font-sans text-[11px] font-bold text-secondary uppercase tracking-wider block mb-1">
                 DISCIPLINED GOVERNANCE
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-primary font-montserrat tracking-tight">
@@ -411,7 +411,7 @@ export const ProjectsPage: React.FC = () => {
                   key={cat}
                   type="button"
                   onClick={() => setSelectedFilter(cat)}
-                  className={`px-3.5 py-1.5 rounded-lg text-[12px] font-mono font-bold transition-all cursor-pointer ${
+                  className={`px-3.5 py-1.5 rounded-lg text-[12px] font-sans font-bold transition-all cursor-pointer ${
                     selectedFilter === cat
                       ? 'bg-primary text-white shadow-sm'
                       : 'bg-white text-on-surface-variant border border-slate-200 hover:border-primary/40'
@@ -435,7 +435,7 @@ export const ProjectsPage: React.FC = () => {
                     <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary group-hover:bg-secondary group-hover:text-white flex items-center justify-center transition-colors">
                       <SrvIcon className="w-4 h-4" />
                     </div>
-                    <span className="font-mono text-[10px] text-slate-400 bg-slate-100 px-2 py-0.5 rounded">
+                    <span className="font-sans text-[10.5px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
                       {srv.category}
                     </span>
                   </div>
@@ -455,7 +455,7 @@ export const ProjectsPage: React.FC = () => {
         {/* Module 3: Project Types (12 Sectors) */}
         <section>
           <div className="mb-10 pb-4 border-b border-primary/10">
-            <span className="font-mono text-[11px] font-bold text-secondary uppercase tracking-widest block mb-1">
+            <span className="font-sans text-[11px] font-bold text-secondary uppercase tracking-wider block mb-1">
               PORTFOLIO COVERAGE
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-primary font-montserrat tracking-tight">
@@ -506,7 +506,7 @@ export const ProjectsPage: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-secondary font-mono text-[11px] font-bold">
+                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-secondary font-sans text-[11.5px] font-bold">
                     <span>Aramco / Royal Commission Spec</span>
                     <ChevronRight className="w-4 h-4" />
                   </div>
@@ -519,7 +519,7 @@ export const ProjectsPage: React.FC = () => {
         {/* Inquiry / Tender Dispatch Callout */}
         <section className="bg-gradient-to-r from-primary to-primary-navy text-white p-8 sm:p-12 rounded-3xl shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="max-w-2xl">
-            <span className="font-mono text-[11px] text-secondary-fixed uppercase tracking-widest block mb-2 font-bold">
+            <span className="font-sans text-[11px] text-secondary-fixed uppercase tracking-wider block mb-2 font-bold">
               SUBMIT AN RFP OR TENDER
             </span>
             <h3 className="text-2xl sm:text-3xl font-extrabold font-montserrat text-white mb-3">

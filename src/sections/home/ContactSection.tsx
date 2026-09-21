@@ -5,7 +5,6 @@ import {
   CheckCircle2,
   Lock,
   ArrowRight,
-  MessageSquare,
 } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
@@ -54,7 +53,7 @@ export const ContactSection: React.FC = () => {
               {/* Eyebrow */}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 mb-4">
                 <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-                <span className="font-mono text-[11px] font-bold tracking-widest text-secondary uppercase">
+                <span className="font-sans text-[11px] font-bold tracking-wider text-secondary uppercase">
                   LET’S DISCUSS YOUR PROJECT
                 </span>
               </div>
@@ -80,7 +79,7 @@ export const ContactSection: React.FC = () => {
 
               {/* Services Line */}
               <div className="mt-8 pt-6 border-t border-white/10">
-                <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-secondary block mb-3">
+                <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-secondary block mb-3">
                   INTEGRATED DISCIPLINES
                 </span>
                 <p className="font-sans text-[13.5px] text-slate-300 font-medium leading-relaxed">
@@ -100,14 +99,14 @@ export const ContactSection: React.FC = () => {
                 <div className="font-montserrat font-extrabold text-[15px] text-white tracking-wider uppercase">
                   Build. Install. Maintain. Deliver.
                 </div>
-                <div className="font-mono text-[11px] text-secondary mt-0.5">
+                <div className="font-sans text-[11px] text-secondary mt-0.5 font-medium">
                   Universal Spark Contracting • Saudi Arabia
                 </div>
               </div>
 
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-1.5 text-secondary hover:text-white font-mono text-[12px] font-bold uppercase tracking-wider transition-colors shrink-0 group"
+                className="inline-flex items-center gap-1.5 text-secondary hover:text-white font-sans text-[12px] font-bold uppercase tracking-wider transition-colors shrink-0 group"
               >
                 <span>Detailed Contacts</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -118,25 +117,19 @@ export const ContactSection: React.FC = () => {
           {/* Right Column: Clean, Minimalist Consultation Form */}
           <div className="lg:col-span-6">
             <div className="bg-slate-900/80 border border-white/10 rounded-2xl p-7 sm:p-9 shadow-2xl backdrop-blur-xl">
-              {/* Clean Form Header */}
-              <div className="mb-6 pb-4 border-b border-white/10 flex items-center justify-between">
-                <div>
-                  <h3 className="font-montserrat font-bold text-lg text-white">
-                    Send an Inquiry
-                  </h3>
-                  <p className="text-slate-400 text-[13px] font-sans mt-0.5">
-                    Our engineering team will review and get back to you promptly.
-                  </p>
-                </div>
-                <div className="w-8 h-8 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center">
-                  <MessageSquare className="w-4 h-4" />
-                </div>
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold font-montserrat text-white tracking-tight">
+                  Request a Project Consultation
+                </h3>
+                <p className="font-sans text-[13.5px] text-slate-300 mt-1">
+                  Provide your requirements and our project estimators will coordinate with you.
+                </p>
               </div>
 
               {submitted ? (
-                <div className="py-12 text-center space-y-4">
-                  <div className="w-12 h-12 rounded-full bg-secondary/20 text-secondary mx-auto flex items-center justify-center">
-                    <CheckCircle2 className="w-6 h-6" />
+                <div className="py-10 text-center space-y-4">
+                  <div className="w-14 h-14 rounded-full bg-secondary/20 text-secondary mx-auto flex items-center justify-center">
+                    <CheckCircle2 className="w-7 h-7" />
                   </div>
                   <h3 className="text-xl font-bold font-montserrat text-white">
                     Message Sent
@@ -147,7 +140,7 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="inline-flex items-center gap-2 text-secondary hover:text-white font-mono text-[12px] font-semibold transition-colors mt-2 cursor-pointer"
+                    className="inline-flex items-center gap-2 text-secondary hover:text-white font-sans text-[12px] font-semibold transition-colors mt-2 cursor-pointer"
                   >
                     <span>Submit another request</span>
                   </button>

@@ -24,7 +24,7 @@ export const AboutSection: React.FC = () => {
             {/* Section Eyebrow */}
             <div className="flex items-center gap-2 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-              <span className="font-mono text-[11px] font-bold text-primary uppercase tracking-widest">
+              <span className="font-sans text-[11px] font-bold text-primary uppercase tracking-wider">
                 ABOUT UNIVERSAL SPARK
               </span>
             </div>
@@ -50,7 +50,7 @@ export const AboutSection: React.FC = () => {
               <div className="p-4 bg-white border border-primary/15 rounded-xl shadow-sm hover:shadow-md hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col group cursor-pointer">
                 <div className="flex items-center gap-1.5 text-secondary mb-1.5">
                   <CheckCircle2 className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider">
+                  <span className="font-sans text-[10.5px] font-bold uppercase tracking-wider">
                     ACCURACY
                   </span>
                 </div>
@@ -66,7 +66,7 @@ export const AboutSection: React.FC = () => {
               <div className="p-4 bg-white border border-primary/15 rounded-xl shadow-sm hover:shadow-md hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col group cursor-pointer">
                 <div className="flex items-center gap-1.5 text-primary mb-1.5">
                   <Award className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider">
+                  <span className="font-sans text-[10.5px] font-bold uppercase tracking-wider">
                     IKTVA
                   </span>
                 </div>
@@ -82,7 +82,7 @@ export const AboutSection: React.FC = () => {
               <div className="p-4 bg-white border border-primary/15 rounded-xl shadow-sm hover:shadow-md hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col group cursor-pointer">
                 <div className="flex items-center gap-1.5 text-secondary mb-1.5">
                   <ShieldCheck className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider">
+                  <span className="font-sans text-[10.5px] font-bold uppercase tracking-wider">
                     SAFETY
                   </span>
                 </div>
@@ -128,16 +128,16 @@ export const AboutSection: React.FC = () => {
                     <div className="font-montserrat font-bold text-[13.5px] text-white">
                       Universal Spark Infrastructure
                     </div>
-                    <div className="font-mono text-[10px] text-slate-300">
+                    <div className="font-sans text-[11px] text-slate-300">
                       CR 4030281902 • Aramco Vendor Certified
                     </div>
                   </div>
                 </div>
                 <div className="hidden sm:flex flex-col items-end">
-                  <span className="font-mono text-[9.5px] uppercase text-secondary-fixed font-bold tracking-wider">
+                  <span className="font-sans text-[10px] uppercase text-secondary-fixed font-bold tracking-wider">
                     VISION 2030 PARTNER
                   </span>
-                  <span className="font-mono text-[9.5px] text-slate-400">
+                  <span className="font-sans text-[10px] text-slate-400">
                     EASTERN PROVINCE &amp; RIYADH HQ
                   </span>
                 </div>

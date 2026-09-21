@@ -85,7 +85,7 @@ export const HseQualitySection: React.FC = () => {
             {/* Eyebrow */}
             <div className="flex items-center gap-2 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-              <span className="font-mono text-[11px] font-bold text-primary uppercase tracking-widest">
+              <span className="font-sans text-[11px] font-bold text-primary uppercase tracking-wider">
                 QUALITY, HSE &amp; MAINTENANCE
               </span>
             </div>
@@ -112,7 +112,7 @@ export const HseQualitySection: React.FC = () => {
               <div className="font-montserrat font-bold text-[13.5px] text-primary">
                 Unconditional Site Governance
               </div>
-              <div className="font-mono text-[11px] text-on-surface-variant/80">
+              <div className="font-sans text-[11px] text-on-surface-variant/80">
                 Aramco, SEC &amp; Royal Commission Standard
               </div>
             </div>
@@ -134,7 +134,7 @@ export const HseQualitySection: React.FC = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white flex items-center justify-center transition-colors duration-300 shadow-sm">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="font-mono text-[10.5px] font-bold text-secondary bg-secondary/10 px-2.5 py-1 rounded-md border border-secondary/20 uppercase tracking-wider">
+                    <span className="font-sans text-[10.5px] font-bold text-secondary bg-secondary/10 px-2.5 py-1 rounded-md border border-secondary/20 uppercase tracking-wider">
                       {pillar.badge}
                     </span>
                   </div>
@@ -143,7 +143,7 @@ export const HseQualitySection: React.FC = () => {
                   <h3 className="text-xl sm:text-2xl font-extrabold text-primary font-montserrat group-hover:text-primary-navy transition-colors mb-1">
                     {pillar.title}
                   </h3>
-                  <div className="font-mono text-[11px] text-secondary font-semibold mb-4">
+                  <div className="font-sans text-[11px] text-secondary font-semibold mb-4">
                     {pillar.tagline}
                   </div>
 
@@ -172,10 +172,10 @@ export const HseQualitySection: React.FC = () => {
 
                 {/* Bottom Card Footer */}
                 <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="font-mono text-[10.5px] text-slate-400">
+                  <span className="font-sans text-[10.5px] text-slate-400">
                     Full Compliance Plan
                   </span>
-                  <span className="font-mono text-[11px] text-primary group-hover:text-secondary font-bold flex items-center gap-1 transition-colors">
+                  <span className="font-sans text-[11px] text-primary group-hover:text-secondary font-bold flex items-center gap-1 transition-colors">
                     <span>Verified</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </span>
