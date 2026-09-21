@@ -16,7 +16,6 @@ import projectExecutionImg from '@/assets/images/project-execution.jpg';
 
 interface Stage {
   id: string;
-  step: string;
   title: string;
   tagline: string;
   description: string;
@@ -26,7 +25,6 @@ interface Stage {
 const STAGES: Stage[] = [
   {
     id: 's1',
-    step: '01',
     title: 'Requirement Understanding',
     tagline: 'Scope & Technical Vetting',
     description: "Study client's scope, specifications, drawings, schedule, and strategic objectives.",
@@ -34,7 +32,6 @@ const STAGES: Stage[] = [
   },
   {
     id: 's2',
-    step: '02',
     title: 'Planning & Engineering',
     tagline: 'Resource & Site Sequencing',
     description: 'Develop execution plans, timelines, manpower/material schedules, and site coordination procedures.',
@@ -42,7 +39,6 @@ const STAGES: Stage[] = [
   },
   {
     id: 's3',
-    step: '03',
     title: 'Procurement & Mobilization',
     tagline: 'Kingdom-Wide Supply Chain',
     description: 'Coordinate materials, manpower, heavy equipment, tools, and site resources for rapid deployment.',
@@ -50,7 +46,6 @@ const STAGES: Stage[] = [
   },
   {
     id: 's4',
-    step: '04',
     title: 'Installation & Construction',
     tagline: 'Precision Execution',
     description: 'Execute per approved engineering drawings, Saudi specifications, safety standards, and schedules.',
@@ -58,7 +53,6 @@ const STAGES: Stage[] = [
   },
   {
     id: 's5',
-    step: '05',
     title: 'Testing & Commissioning',
     tagline: 'Multi-Tier Quality Assurance',
     description: 'Inspect, test, and commission completed systems under strict operational benchmarks.',
@@ -66,7 +60,6 @@ const STAGES: Stage[] = [
   },
   {
     id: 's6',
-    step: '06',
     title: 'Handover & Sign-Off',
     tagline: 'Turnkey Delivery',
     description: 'Coordinate documentation, joint inspections, punch-list closeout, and final handover.',
@@ -148,16 +141,18 @@ export const ProjectsSection: React.FC = () => {
                       }`}
                     >
                       <div className="flex items-center justify-between w-full mb-1">
-                        <span
-                          className={`font-mono text-[11px] font-bold ${
-                            isSelected ? 'text-white' : 'text-slate-400'
+                        <div
+                          className={`w-6 h-6 rounded-md flex items-center justify-center transition-colors ${
+                            isSelected
+                              ? 'bg-white/20 text-white'
+                              : 'bg-white/5 text-secondary group-hover:bg-white/10'
                           }`}
                         >
-                          {stg.step}
-                        </span>
-                        <Icon
-                          className={`w-3.5 h-3.5 transition-transform group-hover:scale-110 ${
-                            isSelected ? 'text-white' : 'text-secondary'
+                          <Icon className="w-3.5 h-3.5" />
+                        </div>
+                        <span
+                          className={`w-1.5 h-1.5 rounded-full ${
+                            isSelected ? 'bg-white' : 'bg-secondary/40'
                           }`}
                         />
                       </div>

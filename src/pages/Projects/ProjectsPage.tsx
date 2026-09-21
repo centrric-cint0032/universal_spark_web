@@ -27,7 +27,6 @@ import {
 import projectExecutionImg from '@/assets/images/project-execution.jpg';
 
 interface ProcessStep {
-  step: string;
   title: string;
   subtitle: string;
   description: string;
@@ -37,7 +36,6 @@ interface ProcessStep {
 
 const EXECUTION_STEPS: ProcessStep[] = [
   {
-    step: '01',
     title: 'Requirement Understanding',
     subtitle: 'Strategic Scoping & Specification Review',
     description:
@@ -51,7 +49,6 @@ const EXECUTION_STEPS: ProcessStep[] = [
     icon: FileSearch,
   },
   {
-    step: '02',
     title: 'Planning & Engineering Coordination',
     subtitle: 'Execution Architecture & Resource Sequencing',
     description:
@@ -65,7 +62,6 @@ const EXECUTION_STEPS: ProcessStep[] = [
     icon: CalendarClock,
   },
   {
-    step: '03',
     title: 'Procurement & Mobilization',
     subtitle: 'Supply Chain Assurance & Rapid Deployment',
     description:
@@ -79,7 +75,6 @@ const EXECUTION_STEPS: ProcessStep[] = [
     icon: Truck,
   },
   {
-    step: '04',
     title: 'Installation & Construction',
     subtitle: 'High-Tolerance Engineering Execution',
     description:
@@ -93,7 +88,6 @@ const EXECUTION_STEPS: ProcessStep[] = [
     icon: HardHat,
   },
   {
-    step: '05',
     title: 'Testing & Commissioning',
     subtitle: 'Performance Verification & Loop Testing',
     description:
@@ -107,7 +101,6 @@ const EXECUTION_STEPS: ProcessStep[] = [
     icon: CheckCircle2,
   },
   {
-    step: '06',
     title: 'Handover & Closeout',
     subtitle: 'Documentation, As-Builts & Client Transition',
     description:
@@ -358,7 +351,7 @@ export const ProjectsPage: React.FC = () => {
               const Icon = step.icon;
               return (
                 <div
-                  key={step.step}
+                  key={step.title}
                   className="bg-white p-7 rounded-2xl border border-primary/15 shadow-sm hover:shadow-xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
