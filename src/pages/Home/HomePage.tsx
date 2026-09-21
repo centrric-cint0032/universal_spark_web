@@ -4,6 +4,7 @@ import { AboutSection } from '@/sections/home/AboutSection';
 import { ServicesSection } from '@/sections/home/ServicesSection';
 import { ProjectsSection } from '@/sections/home/ProjectsSection';
 import { HseQualitySection } from '@/sections/home/HseQualitySection';
+import { ContactSection } from '@/sections/home/ContactSection';
 
 export const HomePage: React.FC = () => {
   return (
@@ -23,7 +24,8 @@ export const HomePage: React.FC = () => {
       {/* Phase 5: Quality & HSE + Maintenance Services (Safety, Quality & Responsibility) */}
       <HseQualitySection />
 
-      {/* Subsequent phases (Verification, Tender Console) will mount here */}
+      {/* Phase 6: Contact & Project Consultation Section */}
+      <ContactSection />
     </div>
   );
 };
