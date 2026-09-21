@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeroSection } from '@/sections/home/HeroSection';
+import { AboutSection } from '@/sections/home/AboutSection';
 
 export const HomePage: React.FC = () => {
   return (
@@ -7,7 +8,10 @@ export const HomePage: React.FC = () => {
       {/* Phase 1: Hero Section with Live Telemetry & Interactive WebGL Energy Grid */}
       <HeroSection />
 
-      {/* Subsequent phases (About, Services, Projects, Tender Console) will mount here */}
+      {/* Phase 2: Corporate Overview & Pre-Qualifications */}
+      <AboutSection />
+
+      {/* Subsequent phases (Services, Projects, Tender Console) will mount here */}
     </div>
   );
 };

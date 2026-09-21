@@ -1,0 +1,148 @@
+import React from 'react';
+import { CheckCircle2, Award, ShieldCheck, ArrowRight } from 'lucide-react';
+import aboutHqImg from '@/assets/images/about-hq.jpg';
+
+export const AboutSection: React.FC = () => {
+  return (
+    <section
+      id="about-us"
+      className="w-full bg-surface-container-low py-20 lg:py-28 border-b border-outline-variant/30 relative overflow-hidden"
+    >
+      <div className="w-full max-w-[1536px] mx-auto px-6 lg:px-12 xl:px-16 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left Column: Narrative & Pre-Qualifications */}
+          <div className="lg:col-span-6 flex flex-col justify-center">
+            {/* Section Eyebrow */}
+            <div className="flex items-center gap-2 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              <span className="font-mono text-[11px] font-bold text-primary uppercase tracking-widest">
+                02 // CORPORATE PROFILE &amp; PRE-QUALIFICATIONS
+              </span>
+            </div>
+
+            {/* Section Headline */}
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-primary tracking-tight leading-tight mb-5 font-montserrat">
+              Pioneering Heavy Industrial Engineering Across the Kingdom
+            </h2>
+
+            {/* Narrative */}
+            <p className="text-on-surface-variant text-[15.5px] sm:text-[16.5px] leading-relaxed mb-8 font-normal font-sans">
+              Universal Spark operates at the forefront of the Kingdom's industrial transformation as an accredited general service contracting company. We engineer, construct, and service critical infrastructure in strict alignment with Saudi Vision 2030, Aramco, and Royal Commission operational benchmarks.
+            </p>
+
+            {/* 3 Pre-Qualification & Credential Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 mb-8">
+              {/* Card 1: Aramco & SABIC */}
+              <div className="p-4 bg-white border border-primary/15 rounded-xl shadow-sm hover:shadow-md hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col group cursor-pointer">
+                <div className="flex items-center gap-1.5 text-secondary mb-1.5">
+                  <CheckCircle2 className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider">
+                    ACCURACY
+                  </span>
+                </div>
+                <span className="text-primary font-bold text-[13.5px] group-hover:text-primary-navy transition-colors font-montserrat">
+                  Aramco &amp; SABIC
+                </span>
+                <span className="text-on-surface-variant/80 text-[11px]">
+                  Approved Vendor System
+                </span>
+              </div>
+
+              {/* Card 2: IKTVA */}
+              <div className="p-4 bg-white border border-primary/15 rounded-xl shadow-sm hover:shadow-md hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col group cursor-pointer">
+                <div className="flex items-center gap-1.5 text-primary mb-1.5">
+                  <Award className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider">
+                    IKTVA
+                  </span>
+                </div>
+                <span className="text-primary font-bold text-[13.5px] group-hover:text-primary-navy transition-colors font-montserrat">
+                  84.2% Rating
+                </span>
+                <span className="text-on-surface-variant/80 text-[11px]">
+                  Domestic Content Value
+                </span>
+              </div>
+
+              {/* Card 3: Safety */}
+              <div className="p-4 bg-white border border-primary/15 rounded-xl shadow-sm hover:shadow-md hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col group cursor-pointer">
+                <div className="flex items-center gap-1.5 text-secondary mb-1.5">
+                  <ShieldCheck className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider">
+                    SAFETY
+                  </span>
+                </div>
+                <span className="text-secondary font-bold text-[13.5px] group-hover:text-emerald-700 transition-colors font-montserrat">
+                  Zero LTI Protocol
+                </span>
+                <span className="text-on-surface-variant/80 text-[11px]">
+                  QHSE Integrated System
+                </span>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href="#tender-console"
+                className="group relative inline-flex items-center gap-3 bg-primary hover:bg-primary-navy text-white text-[12px] font-bold font-montserrat tracking-wider uppercase px-7 py-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0 overflow-hidden"
+              >
+                <span>Explore Full Corporate Profile &amp; Pre-Qualifications</span>
+                <ArrowRight className="w-4 h-4 text-secondary group-hover:translate-x-1.5 transition-transform duration-300" />
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Architectural Corporate Site Showcase */}
+          <div className="lg:col-span-6 relative">
+            <div className="relative rounded-2xl overflow-hidden border border-primary/20 shadow-2xl bg-slate-900 group">
+              <img
+                src={aboutHqImg}
+                alt="High-end modern corporate headquarters and industrial civil engineering executive operations site in Saudi Arabia"
+                className="w-full h-full object-cover aspect-[4/3] filter brightness-[0.96] contrast-[1.04] group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent pointer-events-none" />
+
+              {/* Top Floating Badge */}
+              <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-mono text-[11px] shadow-lg">
+                <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+                <span className="tracking-wider font-semibold text-white">
+                  CLASS-A GENERAL CONTRACTOR
+                </span>
+              </div>
+
+              {/* Bottom Glassmorphic Overlay Card */}
+              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-xl border border-white/15 text-white shadow-xl flex flex-wrap items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-primary/30 border border-primary-container/40 flex items-center justify-center text-secondary">
+                    <CheckCircle2 className="w-5 h-5 text-secondary" />
+                  </div>
+                  <div>
+                    <div className="font-montserrat font-bold text-[13.5px] text-white">
+                      Universal Spark Infrastructure
+                    </div>
+                    <div className="font-mono text-[10px] text-slate-300">
+                      CR 4030281902 • Aramco Vendor Certified
+                    </div>
+                  </div>
+                </div>
+                <div className="hidden sm:flex flex-col items-end">
+                  <span className="font-mono text-[9.5px] uppercase text-secondary-fixed font-bold tracking-wider">
+                    VISION 2030 PARTNER
+                  </span>
+                  <span className="font-mono text-[9.5px] text-slate-400">
+                    EASTERN PROVINCE &amp; RIYADH HQ
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Decorative Blueprint Corner Brackets */}
+            <div className="absolute -bottom-3 -left-3 w-16 h-16 border-l-2 border-b-2 border-primary/20 pointer-events-none rounded-bl-xl" />
+            <div className="absolute -top-3 -right-3 w-16 h-16 border-r-2 border-t-2 border-secondary/40 pointer-events-none rounded-tr-xl" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
