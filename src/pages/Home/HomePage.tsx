@@ -1,6 +1,7 @@
 import React from 'react';
 import { HeroSection } from '@/sections/home/HeroSection';
 import { AboutSection } from '@/sections/home/AboutSection';
+import { ServicesSection } from '@/sections/home/ServicesSection';
 
 export const HomePage: React.FC = () => {
   return (
@@ -11,7 +12,10 @@ export const HomePage: React.FC = () => {
       {/* Phase 2: Corporate Overview & Pre-Qualifications */}
       <AboutSection />
 
-      {/* Subsequent phases (Services, Projects, Tender Console) will mount here */}
+      {/* Phase 3: Engineering & Contracting Services Matrix */}
+      <ServicesSection />
+
+      {/* Subsequent phases (Projects, Tender Console) will mount here */}
     </div>
   );
 };
