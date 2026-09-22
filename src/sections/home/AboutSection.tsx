@@ -9,15 +9,8 @@ export const AboutSection: React.FC = () => {
   return (
     <section
       id="about-us"
-      className="w-full bg-[#002763] text-white py-20 lg:py-28 border-b border-primary-navy/40 relative overflow-hidden"
+      className="w-full bg-primary text-white py-20 lg:py-28 border-b border-primary-navy/40 relative overflow-hidden"
     >
-      {/* Precision Blueprint Ambient Grid */}
-      <div className="absolute inset-0 blueprint-grid opacity-20 pointer-events-none" />
-
-      {/* Subtle Lighting Orbs */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/15 rounded-full blur-3xl pointer-events-none" />
-
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Narrative & Pre-Qualifications */}
