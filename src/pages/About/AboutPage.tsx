@@ -197,7 +197,7 @@ export const AboutPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full bg-surface min-h-screen pt-20">
+    <div className="w-full min-h-screen">
       {/* ─────────────────────────────────────────────────────────────
           SECTION 1: HERO & EXECUTIVE OVERVIEW (Centered Full-Bleed Ambient Video Hero)
       ────────────────────────────────────────────────────────────── */}
@@ -221,7 +221,7 @@ export const AboutPage: React.FC = () => {
           <div className="absolute inset-0 blueprint-grid opacity-20" />
         </div>
 
-        <div className="w-full max-w-[1536px] mx-auto px-6 lg:px-12 xl:px-16 relative z-10">
+        <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
           <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
             {/* Breadcrumb Navigation - Centered */}
             <div className="flex items-center justify-center gap-2 text-[12.5px] font-sans text-slate-400 mb-6">

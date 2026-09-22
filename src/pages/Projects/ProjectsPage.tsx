@@ -256,7 +256,7 @@ export const ProjectsPage: React.FC = () => {
       : MANAGEMENT_SERVICES.filter((s) => s.category === selectedFilter);
 
   return (
-    <div className="w-full bg-surface min-h-screen pt-24 pb-28">
+    <div className="w-full min-h-screen pb-28">
       {/* Hero Header */}
       <section className="w-full bg-[#080E16] text-white py-20 relative overflow-hidden border-b border-slate-800">
         <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-luminosity">

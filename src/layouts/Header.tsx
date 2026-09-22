@@ -26,30 +26,17 @@ export const Header: React.FC = () => {
           : 'bg-white/90 backdrop-blur-md border-primary/10'
       }`}
     >
-      <div className="h-20 w-full max-w-[1536px] mx-auto px-6 lg:px-12 xl:px-16 flex items-center justify-between">
-        {/* Brand Logo & Registration Details - Left End */}
-        <Link to="/" className="flex items-center gap-3.5 group shrink-0">
-          <div className="relative w-10 h-10 rounded-lg bg-white p-1 border border-primary/15 shadow-sm flex items-center justify-center transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-md group-hover:scale-105">
-            <img
-              src={logoImg}
-              alt="Universal Spark Company Emblem"
-              className="w-full h-full object-contain"
-            />
-            <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-secondary rounded-full ring-2 ring-white" />
-          </div>
-          <div className="flex flex-col">
-            <div className="flex items-center gap-2">
-              <span className="font-montserrat font-bold tracking-wider text-primary text-[15px] leading-tight group-hover:text-primary-navy transition-colors">
-                UNIVERSAL SPARK
-              </span>
-              <span className="text-[8.5px] font-montserrat font-semibold tracking-wider text-secondary bg-secondary-fixed/30 border border-secondary/20 px-1.5 py-0.5 rounded leading-none uppercase">
-                KSA A-CLASS
-              </span>
-            </div>
-            <span className="font-montserrat text-[9.5px] tracking-[0.2em] text-on-surface-variant/70 uppercase font-medium mt-0.5">
-              INFRASTRUCTURE &amp; EPC • CR-403028190
-            </span>
-          </div>
+      <div className="h-20 w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 flex items-center justify-between">
+        {/* Brand Logo & Company Name - Clean & Minimalist */}
+        <Link to="/" className="flex items-center gap-2.5 sm:gap-3.5 group shrink-0 py-1">
+          <img
+            src={logoImg}
+            alt="Universal Spark"
+            className="h-10 w-10 sm:h-12 sm:w-12 object-contain transition-transform duration-300 group-hover:scale-105"
+          />
+          <span className="font-montserrat font-extrabold tracking-wider text-primary text-base sm:text-lg lg:text-xl uppercase leading-none group-hover:text-primary-navy transition-colors whitespace-nowrap">
+            UNIVERSAL SPARK
+          </span>
         </Link>
 
         {/* Right End: Desktop Navigation + Mobile Toggle */}
