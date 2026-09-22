@@ -180,28 +180,28 @@ export const HeroSection: React.FC = () => {
             </p>
 
             {/* 3 Key Operational Proof Metrics */}
-            <div className="grid grid-cols-3 gap-4 pt-4 border-t border-slate-200">
-              <div>
-                <div className="font-montserrat text-2xl sm:text-3xl font-black text-primary tracking-tight">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-slate-200">
+              <div className="min-w-0">
+                <div className="font-montserrat text-xl sm:text-2xl lg:text-3xl font-black text-primary tracking-tight truncate">
                   Zero LTI
                 </div>
-                <div className="font-sans text-xs text-on-surface-variant mt-0.5">
+                <div className="font-sans text-[10.5px] sm:text-xs text-on-surface-variant mt-0.5 truncate">
                   Safety Protocol
                 </div>
               </div>
-              <div>
-                <div className="font-montserrat text-2xl sm:text-3xl font-black text-secondary tracking-tight">
+              <div className="min-w-0">
+                <div className="font-montserrat text-xl sm:text-2xl lg:text-3xl font-black text-secondary tracking-tight truncate">
                   100%
                 </div>
-                <div className="font-sans text-xs text-on-surface-variant mt-0.5">
-                  Aramco &amp; SEC Standards
+                <div className="font-sans text-[10.5px] sm:text-xs text-on-surface-variant mt-0.5 truncate">
+                  Aramco &amp; SEC
                 </div>
               </div>
-              <div>
-                <div className="font-montserrat text-2xl sm:text-3xl font-black text-primary tracking-tight">
+              <div className="min-w-0">
+                <div className="font-montserrat text-xl sm:text-2xl lg:text-3xl font-black text-primary tracking-tight truncate">
                   Tier-1
                 </div>
-                <div className="font-sans text-xs text-on-surface-variant mt-0.5">
+                <div className="font-sans text-[10.5px] sm:text-xs text-on-surface-variant mt-0.5 truncate">
                   KSA EPC Rating
                 </div>
               </div>

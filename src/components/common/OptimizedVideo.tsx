@@ -106,9 +106,9 @@ export const OptimizedVideo: React.FC<OptimizedVideoProps> = ({
       <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-obsidian/20 pointer-events-none" />
 
       {/* Top Floating Badge */}
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-sans text-[11px] shadow-lg pointer-events-none z-10">
-        <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-        <span className="tracking-wider font-semibold text-white">
+      <div className="absolute top-2.5 left-2.5 sm:top-4 sm:left-4 inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-sans text-[9.5px] sm:text-[11px] shadow-lg pointer-events-none z-10">
+        <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-secondary animate-pulse" />
+        <span className="tracking-wider font-semibold text-white uppercase">
           {hasLoaded ? 'LIVE FIELD OPERATIONS REEL' : 'CLASS-A GENERAL CONTRACTOR'}
         </span>
       </div>

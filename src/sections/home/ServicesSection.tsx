@@ -139,7 +139,7 @@ export const ServicesSection: React.FC = () => {
         </div>
 
         {/* Division Selector Tabs */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 mb-8 sm:mb-10">
           {SERVICES_DATA.map((service) => {
             const isSelected = service.id === selectedServiceId;
             const ServiceIcon = service.icon;
@@ -148,46 +148,46 @@ export const ServicesSection: React.FC = () => {
                 key={service.id}
                 type="button"
                 onClick={() => setSelectedServiceId(service.id)}
-                className={`p-4 rounded-xl text-left border transition-all duration-300 flex flex-col justify-between cursor-pointer group ${
+                className={`p-3 sm:p-4 rounded-xl text-left border transition-all duration-300 flex flex-col justify-between cursor-pointer group min-w-0 ${
                   isSelected
-                    ? 'bg-primary text-white border-primary shadow-lg shadow-primary/20 -translate-y-1'
+                    ? 'bg-primary text-white border-primary shadow-lg shadow-primary/20 -translate-y-0.5 sm:-translate-y-1'
                     : 'bg-white text-on-surface border-slate-200 hover:border-primary/40 hover:bg-slate-50'
                 }`}
               >
-                <div className="flex items-center justify-between mb-3 w-full">
+                <div className="flex items-center justify-between mb-2 sm:mb-3 w-full gap-1">
                   <div
-                    className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${
+                    className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
                       isSelected
                         ? 'bg-white/15 text-secondary-fixed'
                         : 'bg-primary/5 text-primary group-hover:bg-primary/10'
                     }`}
                   >
-                    <ServiceIcon className="w-4 h-4" />
+                    <ServiceIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   {service.id === 'mechanical' && (
                     <span
-                      className={`inline-flex items-center gap-1 text-[9.5px] font-sans font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
+                      className={`inline-flex items-center gap-1 text-[8px] sm:text-[9.5px] font-sans font-bold uppercase tracking-wider px-1.5 sm:px-2 py-0.5 rounded shrink-0 ${
                         isSelected
                           ? 'bg-secondary text-white'
                           : 'bg-secondary/15 text-secondary border border-secondary/20'
                       }`}
                     >
-                      <Sparkles className="w-3 h-3" />
-                      Detailed
+                      <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                      <span>Detailed</span>
                     </span>
                   )}
                 </div>
 
-                <div>
+                <div className="min-w-0 w-full">
                   <h3
-                    className={`font-montserrat font-bold text-[15px] sm:text-[16px] leading-tight mb-1 ${
+                    className={`font-montserrat font-bold text-[12.5px] sm:text-[15px] lg:text-[16px] leading-snug mb-1 break-words ${
                       isSelected ? 'text-white' : 'text-primary group-hover:text-primary-navy'
                     }`}
                   >
                     {service.title}
                   </h3>
                   <p
-                    className={`text-[11.5px] truncate font-sans ${
+                    className={`text-[10.5px] sm:text-[11.5px] truncate font-sans ${
                       isSelected ? 'text-slate-300' : 'text-on-surface-variant/80'
                     }`}
                   >
@@ -200,8 +200,8 @@ export const ServicesSection: React.FC = () => {
         </div>
 
         {/* Active Service Deep-Dive Panel */}
-        <div className="bg-white rounded-2xl border border-primary/15 shadow-xl p-6 sm:p-8 lg:p-10 transition-all duration-500">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="bg-white rounded-2xl border border-primary/15 shadow-xl p-5 sm:p-8 lg:p-10 transition-all duration-500">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             {/* Left Column: Scope & 10 Capabilities Checklist */}
             <div className="lg:col-span-7 flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-4">
@@ -264,47 +264,47 @@ export const ServicesSection: React.FC = () => {
 
             {/* Right Column: Industrial Visual & Telemetry Card */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border border-primary/20 shadow-2xl bg-slate-950 group">
+              <div className="relative rounded-2xl overflow-hidden border border-primary/20 shadow-2xl bg-slate-950 min-h-[300px] sm:min-h-0 group">
                 <img
                   src={activeService.image || mechanicalImg}
                   alt={`${activeService.title} - Universal Spark Contracting Saudi Arabia`}
-                  className="w-full h-full object-cover aspect-[4/3] filter brightness-[0.96] contrast-[1.05] group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover aspect-[16/11] sm:aspect-[4/3] filter brightness-[0.96] contrast-[1.05] group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent pointer-events-none" />
 
                 {/* Floating Top Tag */}
-                <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-sans text-[11px] shadow-lg">
-                  <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-sans text-[10px] sm:text-[11px] shadow-lg">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-secondary animate-pulse" />
                   <span className="tracking-wider font-semibold text-white uppercase">
                     {activeService.title} DIVISION
                   </span>
                 </div>
 
                 {/* Floating Bottom Metric Bar */}
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-xl border border-white/15 text-white shadow-xl flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-primary/30 border border-primary-container/40 flex items-center justify-center text-secondary">
-                      <activeService.icon className="w-5 h-5" />
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 p-3 sm:p-4 rounded-xl bg-slate-900/95 backdrop-blur-xl border border-white/15 text-white shadow-xl flex items-center justify-between">
+                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-primary/30 border border-primary-container/40 flex items-center justify-center text-secondary shrink-0">
+                      <activeService.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <div>
-                      <div className="font-montserrat font-bold text-[13px] text-white">
+                    <div className="min-w-0">
+                      <div className="font-montserrat font-bold text-[12px] sm:text-[13px] text-white truncate">
                         Turnkey Execution Ready
                       </div>
-                      <div className="font-sans text-[11px] text-slate-300">
+                      <div className="font-sans text-[10px] sm:text-[11px] text-slate-300 truncate">
                         Aramco &amp; Royal Commission Spec
                       </div>
                     </div>
                   </div>
 
-                  <span className="font-sans text-[10.5px] text-secondary-fixed font-bold uppercase tracking-wider hidden sm:inline">
+                  <span className="font-sans text-[10px] sm:text-[10.5px] text-secondary-fixed font-bold uppercase tracking-wider hidden sm:inline shrink-0">
                     ACTIVE SITES
                   </span>
                 </div>
               </div>
 
               {/* Decorative Blueprint Corner Accents */}
-              <div className="absolute -bottom-3 -left-3 w-16 h-16 border-l-2 border-b-2 border-primary/20 pointer-events-none rounded-bl-xl" />
-              <div className="absolute -top-3 -right-3 w-16 h-16 border-r-2 border-t-2 border-secondary/40 pointer-events-none rounded-tr-xl" />
+              <div className="hidden sm:block absolute -bottom-3 -left-3 w-16 h-16 border-l-2 border-b-2 border-primary/20 pointer-events-none rounded-bl-xl" />
+              <div className="hidden sm:block absolute -top-3 -right-3 w-16 h-16 border-r-2 border-t-2 border-secondary/40 pointer-events-none rounded-tr-xl" />
             </div>
           </div>
         </div>

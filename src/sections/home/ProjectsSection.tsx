@@ -125,7 +125,7 @@ export const ProjectsSection: React.FC = () => {
               </div>
 
               {/* 6 Step Buttons */}
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2.5">
                 {STAGES.map((stg) => {
                   const isSelected = stg.id === activeStageId;
                   const Icon = stg.icon;
@@ -134,28 +134,35 @@ export const ProjectsSection: React.FC = () => {
                       key={stg.id}
                       type="button"
                       onClick={() => setActiveStageId(stg.id)}
-                      className={`p-3 rounded-xl text-left transition-all duration-300 flex flex-col items-center sm:items-start cursor-pointer group ${
+                      className={`p-2.5 sm:p-3 rounded-xl text-left transition-all duration-300 flex flex-col justify-between cursor-pointer group ${
                         isSelected
-                          ? 'bg-secondary text-white shadow-lg shadow-secondary/30 scale-[1.02]'
+                          ? 'bg-secondary text-white shadow-lg shadow-secondary/30 scale-[1.01]'
                           : 'bg-white/5 hover:bg-white/10 text-slate-300 border border-white/5 hover:border-white/15'
                       }`}
                     >
-                      <div
-                        className={`w-8 h-8 rounded-lg flex items-center justify-center mb-2.5 transition-all ${
-                          isSelected
-                            ? 'bg-white/20 text-white'
-                            : 'bg-white/5 text-secondary group-hover:bg-white/10 group-hover:scale-105'
-                        }`}
-                      >
-                        <Icon className="w-4 h-4" />
+                      <div className="flex items-center gap-2 sm:flex-col sm:items-start w-full">
+                        <div
+                          className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center shrink-0 mb-0 sm:mb-2 transition-all ${
+                            isSelected
+                              ? 'bg-white/20 text-white'
+                              : 'bg-white/5 text-secondary group-hover:bg-white/10 group-hover:scale-105'
+                          }`}
+                        >
+                          <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <span className="text-[9.5px] uppercase tracking-wider block text-slate-400 font-sans leading-none mb-1">
+                            0{stg.id.replace('s', '')}.
+                          </span>
+                          <span
+                            className={`text-[12px] sm:text-[12.5px] font-montserrat font-bold truncate block leading-tight ${
+                              isSelected ? 'text-white' : 'text-slate-200'
+                            }`}
+                          >
+                            {stg.title.split(' ')[0]}
+                          </span>
+                        </div>
                       </div>
-                      <span
-                        className={`text-[12px] font-montserrat font-bold truncate w-full ${
-                          isSelected ? 'text-white' : 'text-slate-200'
-                        }`}
-                      >
-                        {stg.title.split(' ')[0]}
-                      </span>
                     </button>
                   );
                 })}
@@ -163,29 +170,29 @@ export const ProjectsSection: React.FC = () => {
             </div>
 
             {/* Active Stage Detail Display Box */}
-            <div className="bg-gradient-to-br from-slate-900/90 to-slate-950/90 backdrop-blur-xl p-6 sm:p-8 rounded-2xl border border-secondary/30 shadow-2xl relative overflow-hidden flex-1 flex flex-col justify-between">
+            <div className="bg-gradient-to-br from-slate-900/90 to-slate-950/90 backdrop-blur-xl p-5 sm:p-7 lg:p-8 rounded-2xl border border-secondary/30 shadow-2xl relative overflow-hidden flex-1 flex flex-col justify-between">
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-secondary/15 rounded-full blur-3xl pointer-events-none" />
 
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="inline-flex items-center gap-2 font-sans text-[11px] font-bold text-secondary uppercase bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                  <div className="inline-flex items-center gap-1.5 font-sans text-[10px] sm:text-[11px] font-bold text-secondary uppercase bg-secondary/10 px-2.5 sm:px-3 py-1 rounded-full border border-secondary/20">
                     <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                    {activeStage.tagline}
+                    <span>{activeStage.tagline}</span>
                   </div>
-                  <span className="font-sans text-[11px] text-slate-400">
+                  <span className="font-sans text-[10.5px] sm:text-[11px] text-slate-400">
                     Quality Gate Verified
                   </span>
                 </div>
 
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-secondary text-white flex items-center justify-center shrink-0 shadow-lg shadow-secondary/25">
-                    <ActiveIcon className="w-6 h-6" />
+                <div className="flex items-start gap-3 sm:gap-4 mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-secondary text-white flex items-center justify-center shrink-0 shadow-lg shadow-secondary/25">
+                    <ActiveIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-black font-montserrat text-white tracking-tight">
+                  <div className="min-w-0">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-black font-montserrat text-white tracking-tight break-words">
                       {activeStage.title}
                     </h3>
-                    <p className="font-sans text-[15px] text-slate-300 mt-2 leading-relaxed">
+                    <p className="font-sans text-[13.5px] sm:text-[15px] text-slate-300 mt-1.5 sm:mt-2 leading-relaxed">
                       {activeStage.description}
                     </p>
                   </div>
@@ -193,18 +200,18 @@ export const ProjectsSection: React.FC = () => {
               </div>
 
               {/* Metric Highlights */}
-              <div className="grid grid-cols-3 gap-3 pt-6 border-t border-white/10 mt-6">
-                <div className="p-2.5 rounded-lg bg-white/5 border border-white/5">
-                  <div className="font-sans text-[10px] text-slate-400 uppercase">Disciplines</div>
-                  <div className="font-montserrat font-bold text-[14px] text-white">13 Handled</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-4 sm:pt-6 border-t border-white/10 mt-5 sm:mt-6">
+                <div className="p-2 sm:p-2.5 rounded-lg bg-white/5 border border-white/5 min-w-0">
+                  <div className="font-sans text-[9px] sm:text-[10px] text-slate-400 uppercase truncate">Disciplines</div>
+                  <div className="font-montserrat font-bold text-[12px] sm:text-[14px] text-white truncate">13 Handled</div>
                 </div>
-                <div className="p-2.5 rounded-lg bg-white/5 border border-white/5">
-                  <div className="font-sans text-[10px] text-slate-400 uppercase">Sectors</div>
-                  <div className="font-montserrat font-bold text-[14px] text-secondary">12 Types</div>
+                <div className="p-2 sm:p-2.5 rounded-lg bg-white/5 border border-white/5 min-w-0">
+                  <div className="font-sans text-[9px] sm:text-[10px] text-slate-400 uppercase truncate">Sectors</div>
+                  <div className="font-montserrat font-bold text-[12px] sm:text-[14px] text-secondary truncate">12 Types</div>
                 </div>
-                <div className="p-2.5 rounded-lg bg-white/5 border border-white/5">
-                  <div className="font-sans text-[10px] text-slate-400 uppercase">Safety</div>
-                  <div className="font-montserrat font-bold text-[14px] text-white">Zero LTI</div>
+                <div className="p-2 sm:p-2.5 rounded-lg bg-white/5 border border-white/5 min-w-0">
+                  <div className="font-sans text-[9px] sm:text-[10px] text-slate-400 uppercase truncate">Safety</div>
+                  <div className="font-montserrat font-bold text-[12px] sm:text-[14px] text-white truncate">Zero LTI</div>
                 </div>
               </div>
             </div>
@@ -212,7 +219,7 @@ export const ProjectsSection: React.FC = () => {
 
           {/* Right Column: High-End Industrial Site Card & Telemetry */}
           <div className="lg:col-span-5 relative flex flex-col justify-between">
-            <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-slate-950 h-full min-h-[380px] group">
+            <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-slate-950 h-full min-h-[340px] sm:min-h-[380px] group">
               <img
                 src={projectExecutionImg}
                 alt="Mega Project Execution in Saudi Arabia - Universal Spark Contracting"
@@ -221,28 +228,28 @@ export const ProjectsSection: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
 
               {/* Floating Top Tag */}
-              <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-sans text-[10.5px] shadow-lg">
-                <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-white/20 text-white font-sans text-[9.5px] sm:text-[10.5px] shadow-lg">
+                <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-secondary animate-pulse" />
                 <span className="tracking-wider font-semibold uppercase">
                   ACTIVE KINGDOM-WIDE SITES
                 </span>
               </div>
 
               {/* Floating Bottom Console */}
-              <div className="absolute bottom-4 left-4 right-4 p-5 rounded-xl bg-slate-900/95 backdrop-blur-xl border border-white/15 text-white shadow-2xl">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2 text-secondary font-sans text-[11px] font-bold uppercase">
-                    <Activity className="w-4 h-4" />
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-3.5 sm:p-5 rounded-xl bg-slate-900/95 backdrop-blur-xl border border-white/15 text-white shadow-2xl">
+                <div className="flex items-center justify-between mb-1.5 sm:mb-2">
+                  <div className="flex items-center gap-1.5 text-secondary font-sans text-[10px] sm:text-[11px] font-bold uppercase">
+                    <Activity className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     <span>Project Types Covered</span>
                   </div>
-                  <span className="font-sans text-[10px] text-slate-400">KSA Standard</span>
+                  <span className="font-sans text-[9.5px] sm:text-[10px] text-slate-400">KSA Standard</span>
                 </div>
 
-                <div className="text-[13px] font-sans text-slate-200 leading-snug mb-3">
+                <div className="text-[12px] sm:text-[13px] font-sans text-slate-200 leading-snug mb-2 sm:mb-3">
                   Industrial Facilities • Commercial Buildings • Warehouses • Infrastructure • Plant Shutdowns
                 </div>
 
-                <div className="flex items-center gap-2 pt-2 border-t border-white/10 font-sans text-[10.5px] text-secondary">
+                <div className="flex items-center gap-1.5 pt-2 border-t border-white/10 font-sans text-[10px] sm:text-[10.5px] text-secondary">
                   <ShieldCheck className="w-3.5 h-3.5" />
                   <span>Direct Site Leadership &amp; Turnkey Execution</span>
                 </div>

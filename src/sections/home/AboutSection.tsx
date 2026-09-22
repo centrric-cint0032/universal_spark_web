@@ -115,26 +115,26 @@ export const AboutSection: React.FC = () => {
                 src={aboutReelVideo}
                 poster={aboutHqImg}
                 alt="Universal Spark industrial site engineering, machinery, and civil operations in Saudi Arabia"
-                aspectRatio="aspect-[4/3]"
+                aspectRatio="aspect-[16/11] sm:aspect-[4/3]"
                 title="Universal Spark Executive Site Operations"
               />
 
               {/* Bottom Glassmorphic Overlay Card */}
-              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-xl border border-white/15 text-white shadow-xl flex flex-wrap items-center justify-between gap-3 z-20">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/30 border border-primary-container/40 flex items-center justify-center text-secondary">
-                    <CheckCircle2 className="w-5 h-5 text-secondary" />
+              <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 p-3 sm:p-4 rounded-xl bg-slate-900/95 backdrop-blur-xl border border-white/15 text-white shadow-xl flex items-center justify-between gap-2.5 z-20">
+                <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/30 border border-primary-container/40 flex items-center justify-center text-secondary shrink-0">
+                    <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-secondary" />
                   </div>
-                  <div>
-                    <div className="font-montserrat font-bold text-[13.5px] text-white">
+                  <div className="min-w-0">
+                    <div className="font-montserrat font-bold text-[12px] sm:text-[13.5px] text-white truncate">
                       Universal Spark Infrastructure
                     </div>
-                    <div className="font-sans text-[11px] text-slate-300">
+                    <div className="font-sans text-[10px] sm:text-[11px] text-slate-300 truncate">
                       CR 4030281902 • Aramco Vendor Certified
                     </div>
                   </div>
                 </div>
-                <div className="hidden sm:flex flex-col items-end">
+                <div className="hidden sm:flex flex-col items-end shrink-0">
                   <span className="font-sans text-[10px] uppercase text-secondary-fixed font-bold tracking-wider">
                     VISION 2030 PARTNER
                   </span>
@@ -146,8 +146,8 @@ export const AboutSection: React.FC = () => {
             </div>
 
             {/* Decorative Blueprint Corner Brackets */}
-            <div className="absolute -bottom-3 -left-3 w-16 h-16 border-l-2 border-b-2 border-primary/20 pointer-events-none rounded-bl-xl z-0" />
-            <div className="absolute -top-3 -right-3 w-16 h-16 border-r-2 border-t-2 border-secondary/40 pointer-events-none rounded-tr-xl z-0" />
+            <div className="hidden sm:block absolute -bottom-3 -left-3 w-16 h-16 border-l-2 border-b-2 border-primary/20 pointer-events-none rounded-bl-xl z-0" />
+            <div className="hidden sm:block absolute -top-3 -right-3 w-16 h-16 border-r-2 border-t-2 border-secondary/40 pointer-events-none rounded-tr-xl z-0" />
           </div>
         </div>
       </div>
