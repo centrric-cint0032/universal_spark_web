@@ -19,6 +19,11 @@ import {
 } from 'lucide-react';
 import aboutHqImg from '@/assets/images/about-hq.jpg';
 import aboutReelVideo from '@/assets/videos/about-reel.webm';
+import companyLogo from '@/assets/images/logo.png';
+import industrialImg1 from '@/assets/images/about_industrial_execution_1790580549206.jpg';
+import mechanicalImg2 from '@/assets/images/about_mechanical_works_1790580562383.jpg';
+import projectExecImg3 from '@/assets/images/about_civil_infrastructure_1790580582420.jpg';
+import corpOpsImg from '@/assets/images/about_corporate_clean_1790585081901.jpg';
 
 interface CoreValue {
   id: string;
@@ -201,7 +206,7 @@ export const AboutPage: React.FC = () => {
       {/* ─────────────────────────────────────────────────────────────
           SECTION 1: HERO & EXECUTIVE OVERVIEW (Centered Full-Bleed Ambient Video Hero)
       ────────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[640px] lg:min-h-[720px] bg-[#060e1e] text-white py-24 lg:py-32 overflow-hidden border-b border-slate-800 flex items-center justify-center">
+      <section className="relative bg-[#060e1e] text-white py-10 lg:py-14 overflow-hidden border-b border-slate-800 flex items-center justify-center">
         {/* Full-Bleed Ambient Background Video */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <video
@@ -222,46 +227,41 @@ export const AboutPage: React.FC = () => {
         </div>
 
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
-          <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
-            {/* Breadcrumb Navigation - Centered */}
-            <div className="flex items-center justify-center gap-2 text-[12.5px] font-sans text-slate-400 mb-6">
-              <Link to="/" className="hover:text-secondary flex items-center gap-1.5 transition-colors">
-                <ArrowLeft className="w-3.5 h-3.5" />
-                <span>HOME</span>
-              </Link>
-              <ChevronRight className="w-3 h-3 text-slate-600" />
-              <span className="text-secondary-fixed font-semibold">ABOUT UNIVERSAL SPARK</span>
-            </div>
-
-            {/* Eyebrow Badge - Centered */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-secondary/15 border border-secondary/30 text-secondary-fixed text-[11px] font-sans font-semibold uppercase tracking-wider mb-6 backdrop-blur-sm shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
-              Corporate Profile &amp; Overview
+          <div className="max-w-4xl mx-auto flex flex-col items-center text-center mt-6">
+            
+            {/* Prominent Company Logo (Shrunk to save vertical space) */}
+            <div className="mb-4 flex justify-center">
+              <img 
+                src={companyLogo} 
+                alt="Universal Spark Logo" 
+                className="w-20 h-20 sm:w-24 sm:h-24 object-contain drop-shadow-xl" 
+                style={{ clipPath: 'inset(0 3px 0 0)' }}
+              />
             </div>
 
             {/* Main Headline - Centered */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-montserrat tracking-tight text-white mb-4 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-montserrat tracking-tight text-white mb-2 leading-tight">
               About Universal Spark
             </h1>
 
             {/* Subheading - Centered */}
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-montserrat text-secondary-fixed mb-6 leading-snug">
+            <h2 className="text-base sm:text-lg lg:text-xl font-bold font-montserrat text-secondary-fixed mb-4 leading-snug">
               Your Trusted Contracting Partner in Saudi Arabia
             </h2>
 
             {/* Lead Narrative - Centered */}
-            <p className="font-sans text-base sm:text-lg text-slate-200 leading-relaxed font-normal mb-10 max-w-3xl">
-              Universal Spark is a general service contracting and project execution company serving clients across Saudi Arabia. We provide comprehensive contracting solutions covering Mechanical, Electrical, MEP, Instrumentation, Civil Construction, Maintenance, and Project Management. Our approach is built around understanding client technical requirements, developing practical execution plans, managing resources effectively, and completing projects safely and professionally.
+            <p className="font-sans text-sm sm:text-base text-slate-200 leading-relaxed font-normal mb-6 max-w-xl">
+              Delivering comprehensive turnkey contracting solutions across Saudi Arabia. From civil construction and mechanical installations to advanced MEP and project management, we execute every project with precision, safety, and strict technical compliance.
             </p>
 
             {/* Centered CTA Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-secondary hover:bg-emerald-600 text-white font-montserrat font-bold text-xs tracking-wider uppercase px-8 py-4 rounded-xl shadow-lg hover:shadow-secondary/25 transition-all hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center gap-2 bg-secondary hover:bg-emerald-600 text-white font-montserrat font-bold text-[10px] tracking-wider uppercase px-5 py-3 rounded-lg shadow-lg hover:shadow-secondary/25 transition-all hover:-translate-y-0.5"
               >
                 <span>Request a Project Consultation</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-3.5 h-3.5" />
               </Link>
               <a
                 href="#values"
@@ -269,29 +269,29 @@ export const AboutPage: React.FC = () => {
                   e.preventDefault();
                   document.getElementById('values')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-montserrat font-semibold text-xs tracking-wider uppercase px-7 py-4 rounded-xl border border-white/20 backdrop-blur-md transition-all hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-montserrat font-semibold text-[10px] tracking-wider uppercase px-5 py-3 rounded-lg border border-white/20 backdrop-blur-md transition-all hover:-translate-y-0.5"
               >
                 <span>Explore Core Values</span>
               </a>
             </div>
 
             {/* Subtle Centered Horizontal Credentials Strip */}
-            <div className="w-full max-w-3xl pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 font-sans text-xs">
+            <div className="w-full max-w-2xl pt-4 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-4 font-sans text-[10px]">
               <div className="flex flex-col items-center">
-                <span className="text-slate-400 block mb-1">Commercial Registration</span>
-                <span className="font-bold text-white text-sm">CR-4030281902</span>
+                <span className="text-slate-400 block mb-0.5">Registration</span>
+                <span className="font-bold text-white text-[11px]">CR-4030281902</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-slate-400 block mb-1">Contractor Rating</span>
-                <span className="font-bold text-secondary text-sm">KSA Class-A EPC</span>
+                <span className="text-slate-400 block mb-0.5">Rating</span>
+                <span className="font-bold text-secondary text-[11px]">KSA Class-A EPC</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-slate-400 block mb-1">Compliance Standard</span>
-                <span className="font-bold text-white text-sm">Aramco &amp; SABIC</span>
+                <span className="text-slate-400 block mb-0.5">Compliance</span>
+                <span className="font-bold text-white text-[11px]">Aramco &amp; SABIC</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-slate-400 block mb-1">Regional Deployment</span>
-                <span className="font-bold text-secondary text-sm">Kingdom-Wide</span>
+                <span className="text-slate-400 block mb-0.5">Deployment</span>
+                <span className="font-bold text-secondary text-[11px]">Kingdom-Wide</span>
               </div>
             </div>
           </div>
@@ -303,6 +303,22 @@ export const AboutPage: React.FC = () => {
       ────────────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28 bg-[#f2f3ff] border-b border-slate-200 relative overflow-hidden">
         <div className="w-full max-w-[1536px] mx-auto px-6 lg:px-12 xl:px-16">
+          {/* Aesthetic Image Strip */}
+          <div className="flex gap-4 mb-14 h-40 sm:h-56 lg:h-72 w-full relative">
+            <div className="w-1/3 relative rounded-2xl overflow-hidden shadow-sm group">
+              <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+              <img src={industrialImg1} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Industrial Project Execution" />
+            </div>
+            <div className="w-1/3 relative rounded-2xl overflow-hidden shadow-sm group mt-4 lg:mt-8">
+              <div className="absolute inset-0 bg-secondary/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+              <img src={mechanicalImg2} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Mechanical Works" />
+            </div>
+            <div className="w-1/3 relative rounded-2xl overflow-hidden shadow-sm group">
+              <div className="absolute inset-0 bg-emerald-600/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+              <img src={projectExecImg3} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Project Execution Site" />
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
             {/* Mission Panel: Editorial Statement with Emerald Anchor */}
             <div className="lg:col-span-6 relative bg-white p-8 sm:p-12 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between overflow-hidden group hover:shadow-md transition-shadow">
@@ -544,6 +560,20 @@ export const AboutPage: React.FC = () => {
                     <span>Submit Your Project Scope</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
+                </div>
+
+                {/* Capability Aesthetic Image */}
+                <div className="mt-12 relative rounded-2xl overflow-hidden h-48 lg:h-64 shadow-md group hidden lg:block">
+                  <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/5 transition-colors z-10 duration-500 pointer-events-none" />
+                  <img src={corpOpsImg} alt="Corporate Operations" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  
+                  {/* Floating Badge */}
+                  <div className="absolute bottom-4 left-4 z-20 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-white/50 flex items-center gap-3">
+                     <div>
+                       <span className="block text-[10px] font-sans font-bold text-slate-500 uppercase tracking-wider mb-0.5">Execution Standard</span>
+                       <span className="block text-xs font-montserrat font-extrabold text-primary">Class-A EPC</span>
+                     </div>
+                  </div>
                 </div>
               </div>
             </div>

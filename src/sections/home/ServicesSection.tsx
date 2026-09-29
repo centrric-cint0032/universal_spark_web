@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Wrench,
   Zap,
@@ -10,8 +11,46 @@ import {
   Sparkles,
 } from 'lucide-react';
 import mechanicalImg from '@/assets/images/services-mechanical.jpg';
+import mechImg1 from '@/assets/mechanical-services-images/image1.jpg';
+import mechImg2 from '@/assets/mechanical-services-images/image2.avif';
+import mechImg3 from '@/assets/mechanical-services-images/image3.jpg';
+import mechImg4 from '@/assets/mechanical-services-images/image4.webp';
+import mechImg5 from '@/assets/mechanical-services-images/image5.avif';
+import elecImg1 from '@/assets/electrical-works/pic1.jpg';
+import elecImg2 from '@/assets/electrical-works/pic2.jpg';
+import elecImg3 from '@/assets/electrical-works/pic3.jpg';
+import elecImg4 from '@/assets/electrical-works/pic4.jpg';
+import elecImg5 from '@/assets/electrical-works/pic5.jpg';
+import elecImg6 from '@/assets/electrical-works/pic6.jpg';
+import civImg1 from '@/assets/civil-construction/img1.jpg';
+import civImg2 from '@/assets/civil-construction/img2.jpg';
+import civImg3 from '@/assets/civil-construction/img3.jpg';
+import civImg4 from '@/assets/civil-construction/img4.jpg';
+import civImg5 from '@/assets/civil-construction/img5.jpg';
+import civImg6 from '@/assets/civil-construction/img6.jpg';
+import mepImg1 from '@/assets/mep-instrumentation/still1.jpg';
+import mepImg2 from '@/assets/mep-instrumentation/still2.jpg';
+import mepImg3 from '@/assets/mep-instrumentation/still3.jpg';
+import mepImg4 from '@/assets/mep-instrumentation/still4.jpg';
+import mepImg5 from '@/assets/mep-instrumentation/still5.jpg';
+import mepImg6 from '@/assets/mep-instrumentation/still6.jpg';
 
-interface ServiceDivision {
+
+
+
+import industrialImg1 from '@/assets/images/about_industrial_execution_1790580549206.jpg';
+import mechanicalImg2 from '@/assets/images/about_mechanical_works_1790580562383.jpg';
+import civilImg from '@/assets/images/about_civil_infrastructure_1790580582420.jpg';
+import corpImg from '@/assets/images/about_corporate_clean_1790585081901.jpg';
+
+
+export interface ServiceCapability {
+  name: string;
+  description: string;
+  image: string;
+}
+
+export interface ServiceDivision {
   id: string;
   icon: React.ComponentType<{ className?: string }>;
   title: string;
@@ -19,31 +58,26 @@ interface ServiceDivision {
   description: string;
   image?: string;
   tag: string;
-  capabilities: string[];
+  capabilities: ServiceCapability[];
   active?: boolean;
 }
 
-const SERVICES_DATA: ServiceDivision[] = [
+export const SERVICES_DATA: ServiceDivision[] = [
   {
     id: 'mechanical',
     icon: Wrench,
     title: 'Mechanical Works',
     subtitle: 'Industrial Installation, Fabrication & Shutdown Support',
-    description:
-      'We provide mechanical installation, fabrication, maintenance, and project support services across industrial, petrochemical, and construction projects.',
+    description: 'We provide mechanical installation, fabrication, maintenance, and project support services across industrial, petrochemical, and construction projects.',
     image: mechanicalImg,
     tag: 'ASME & Saudi Aramco Standards',
     capabilities: [
-      'Mechanical equipment installation',
-      'Piping installation',
-      'Pipe fabrication and erection',
-      'Structural mechanical works',
-      'Pumps and equipment installation',
-      'Tanks and vessels installation support',
-      'HVAC mechanical works',
-      'Mechanical maintenance',
-      'Equipment alignment and installation',
-      'Shutdown and maintenance support',
+      { name: 'Mechanical equipment installation', description: 'Precision mounting and alignment of heavy industrial machinery.', image: mechImg1 },
+      { name: 'Piping installation', description: 'Comprehensive pipework for fluid, gas, and steam processes.', image: mechImg2 },
+      { name: 'Pipe fabrication and erection', description: 'Custom spooling and on-site erection of complex piping systems.', image: mechImg3 },
+      { name: 'Structural mechanical works', description: 'Erection of structural steel and mechanical support structures.', image: mechImg4 },
+      { name: 'Pumps and equipment installation', description: 'Complete setup of rotary and static pumping equipment.', image: mechImg5 },
+      { name: 'Tanks and vessels installation support', description: 'Support for pressure vessels and bulk storage tanks.', image: mechImg1 },
     ],
     active: true,
   },
@@ -52,16 +86,16 @@ const SERVICES_DATA: ServiceDivision[] = [
     icon: Zap,
     title: 'Electrical Works',
     subtitle: 'High & Low Voltage Power Distribution & Systems',
-    description:
-      'Turnkey electrical installations, substation engineering, cable laying, switchgear testing, and power distribution systems engineered to Saudi Electricity Company (SEC) benchmarks.',
+    description: 'Turnkey electrical installations, substation engineering, cable laying, switchgear testing, and power distribution systems engineered to Saudi Electricity Company (SEC) benchmarks.',
     tag: 'SEC & IEC Certified',
+    image: elecImg1,
     capabilities: [
-      'Substation and switchgear installation',
-      'High-voltage and low-voltage power distribution',
-      'Cable tray laying and cable pulling',
-      'Transformer testing and commissioning',
-      'Industrial electrical lighting & grounding',
-      'Power panel fabrication and wiring',
+      { name: 'Substation and switchgear installation', description: 'Installation of main power distribution hubs and switchgears.', image: elecImg1 },
+      { name: 'High-voltage and low-voltage power distribution', description: 'Complete MV/LV cable networks and distribution panels.', image: elecImg2 },
+      { name: 'Cable tray laying and cable pulling', description: 'Industrial cable management and heavy cable pulling.', image: elecImg3 },
+      { name: 'Transformer testing and commissioning', description: 'Pre-commissioning and testing of power transformers.', image: elecImg4 },
+      { name: 'Industrial electrical lighting & grounding', description: 'Plant-wide illumination and earthing system grids.', image: elecImg5 },
+      { name: 'Power panel fabrication and wiring', description: 'Custom electrical control panels and local control stations.', image: elecImg6 },
     ],
     active: false,
   },
@@ -70,16 +104,16 @@ const SERVICES_DATA: ServiceDivision[] = [
     icon: Building2,
     title: 'Civil Construction',
     subtitle: 'Heavy Foundations, Earthworks & Structural Works',
-    description:
-      'Robust civil engineering solutions including high-tolerance machine foundations, deep piling, structural concrete casting, and industrial site infrastructure.',
+    description: 'Robust civil engineering solutions including high-tolerance machine foundations, deep piling, structural concrete casting, and industrial site infrastructure.',
     tag: 'SBC 301-306 Compliant',
+    image: civImg1,
     capabilities: [
-      'Heavy machine foundation casting',
-      'Deep geotechnical piling & earthworks',
-      'Industrial structural concrete works',
-      'Trenching, duct banks & underground utilities',
-      'Blast-resistant control room civil construction',
-      'Roads, paving & site development',
+      { name: 'Heavy machine foundation casting', description: 'Precision concrete casting for vibratory equipment.', image: civImg1 },
+      { name: 'Deep geotechnical piling & earthworks', description: 'Site preparation, excavation, and structural piling.', image: civImg2 },
+      { name: 'Industrial structural concrete works', description: 'Erection of robust concrete superstructures.', image: civImg3 },
+      { name: 'Trenching, duct banks & underground utilities', description: 'Subsurface trenching for power and piping networks.', image: civImg4 },
+      { name: 'Blast-resistant control room civil construction', description: 'Construction of reinforced safety facilities.', image: civImg5 },
+      { name: 'Roads, paving & site development', description: 'Complete site grading and asphalt paving solutions.', image: civImg6 },
     ],
     active: false,
   },
@@ -88,16 +122,16 @@ const SERVICES_DATA: ServiceDivision[] = [
     icon: Cpu,
     title: 'MEP & Instrumentation',
     subtitle: 'Process Automation, Telemetry & Building Services',
-    description:
-      'Integrated HVAC ducting, plumbing, firefighting networks, precision instrumentation calibration, and industrial SCADA automation services.',
+    description: 'Integrated HVAC ducting, plumbing, firefighting networks, precision instrumentation calibration, and industrial SCADA automation services.',
     tag: 'ISA & NFPA Standards',
+    image: mepImg1,
     capabilities: [
-      'Process instrumentation and loop calibration',
-      'Central chiller plants & HVAC ducting networks',
-      'NFPA-compliant fire suppression & deluge systems',
-      'Industrial plumbing and sanitary drainage',
-      'SCADA, BMS & PLC control automation',
-      'Third-party FAT / SAT verification',
+      { name: 'Process instrumentation and loop calibration', description: 'Calibration of field transmitters and control valves.', image: mepImg1 },
+      { name: 'Central chiller plants & HVAC ducting networks', description: 'Industrial cooling and ventilation systems.', image: mepImg2 },
+      { name: 'NFPA-compliant fire suppression & deluge systems', description: 'Critical safety and active fire protection systems.', image: mepImg3 },
+      { name: 'Industrial plumbing and sanitary drainage', description: 'Complete water distribution and drainage works.', image: mepImg4 },
+      { name: 'SCADA, BMS & PLC control automation', description: 'Centralized control room automation and telemetry.', image: mepImg5 },
+      { name: 'Third-party FAT / SAT verification', description: 'Factory and site acceptance testing for systems.', image: mepImg6 },
     ],
     active: false,
   },
@@ -200,7 +234,11 @@ export const ServicesSection: React.FC = () => {
         </div>
 
         {/* Active Service Deep-Dive Panel */}
-        <div className="bg-white rounded-2xl border border-primary/15 shadow-xl p-5 sm:p-8 lg:p-10 transition-all duration-500">
+        <div className="relative bg-white rounded-2xl border border-primary/15 shadow-xl p-5 sm:p-8 lg:p-10 transition-all duration-500 group/panel">
+          {/* Top Right Navigation Arrow */}
+          <Link to={`/services/${activeService.id}`} className="absolute top-5 right-5 sm:top-8 sm:right-8 text-primary hover:text-secondary transition-all duration-300 hover:translate-x-2 z-20" title="View Detailed Service">
+            <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7" />
+          </Link>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             {/* Left Column: Scope & 10 Capabilities Checklist */}
             <div className="lg:col-span-7 flex flex-col justify-center">
@@ -233,12 +271,12 @@ export const ServicesSection: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {activeService.capabilities.map((cap) => (
                     <div
-                      key={cap}
+                      key={cap.name}
                       className="p-3 rounded-lg bg-surface-container-low/70 border border-primary/10 flex items-start gap-2.5 group hover:border-secondary/50 hover:bg-white transition-colors"
                     >
                       <CheckCircle2 className="w-4 h-4 text-secondary shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                       <span className="text-[13px] font-sans text-on-surface font-medium leading-tight">
-                        {cap}
+                        {cap.name}
                       </span>
                     </div>
                   ))}

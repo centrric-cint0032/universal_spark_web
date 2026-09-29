@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   FileSearch,
@@ -250,6 +250,23 @@ export const ProjectsPage: React.FC = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>('All');
   const categories = ['All', 'Engineering & Schedule', 'Operations', 'Supply Chain', 'Governance & Safety'];
 
+  // Scroll to top and initialize intersection observer for route map reveal
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0', 'translate-x-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-12', 'translate-x-8', '-translate-x-8', 'scale-95');
+        }
+      });
+    }, { threshold: 0.15 });
+    
+    document.querySelectorAll('.route-reveal').forEach(el => observer.observe(el));
+    
+    return () => observer.disconnect();
+  }, []);
+
   const filteredServices =
     selectedFilter === 'All'
       ? MANAGEMENT_SERVICES
@@ -346,49 +363,71 @@ export const ProjectsPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {EXECUTION_STEPS.map((step) => {
-              const Icon = step.icon;
-              return (
-                <div
-                  key={step.title}
-                  className="bg-white p-7 rounded-2xl border border-primary/15 shadow-sm hover:shadow-xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
-                >
-                  <div>
-                    {/* Header */}
-                    <div className="mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-primary/5 text-primary group-hover:bg-secondary group-hover:text-white flex items-center justify-center transition-colors">
-                        <Icon className="w-5 h-5" />
+          <div className="relative max-w-5xl mx-auto py-10">
+            {/* Center Vertical Line */}
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-primary/10 rounded-full transform md:-translate-x-1/2 z-0" />
+            
+            <div className="space-y-12 md:space-y-24">
+              {EXECUTION_STEPS.map((step, idx) => {
+                const Icon = step.icon;
+                const isEven = idx % 2 === 0;
+                
+                return (
+                  <div key={step.title} className={`relative z-10 flex flex-col md:flex-row items-start md:items-center ${isEven ? 'md:flex-row-reverse' : ''} gap-8 md:gap-16`}>
+                    
+                    {/* Center Node (Icon) */}
+                    <div className="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white border-4 border-secondary shadow-xl flex items-center justify-center text-primary z-20 route-reveal opacity-0 scale-95 transition-all duration-700 ease-out">
+                      <Icon className="w-5 h-5 sm:w-7 sm:h-7" />
+                      <div className="absolute inset-0 rounded-full bg-secondary/20 animate-ping z-[-1]" style={{ animationDuration: '3s' }} />
+                    </div>
+
+                    {/* Empty Space for the other side */}
+                    <div className="hidden md:block md:w-1/2" />
+
+                    {/* Content Card */}
+                    <div className={`md:w-1/2 pl-20 md:pl-0 ${isEven ? 'md:pr-16 text-left md:text-right' : 'md:pl-16 text-left'} route-reveal opacity-0 translate-y-12 ${isEven ? 'md:-translate-x-8' : 'md:translate-x-8'} transition-all duration-1000 ease-out`}>
+                      <div className="bg-white p-7 sm:p-10 rounded-3xl border border-primary/10 shadow-lg hover:shadow-2xl hover:border-secondary/40 transition-all duration-500 relative group overflow-hidden">
+                        
+                        {/* Decorative Step Number */}
+                        <div className={`absolute top-0 ${isEven ? 'md:left-0 right-0' : 'right-0'} opacity-[0.03] text-8xl font-black font-montserrat pointer-events-none group-hover:scale-110 group-hover:opacity-[0.05] transition-all duration-700`}>
+                          0{idx + 1}
+                        </div>
+
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/5 text-primary text-[10px] font-bold uppercase tracking-widest mb-4">
+                          Stage 0{idx + 1}
+                        </span>
+                        
+                        <h3 className="font-montserrat font-extrabold text-[22px] text-primary group-hover:text-secondary transition-colors mb-2">
+                          {step.title}
+                        </h3>
+                        <div className="font-sans text-[12.5px] text-on-surface-variant font-bold mb-4">
+                          {step.subtitle}
+                        </div>
+
+                        <p className="font-sans text-[14.5px] text-slate-500 leading-relaxed mb-6">
+                          {step.description}
+                        </p>
+
+                        <div className="pt-5 border-t border-slate-100">
+                          <span className="font-sans text-[10px] font-bold uppercase text-primary tracking-widest block mb-3">
+                            Key Deliverables:
+                          </span>
+                          <div className={`flex flex-col gap-2.5 ${isEven ? 'md:items-end' : ''}`}>
+                            {step.deliverables.map((item) => (
+                              <div key={item} className={`flex items-start gap-2 text-[12.5px] font-sans text-on-surface font-medium bg-slate-50 px-3 py-2 rounded-lg border border-slate-100 w-fit ${isEven ? 'md:flex-row-reverse' : ''}`}>
+                                <CheckCircle2 className="w-4 h-4 text-secondary shrink-0" />
+                                <span>{item}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
 
-                    <h3 className="font-montserrat font-extrabold text-[18px] text-primary group-hover:text-primary-navy transition-colors mb-1">
-                      {step.title}
-                    </h3>
-                    <div className="font-sans text-[11.5px] text-secondary font-semibold mb-3">
-                      {step.subtitle}
-                    </div>
-
-                    <p className="font-sans text-[13.5px] text-on-surface-variant leading-relaxed mb-6">
-                      {step.description}
-                    </p>
                   </div>
-
-                  {/* Deliverables Checklist */}
-                  <div className="pt-4 border-t border-slate-100 space-y-2">
-                    <span className="font-sans text-[10.5px] font-bold uppercase text-primary tracking-wider block mb-2">
-                      Key Deliverables:
-                    </span>
-                    {step.deliverables.map((item) => (
-                      <div key={item} className="flex items-start gap-2 text-[12px] font-sans text-on-surface">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-secondary shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </section>
 
@@ -506,9 +545,9 @@ export const ProjectsPage: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-secondary font-sans text-[11.5px] font-bold">
+                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-secondary font-sans text-[11.5px] font-bold">
+                    <CheckCircle2 className="w-4 h-4" />
                     <span>Aramco / Royal Commission Spec</span>
-                    <ChevronRight className="w-4 h-4" />
                   </div>
                 </div>
               );

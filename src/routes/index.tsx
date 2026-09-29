@@ -5,6 +5,7 @@ import { ProjectsPage } from '@/pages/Projects/ProjectsPage';
 import { AboutPage } from '@/pages/About/AboutPage';
 import { ContactPage } from '@/pages/Contact/ContactPage';
 import { NotFoundPage } from '@/pages/NotFound/NotFoundPage';
+import { ServiceDetailPage } from '@/pages/Services/ServiceDetailPage';
 
 /**
  * Application Routes Configuration
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: 'services/:serviceId',
+        element: <ServiceDetailPage />,
       },
       {
         path: 'projects',
@@ -35,14 +40,6 @@ export const router = createBrowserRouter([
       {
         path: 'services',
         element: <ServicesPage />,
-      },
-      {
-        path: 'about',
-        element: <AboutPage />,
-      },
-      {
-        path: 'contact',
-        element: <ContactPage />,
       },
       */
       {
