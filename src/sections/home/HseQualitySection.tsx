@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   ShieldCheck,
   CheckCircle2,
@@ -103,19 +104,25 @@ export const HseQualitySection: React.FC = () => {
             </p>
           </div>
 
-          {/* Quick Credential Badge */}
-          <div className="flex items-center gap-3 bg-surface-container-low p-4 rounded-xl border border-primary/10 self-start lg:self-auto shrink-0 shadow-sm">
-            <div className="w-10 h-10 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center font-bold">
-              <Award className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="font-montserrat font-bold text-[13.5px] text-primary">
-                Unconditional Site Governance
+          {/* Right Side: Quick Credential Badge & Navigation Arrow */}
+          <div className="flex items-center gap-6 self-start lg:self-auto shrink-0">
+            <div className="flex items-center gap-3 bg-surface-container-low p-4 rounded-xl border border-primary/10 shadow-sm hidden sm:flex">
+              <div className="w-10 h-10 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center font-bold">
+                <Award className="w-5 h-5" />
               </div>
-              <div className="font-sans text-[11px] text-on-surface-variant/80">
-                Aramco, SEC &amp; Royal Commission Standard
+              <div>
+                <div className="font-montserrat font-bold text-[13.5px] text-primary">
+                  Unconditional Site Governance
+                </div>
+                <div className="font-sans text-[11px] text-on-surface-variant/80">
+                  Aramco, SEC &amp; Royal Commission Standard
+                </div>
               </div>
             </div>
+            
+            <Link to="/hseq" className="text-primary hover:text-secondary transition-all duration-300 hover:translate-x-2" title="View Detailed Page">
+              <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8" />
+            </Link>
           </div>
         </div>
 
@@ -175,10 +182,13 @@ export const HseQualitySection: React.FC = () => {
                   <span className="font-sans text-[10.5px] text-slate-400">
                     Full Compliance Plan
                   </span>
-                  <span className="font-sans text-[11px] text-primary group-hover:text-secondary font-bold flex items-center gap-1 transition-colors">
-                    <span>Verified</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </span>
+                  <Link 
+                    to={`/hseq?tab=${pillar.id}`} 
+                    className="font-sans text-[11px] text-primary hover:text-secondary font-bold flex items-center gap-1 transition-colors group/link"
+                  >
+                    <span>View Details</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
               </div>
             );

@@ -6,6 +6,7 @@ import { AboutPage } from '@/pages/About/AboutPage';
 import { ContactPage } from '@/pages/Contact/ContactPage';
 import { NotFoundPage } from '@/pages/NotFound/NotFoundPage';
 import { ServiceDetailPage } from '@/pages/Services/ServiceDetailPage';
+import { HSEQPage } from '@/pages/HSEQ/HSEQPage';
 
 /**
  * Application Routes Configuration
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: 'hseq',
+        element: <HSEQPage />,
       },
       {
         path: 'services/:serviceId',

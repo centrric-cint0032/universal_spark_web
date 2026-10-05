@@ -34,17 +34,17 @@ export const Footer: React.FC = () => {
               DISCIPLINES
             </span>
             <div className="flex flex-col gap-2 font-sans text-[12px] text-on-surface-variant">
-              <Link className="hover:text-secondary transition-colors" to="/#services-matrix">
-                Civil &amp; Foundation EPC
+              <Link className="hover:text-secondary transition-colors" to="/services/civil">
+                Civil Construction
               </Link>
-              <Link className="hover:text-secondary transition-colors" to="/#services-matrix">
-                Plant Shutdown &amp; Turnaround
+              <Link className="hover:text-secondary transition-colors" to="/services/mechanical">
+                Mechanical Works &amp; Fabrication
               </Link>
-              <Link className="hover:text-secondary transition-colors" to="/#services-matrix">
-                MEP &amp; Substation Infrastructure
+              <Link className="hover:text-secondary transition-colors" to="/services/electrical">
+                Electrical &amp; MEP
               </Link>
-              <Link className="hover:text-secondary transition-colors" to="/#services-matrix">
-                ASME Vessel &amp; Skid Fabrication
+              <Link className="hover:text-secondary transition-colors" to="/hseq?tab=maintenance">
+                Plant Maintenance
               </Link>
             </div>
           </div>

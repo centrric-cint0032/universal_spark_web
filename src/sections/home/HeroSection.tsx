@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -58,28 +59,28 @@ const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Mechanical Works',
     category: 'Piping & Fabrication',
     image: servicesMechanicalImg,
-    href: '#services-matrix',
+    href: '/services/mechanical',
   },
   {
     id: 'civil',
     title: 'Civil Construction',
     category: 'Foundations & Earthworks',
     image: projectExecutionImg,
-    href: '#services-matrix',
+    href: '/services/civil',
   },
   {
     id: 'electrical',
     title: 'Electrical & MEP',
     category: 'Substations & HVAC',
     image: heroBgImg,
-    href: '#services-matrix',
+    href: '/services/electrical',
   },
   {
     id: 'maintenance',
     title: 'Plant Turnaround',
     category: 'Modifications & Maintenance',
     image: contactBgImg,
-    href: '#services-matrix',
+    href: '/hseq',
   },
 ];
 
@@ -100,14 +101,6 @@ export const HeroSection: React.FC = () => {
           
           {/* Left Column (Approx 60%): Massive Editorial Headline & Narrative */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            {/* Category Kicker */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200/80 mb-6 self-start">
-              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-              <span className="font-sans text-[11px] font-bold tracking-wider text-primary uppercase">
-                General Service Contracting &amp; Project Solutions
-              </span>
-            </div>
-
             {/* Massive Bold Headline */}
             <h1 className="font-montserrat text-4xl sm:text-5xl lg:text-[62px] font-extrabold text-primary tracking-tight leading-[1.08] mb-6">
               Building Solutions.{' '}
@@ -224,7 +217,7 @@ export const HeroSection: React.FC = () => {
               href="#services-matrix"
               className="text-xs font-montserrat font-bold text-primary hover:text-secondary flex items-center gap-1 transition-colors uppercase tracking-wider"
             >
-              <span>View All Services (10)</span>
+              <span>View All Services (5)</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
@@ -234,11 +227,11 @@ export const HeroSection: React.FC = () => {
             {GALLERY_ITEMS.map((item) => {
               const isActive = activeGalleryId === item.id;
               return (
-                <div
+                <Link
                   key={item.id}
+                  to={item.href}
                   onMouseEnter={() => setActiveGalleryId(item.id)}
-                  onClick={() => setActiveGalleryId(item.id)}
-                  className={`relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 border ${
+                  className={`relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer block transition-all duration-500 border ${
                     isActive
                       ? 'border-secondary shadow-xl ring-2 ring-secondary/20'
                       : 'border-slate-200 hover:border-slate-400'
@@ -289,12 +282,12 @@ export const HeroSection: React.FC = () => {
                       )}
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
 
             {/* Dark Callout End-Card (Matching the Reference Design "Check out our machines / View all") */}
-            <div className="col-span-2 md:col-span-1 lg:col-span-1 h-64 sm:h-72 rounded-2xl bg-[#060e1e] p-6 text-white flex flex-col justify-between border border-slate-800 shadow-xl group">
+            <Link to="/#services-matrix" className="col-span-2 md:col-span-1 lg:col-span-1 h-64 sm:h-72 rounded-2xl bg-[#060e1e] p-6 text-white flex flex-col justify-between border border-slate-800 shadow-xl group cursor-pointer hover:border-secondary/50 transition-colors">
               <div className="flex items-center justify-between">
                 <span className="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse" />
                 <div className="w-8 h-8 rounded-full bg-white/10 group-hover:bg-secondary flex items-center justify-center transition-colors text-white">
@@ -312,15 +305,12 @@ export const HeroSection: React.FC = () => {
                 <p className="font-sans text-xs text-slate-400 mb-4">
                   Mechanical, Civil, Electrical, MEP, and Process Instrumentation.
                 </p>
-                <a
-                  href="#services-matrix"
-                  className="inline-flex items-center gap-1.5 text-xs font-montserrat font-bold text-secondary-fixed group-hover:text-white transition-colors uppercase tracking-wider"
-                >
-                  <span>View All (10)</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                <div className="inline-flex items-center gap-1.5 text-xs font-montserrat font-bold text-secondary-fixed group-hover:text-white transition-colors uppercase tracking-wider">
+                  <span>View All (5)</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
 
