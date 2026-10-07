@@ -6,7 +6,6 @@ import {
   MessageCircle,
   MapPin,
   ArrowLeft,
-  Send,
   ShieldCheck,
   Building2,
   Clock,

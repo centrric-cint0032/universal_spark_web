@@ -39,7 +39,6 @@ import mepImg5 from '@/assets/mep-instrumentation/still5.jpg';
 import mepImg6 from '@/assets/mep-instrumentation/still6.jpg';
 
 
-import chemImg1 from '@/assets/chemical-test-services/chemical_1.jpg';
 import chemImg3 from '@/assets/chemical-test-services/chemical_3.jpg';
 import chemImg5 from '@/assets/chemical-test-services/chemical_5.jpg';
 import chemImg6 from '@/assets/chemical-test-services/chemical_6.jpg';
@@ -54,7 +53,6 @@ import netImgWifi from '@/assets/network-services/wifi.jpeg';
 import netImgServer from '@/assets/network-services/server_room.webp';
 import netImgMaint from '@/assets/network-services/network_maintenance.jpg';
 
-import foodImg1 from '@/assets/food-services/food_1.jpeg';
 import foodImg2 from '@/assets/food-services/food_2.jpeg';
 import foodImg3 from '@/assets/food-services/food_3.jpeg';
 import foodImg4 from '@/assets/food-services/food_4.jpeg';
