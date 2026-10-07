@@ -14,7 +14,6 @@ export const ContactSection: React.FC = () => {
     name: '',
     email: '',
     phone: '',
-    discipline: 'Mechanical Works',
     message: '',
   });
 
@@ -22,16 +21,6 @@ export const ContactSection: React.FC = () => {
     e.preventDefault();
     setSubmitted(true);
   };
-
-  const disciplines = [
-    'Mechanical Works',
-    'Electrical Works',
-    'MEP & Instrumentation',
-    'Civil Construction',
-    'Plant Maintenance',
-    'Project Management',
-    'Comprehensive Turnkey EPC',
-  ];
 
   return (
     <section
@@ -207,23 +196,7 @@ export const ContactSection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Discipline Selector */}
-                  <div>
-                    <label className="block text-[12.5px] font-medium text-slate-300 mb-1.5">
-                      Discipline
-                    </label>
-                    <select
-                      value={formData.discipline}
-                      onChange={(e) => setFormData({ ...formData, discipline: e.target.value })}
-                      className="w-full bg-slate-950/60 border border-slate-800 text-white text-[14px] rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-secondary transition-colors cursor-pointer"
-                    >
-                      {disciplines.map((d) => (
-                        <option key={d} value={d} className="bg-slate-900 text-white">
-                          {d}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+
 
                   {/* Project Details */}
                   <div>

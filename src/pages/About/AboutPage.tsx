@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  ArrowLeft,
-  ChevronRight,
   ArrowRight,
   ShieldCheck,
   CheckCircle2,
@@ -727,7 +725,7 @@ export const AboutPage: React.FC = () => {
 
           <div className="flex items-center gap-4">
             <a
-              href="tel:+966500000000"
+              href="tel:0534198399"
               className="inline-flex items-center gap-2 text-xs font-bold font-montserrat text-primary uppercase tracking-wider px-5 py-3.5 rounded-xl border border-slate-300 hover:border-primary transition-colors"
             >
               <PhoneCall className="w-4 h-4 text-secondary" />

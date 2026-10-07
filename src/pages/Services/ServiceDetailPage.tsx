@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, ShieldCheck, Zap, Building2, Cpu, Wrench } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { SERVICES_DATA } from '@/sections/home/ServicesSection';
 import companyLogo from '@/assets/images/logo.png';
 

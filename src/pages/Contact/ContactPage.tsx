@@ -113,7 +113,7 @@ export const ContactPage: React.FC = () => {
               <div className="space-y-4 font-sans">
                 {/* Phone */}
                 <a
-                  href="tel:+966138900000"
+                  href="tel:0534198399"
                   className="flex items-start gap-3.5 p-3.5 rounded-xl hover:bg-slate-50 transition-colors group border border-transparent hover:border-slate-200"
                 >
                   <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
@@ -124,7 +124,7 @@ export const ContactPage: React.FC = () => {
                       Telephone
                     </span>
                     <span className="text-sm sm:text-[15px] text-primary font-bold group-hover:text-primary-navy transition-colors">
-                      +966 13 890 0000
+                      0534198399
                     </span>
                     <span className="text-xs text-slate-400 block mt-0.5">
                       Sunday – Thursday, 8am – 5pm
@@ -134,7 +134,7 @@ export const ContactPage: React.FC = () => {
 
                 {/* WhatsApp */}
                 <a
-                  href="https://wa.me/966500000000"
+                  href="https://wa.me/966534198399"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3.5 p-3.5 rounded-xl hover:bg-slate-50 transition-colors group border border-transparent hover:border-slate-200"
@@ -147,7 +147,7 @@ export const ContactPage: React.FC = () => {
                       WhatsApp Direct
                     </span>
                     <span className="text-sm sm:text-[15px] text-secondary font-bold group-hover:underline">
-                      +966 50 000 0000
+                      0534198399
                     </span>
                     <span className="text-xs text-slate-400 block mt-0.5">
                       Quick chat &amp; file sharing
@@ -157,7 +157,7 @@ export const ContactPage: React.FC = () => {
 
                 {/* Email */}
                 <a
-                  href="mailto:info@universalspark.sa"
+                  href="mailto:info@universalsparkksa.com"
                   className="flex items-start gap-3.5 p-3.5 rounded-xl hover:bg-slate-50 transition-colors group border border-transparent hover:border-slate-200"
                 >
                   <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
@@ -168,7 +168,7 @@ export const ContactPage: React.FC = () => {
                       Corporate Email
                     </span>
                     <span className="text-sm sm:text-[15px] text-primary font-semibold group-hover:text-secondary transition-colors break-all">
-                      info@universalspark.sa
+                      info@universalsparkksa.com
                     </span>
                     <span className="text-xs text-slate-400 block mt-0.5">
                       RFP, BOQ &amp; Tender submissions
@@ -182,14 +182,16 @@ export const ContactPage: React.FC = () => {
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
-                      Headquarters &amp; Depots
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                      Headquarters
                     </span>
-                    <span className="text-sm sm:text-[14px] text-on-surface font-medium block">
-                      Eastern Province &amp; Riyadh Region
+                    <span className="text-sm sm:text-[13px] text-on-surface font-medium block leading-relaxed">
+                      Universal Spark Company<br />
+                      8617 Eighteenth Street, As Suq District<br />
+                      Dammam 32242, Saudi Arabia
                     </span>
-                    <span className="text-xs text-slate-400 block mt-0.5">
-                      Kingdom of Saudi Arabia • CR-4030281902
+                    <span className="text-[11px] text-slate-400 block mt-1.5">
+                      Short: EDJB8617 • CR-4030281902
                     </span>
                   </div>
                 </div>
@@ -281,39 +283,18 @@ export const ContactPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div>
-                    <label className="block font-sans text-xs uppercase text-primary tracking-wider mb-1.5 font-bold">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="+966 50 000 0000"
-                      className="w-full bg-slate-50 border border-slate-200 text-on-surface text-sm sm:text-[14px] rounded-xl px-4 py-3 focus:outline-none focus:bg-white focus:border-secondary focus:ring-1 focus:ring-secondary transition-all"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block font-sans text-xs uppercase text-primary tracking-wider mb-1.5 font-bold">
-                      Service Requirement
-                    </label>
-                    <select
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full bg-slate-50 border border-slate-200 text-on-surface text-sm sm:text-[14px] rounded-xl px-4 py-3 focus:outline-none focus:bg-white focus:border-secondary focus:ring-1 focus:ring-secondary transition-all cursor-pointer"
-                    >
-                      <option value="Quotation & Tender">Quotation &amp; Tender</option>
-                      <option value="Mechanical Works">Mechanical Installation / Maintenance</option>
-                      <option value="Electrical & MEP">Electrical &amp; MEP Works</option>
-                      <option value="Instrumentation & Control">Instrumentation &amp; Control</option>
-                      <option value="Civil Construction">Civil Construction &amp; Earthworks</option>
-                      <option value="Plant Maintenance">Plant Modification &amp; Maintenance</option>
-                      <option value="Project Management">Project Management / Supervision</option>
-                    </select>
-                  </div>
+                <div>
+                  <label className="block font-sans text-xs uppercase text-primary tracking-wider mb-1.5 font-bold">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    placeholder="+966 50 000 0000"
+                    className="w-full bg-slate-50 border border-slate-200 text-on-surface text-sm sm:text-[14px] rounded-xl px-4 py-3 focus:outline-none focus:bg-white focus:border-secondary focus:ring-1 focus:ring-secondary transition-all"
+                  />
                 </div>
 
                 <div>

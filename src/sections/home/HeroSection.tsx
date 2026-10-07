@@ -15,6 +15,7 @@ import projectExecutionImg from '@/assets/images/project-execution.jpg';
 import servicesMechanicalImg from '@/assets/images/services-mechanical.jpg';
 import contactBgImg from '@/assets/images/contact-infrastructure.jpg';
 import universalSparkSiteOpsImg from '@/assets/images/universal-spark-site-ops.jpg';
+import visionLogo from '@/assets/vision2030-saudi-arabia-Logo.png';
 
 interface TrustPillar {
   title: string;
@@ -101,6 +102,15 @@ export const HeroSection: React.FC = () => {
           
           {/* Left Column (Approx 60%): Massive Editorial Headline & Narrative */}
           <div className="lg:col-span-7 flex flex-col justify-center">
+            {/* Vision 2030 Logo */}
+            <div className="mb-6 lg:mb-8">
+              <img 
+                src={visionLogo} 
+                alt="Saudi Vision 2030" 
+                className="h-12 sm:h-14 lg:h-16 object-contain"
+              />
+            </div>
+
             {/* Massive Bold Headline */}
             <h1 className="font-montserrat text-4xl sm:text-5xl lg:text-[62px] font-extrabold text-primary tracking-tight leading-[1.08] mb-6">
               Building Solutions.{' '}
@@ -217,7 +227,7 @@ export const HeroSection: React.FC = () => {
               href="#services-matrix"
               className="text-xs font-montserrat font-bold text-primary hover:text-secondary flex items-center gap-1 transition-colors uppercase tracking-wider"
             >
-              <span>View All Services (5)</span>
+              <span>View All Services (7)</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>

@@ -22,9 +22,10 @@ export const Footer: React.FC = () => {
             <p className="font-sans text-[13px] text-on-surface-variant leading-relaxed max-w-sm mb-4">
               Universal Spark Infrastructure &amp; Contracting Co. Ltd. — A Tier-1 general engineering contractor committed to Kingdom Vision 2030 industrial resilience.
             </p>
-            <div className="font-sans text-[11px] text-on-surface-variant/80 space-y-1">
+            <div className="font-sans text-[11px] text-on-surface-variant/80 space-y-1 mt-2">
               <p>CR NO. 4030281902 • CHAMBER OF COMMERCE KSA</p>
-              <p>EASTERN PROVINCE / RIYADH METROPOLITAN BRANCHES</p>
+              <p>8617 Eighteenth Street, As Suq District, Dammam 32242, Saudi Arabia</p>
+              <p>T: 0534198399 | E: info@universalsparkksa.com</p>
             </div>
           </div>
 

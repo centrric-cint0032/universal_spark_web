@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { 
   ShieldCheck, 
   CheckCircle2, 
   Activity, 
   Award, 
-  Wrench, 
-  ArrowRight,
+  Wrench,
   ClipboardCheck,
   HardHat,
   Thermometer,

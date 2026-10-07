@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import { WhatsAppButton } from '@/components/common/WhatsAppButton';
 
 /**
  * ScrollManager handles scroll behavior across SPA page changes:
@@ -38,6 +39,7 @@ export const RootLayout: React.FC = () => {
         <Outlet />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

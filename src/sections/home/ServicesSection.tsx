@@ -9,6 +9,9 @@ import {
   CheckCircle2,
   ArrowRight,
   Sparkles,
+  FlaskConical,
+  Network,
+  UtensilsCrossed,
 } from 'lucide-react';
 import mechanicalImg from '@/assets/images/services-mechanical.jpg';
 import mechImg1 from '@/assets/mechanical-services-images/image1.jpg';
@@ -36,13 +39,28 @@ import mepImg5 from '@/assets/mep-instrumentation/still5.jpg';
 import mepImg6 from '@/assets/mep-instrumentation/still6.jpg';
 
 
+import chemImg1 from '@/assets/chemical-test-services/chemical_1.jpg';
+import chemImg3 from '@/assets/chemical-test-services/chemical_3.jpg';
+import chemImg5 from '@/assets/chemical-test-services/chemical_5.jpg';
+import chemImg6 from '@/assets/chemical-test-services/chemical_6.jpg';
+import chemImgRock from '@/assets/chemical-test-services/rock_composition.jpg';
+import chemImgAsbestos from '@/assets/chemical-test-services/asbetos.jpg';
+import chemImgBuilding from '@/assets/chemical-test-services/building_material.jpg';
 
+import netImg1 from '@/assets/network-services/network_1.jpeg';
+import netImg2 from '@/assets/network-services/network_2.jpg';
+import netImg3 from '@/assets/network-services/network_3.jpg';
+import netImgWifi from '@/assets/network-services/wifi.jpeg';
+import netImgServer from '@/assets/network-services/server_room.webp';
+import netImgMaint from '@/assets/network-services/network_maintenance.jpg';
 
-import industrialImg1 from '@/assets/images/about_industrial_execution_1790580549206.jpg';
-import mechanicalImg2 from '@/assets/images/about_mechanical_works_1790580562383.jpg';
-import civilImg from '@/assets/images/about_civil_infrastructure_1790580582420.jpg';
-import corpImg from '@/assets/images/about_corporate_clean_1790585081901.jpg';
-
+import foodImg1 from '@/assets/food-services/food_1.jpeg';
+import foodImg2 from '@/assets/food-services/food_2.jpeg';
+import foodImg3 from '@/assets/food-services/food_3.jpeg';
+import foodImg4 from '@/assets/food-services/food_4.jpeg';
+import foodImg5 from '@/assets/food-services/food_5.png';
+import foodImg6 from '@/assets/food-services/food_6.webp';
+import foodImgSpecial from '@/assets/food-services/special_dietary.jpg';
 
 export interface ServiceCapability {
   name: string;
@@ -132,6 +150,60 @@ export const SERVICES_DATA: ServiceDivision[] = [
       { name: 'Industrial plumbing and sanitary drainage', description: 'Complete water distribution and drainage works.', image: mepImg4 },
       { name: 'SCADA, BMS & PLC control automation', description: 'Centralized control room automation and telemetry.', image: mepImg5 },
       { name: 'Third-party FAT / SAT verification', description: 'Factory and site acceptance testing for systems.', image: mepImg6 },
+    ],
+    active: false,
+  },
+  {
+    id: 'rgf-chemical-laboratory',
+    icon: FlaskConical,
+    title: 'RGF Chemical Laboratory',
+    subtitle: 'Comprehensive Analytical & Consulting Services',
+    description: 'State-of-the-art analytical testing services across agricultural, environmental, industrial, and geological sectors with rigorous quality control and ISO/IEC 17025 accredited standards.',
+    tag: 'ISO/IEC 17025 Accredited',
+    image: chemImg1,
+    capabilities: [
+      { name: 'Agricultural & Soil Diagnostics', description: 'Comprehensive evaluation of soil fertility, chemical composition, and irrigation suitability for optimized yield.', image: chemImg3 },
+      { name: 'Building Materials Analysis', description: 'Rigorous physical and chemical evaluation of construction materials to ensure structural integrity and compliance.', image: chemImgBuilding },
+      { name: 'Water & Wastewater Analysis', description: 'Advanced testing for potability, environmental compliance, industrial effluents, and construction water.', image: chemImg5 },
+      { name: 'Microbiological Analysis', description: 'Comprehensive biological screening in water, soil, and environmental air matrices for pathogen detection.', image: chemImg6 },
+      { name: 'Rock & Mineral Composition', description: 'Quantitative geochemical profiling of rock, ore, sand, and industrial minerals using XRF/AAS/ICP-OES.', image: chemImgRock },
+      { name: 'Asbestos & Hazard Analysis', description: 'High-precision asbestos identification, fiber contamination quantification, and ambient exposure monitoring.', image: chemImgAsbestos },
+    ],
+    active: false,
+  },
+  {
+    id: 'networking-cabling',
+    icon: Network,
+    title: 'Networking & Cabling',
+    subtitle: 'Reliable Connectivity & Professional Infrastructure',
+    description: 'End-to-end professional networking and structured cabling solutions for offices, industrial facilities, and commercial buildings.',
+    tag: 'Enterprise & Industrial Connectivity',
+    image: netImg3,
+    capabilities: [
+      { name: 'Structured Cabling', description: 'High-performance Cat5e, Cat6 & Cat6A cabling with organized management and certification.', image: netImg1 },
+      { name: 'Fiber Optic Solutions', description: 'Precision fiber optic installation, splicing, OTDR testing, and link troubleshooting.', image: netImg2 },
+      { name: 'Network Installation', description: 'Deployment of switches, routers, VLANs, and robust IP network segmentation.', image: netImg3 },
+      { name: 'Wi-Fi & Wireless Networks', description: 'Enterprise Wi-Fi access point installation, coverage planning, and wireless optimization.', image: netImgWifi },
+      { name: 'Server Room Setup', description: 'Professional installation of server racks, patch panels, and seamless UPS integration.', image: netImgServer },
+      { name: 'Network Maintenance', description: 'Proactive fault diagnosis, preventive maintenance, and rapid network troubleshooting.', image: netImgMaint },
+    ],
+    active: false,
+  },
+  {
+    id: 'food-catering',
+    icon: UtensilsCrossed,
+    title: 'Food Catering Services',
+    subtitle: 'Reliable Catering & Nutritious Meals',
+    description: 'Professional catering solutions providing fresh, hygienically prepared, and cost-effective meals for labor camps, corporate offices, and industrial construction sites.',
+    tag: 'Workforce & Corporate Catering',
+    image: foodImg5,
+    capabilities: [
+      { name: 'Labor Camp Catering', description: 'Complete daily meal preparation and bulk food production for workforce accommodations.', image: foodImg5 },
+      { name: 'Corporate & Office Catering', description: 'Daily employee meals, executive lunch programs, and corporate event refreshments.', image: foodImg2 },
+      { name: 'Industrial & Site Catering', description: 'Reliable packed meals and flexible bulk delivery for construction sites and factories.', image: foodImg4 },
+      { name: 'Multicultural Customized Menus', description: 'Diverse culinary options including Indian, Arabic, and Asian cuisines to suit every workforce.', image: foodImg3 },
+      { name: 'Special Dietary Solutions', description: 'Tailored vegetarian, non-vegetarian, and specific dietary requirement meals.', image: foodImgSpecial },
+      { name: 'Full-Cycle Catering Logistics', description: 'End-to-end service from hygienic food preparation and packaging to scheduled site delivery.', image: foodImg6 },
     ],
     active: false,
   },

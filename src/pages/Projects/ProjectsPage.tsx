@@ -22,7 +22,6 @@ import {
   Flame,
   Activity,
   ArrowLeft,
-  ChevronRight,
 } from 'lucide-react';
 import projectExecutionImg from '@/assets/images/project-execution.jpg';
 
