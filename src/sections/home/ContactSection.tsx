@@ -1,27 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Send,
-  CheckCircle2,
   Lock,
   ArrowRight,
+  Mail
 } from 'lucide-react';
 import contactBgImg from '@/assets/images/contact-infrastructure.jpg';
 
 export const ContactSection: React.FC = () => {
-  const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <section
       id="contact"
@@ -130,105 +117,33 @@ export const ContactSection: React.FC = () => {
                 </p>
               </div>
 
-              {submitted ? (
-                <div className="py-10 text-center space-y-4">
-                  <div className="w-14 h-14 rounded-full bg-secondary/20 text-secondary mx-auto flex items-center justify-center">
-                    <CheckCircle2 className="w-7 h-7" />
+              <div className="py-8 flex flex-col items-center text-center space-y-6">
+                <a
+                  href="mailto:info@universalsparkksa.com"
+                  className="group flex flex-col items-center gap-4 cursor-pointer"
+                >
+                  <div className="w-24 h-24 rounded-full bg-secondary/10 flex items-center justify-center transition-all duration-300 group-hover:bg-secondary group-hover:scale-105 group-active:scale-95 shadow-lg group-hover:shadow-secondary/25">
+                    <Mail className="w-10 h-10 text-secondary group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <h3 className="text-xl font-bold font-montserrat text-white">
-                    Message Sent
-                  </h3>
-                  <p className="font-sans text-[14px] text-slate-300 max-w-sm mx-auto">
-                    Thank you. We have received your project details and will contact you shortly.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => setSubmitted(false)}
-                    className="inline-flex items-center gap-2 text-secondary hover:text-white font-sans text-[12px] font-semibold transition-colors mt-2 cursor-pointer"
-                  >
-                    <span>Submit another request</span>
-                  </button>
+                  <div className="space-y-1">
+                    <h4 className="text-xl font-montserrat font-extrabold text-white tracking-wider uppercase group-hover:text-secondary transition-colors duration-300">
+                      Send us an Email
+                    </h4>
+                    <p className="font-sans text-[14px] text-slate-300">
+                      info@universalsparkksa.com
+                    </p>
+                  </div>
+                </a>
+
+                <p className="font-sans text-[13.5px] text-slate-400 max-w-sm mx-auto mt-4">
+                  Click the icon above to open your default email application. Our project estimators will review your requirements and coordinate with you.
+                </p>
+
+                <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-400 mt-4 text-center">
+                  <Lock className="w-3 h-3 text-secondary" />
+                  <span>Commercial confidentiality assured</span>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 font-sans">
-                  {/* Name */}
-                  <div>
-                    <label className="block text-[12.5px] font-medium text-slate-300 mb-1.5">
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Your name"
-                      className="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 text-[14px] rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-secondary transition-colors"
-                    />
-                  </div>
-
-                  {/* Email & Phone */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-[12.5px] font-medium text-slate-300 mb-1.5">
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="yourname@company.com"
-                        className="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 text-[14px] rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-secondary transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-[12.5px] font-medium text-slate-300 mb-1.5">
-                        Phone / WhatsApp
-                      </label>
-                      <input
-                        type="tel"
-                        required
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="Contact number"
-                        className="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 text-[14px] rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-secondary transition-colors"
-                      />
-                    </div>
-                  </div>
-
-
-
-                  {/* Project Details */}
-                  <div>
-                    <label className="block text-[12.5px] font-medium text-slate-300 mb-1.5">
-                      Project Details
-                    </label>
-                    <textarea
-                      rows={3}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Scope, location, or requirements..."
-                      className="w-full bg-slate-950/60 border border-slate-800 text-white placeholder-slate-500 text-[14px] rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-secondary transition-colors resize-none"
-                    />
-                  </div>
-
-                  {/* Submit Button */}
-                  <div className="pt-2">
-                    <button
-                      type="submit"
-                      className="w-full bg-secondary hover:bg-emerald-600 active:scale-[0.99] text-white font-montserrat text-[12.5px] uppercase tracking-wider font-bold py-3.5 px-5 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-secondary/25 cursor-pointer"
-                    >
-                      <span>Send Inquiry</span>
-                      <Send className="w-3.5 h-3.5" />
-                    </button>
-
-                    <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-400 mt-3 text-center">
-                      <Lock className="w-3 h-3 text-secondary" />
-                      <span>Commercial confidentiality assured</span>
-                    </div>
-                  </div>
-                </form>
-              )}
+              </div>
             </div>
           </div>
         </div>

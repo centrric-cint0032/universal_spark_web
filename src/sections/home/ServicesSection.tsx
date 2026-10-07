@@ -160,7 +160,7 @@ export const SERVICES_DATA: ServiceDivision[] = [
     subtitle: 'Comprehensive Analytical & Consulting Services',
     description: 'State-of-the-art analytical testing services across agricultural, environmental, industrial, and geological sectors with rigorous quality control and ISO/IEC 17025 accredited standards.',
     tag: 'ISO/IEC 17025 Accredited',
-    image: chemImg1,
+    image: chemImg5,
     capabilities: [
       { name: 'Agricultural & Soil Diagnostics', description: 'Comprehensive evaluation of soil fertility, chemical composition, and irrigation suitability for optimized yield.', image: chemImg3 },
       { name: 'Building Materials Analysis', description: 'Rigorous physical and chemical evaluation of construction materials to ensure structural integrity and compliance.', image: chemImgBuilding },

@@ -94,19 +94,19 @@ export const HeroSection: React.FC = () => {
       <div className="absolute inset-0 blueprint-grid opacity-15 pointer-events-none" />
 
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 pt-10 pb-16 lg:pt-14 lg:pb-24 relative z-10">
-        
+
         {/* ─────────────────────────────────────────────────────────────
             ZONE 1: TOP HERO STATEMENT & VIDEO/METRICS (Asymmetric 60/40)
         ────────────────────────────────────────────────────────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-16 lg:mb-20">
-          
+
           {/* Left Column (Approx 60%): Massive Editorial Headline & Narrative */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             {/* Vision 2030 Logo */}
             <div className="mb-6 lg:mb-8">
-              <img 
-                src={visionLogo} 
-                alt="Saudi Vision 2030" 
+              <img
+                src={visionLogo}
+                alt="Saudi Vision 2030"
                 className="h-12 sm:h-14 lg:h-16 object-contain"
               />
             </div>
@@ -241,37 +241,33 @@ export const HeroSection: React.FC = () => {
                   key={item.id}
                   to={item.href}
                   onMouseEnter={() => setActiveGalleryId(item.id)}
-                  className={`relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer block transition-all duration-500 border ${
-                    isActive
+                  className={`relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer block transition-all duration-500 border ${isActive
                       ? 'border-secondary shadow-xl ring-2 ring-secondary/20'
                       : 'border-slate-200 hover:border-slate-400'
-                  }`}
+                    }`}
                 >
                   {/* Background Discipline Imagery */}
                   <img
                     src={item.image}
                     alt={item.title}
-                    className={`w-full h-full object-cover transition-all duration-700 ${
-                      isActive ? 'scale-110' : 'filter grayscale contrast-125 group-hover:grayscale-0'
-                    }`}
+                    className={`w-full h-full object-cover transition-all duration-700 ${isActive ? 'scale-110' : 'filter grayscale contrast-125 group-hover:grayscale-0'
+                      }`}
                   />
 
                   {/* Gradient Overlay */}
                   <div
-                    className={`absolute inset-0 transition-opacity duration-300 ${
-                      isActive
+                    className={`absolute inset-0 transition-opacity duration-300 ${isActive
                         ? 'bg-gradient-to-t from-[#00875A]/95 via-[#00875A]/60 to-transparent'
                         : 'bg-gradient-to-t from-black/80 via-black/40 to-transparent'
-                    }`}
+                      }`}
                   />
 
                   {/* Card Content & Action Button */}
                   <div className="absolute inset-0 p-5 flex flex-col justify-between text-white z-10">
                     <div className="flex justify-end">
                       <div
-                        className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${
-                          isActive ? 'bg-white text-secondary' : 'bg-white/20 text-white'
-                        }`}
+                        className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${isActive ? 'bg-white text-secondary' : 'bg-white/20 text-white'
+                          }`}
                       >
                         <ArrowUpRight className="w-4 h-4" />
                       </div>
@@ -316,7 +312,7 @@ export const HeroSection: React.FC = () => {
                   Mechanical, Civil, Electrical, MEP, and Process Instrumentation.
                 </p>
                 <div className="inline-flex items-center gap-1.5 text-xs font-montserrat font-bold text-secondary-fixed group-hover:text-white transition-colors uppercase tracking-wider">
-                  <span>View All (5)</span>
+                  <span>View All (7)</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>

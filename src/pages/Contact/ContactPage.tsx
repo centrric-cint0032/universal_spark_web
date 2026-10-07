@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Mail,
@@ -7,7 +7,6 @@ import {
   MapPin,
   ArrowLeft,
   Send,
-  CheckCircle2,
   ShieldCheck,
   Building2,
   Clock,
@@ -16,23 +15,10 @@ import {
 import contactBgImg from '@/assets/images/contact-infrastructure.jpg';
 
 export const ContactPage: React.FC = () => {
-  const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: 'Quotation & Tender',
-    message: '',
-  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
 
   return (
     <div className="w-full min-h-screen bg-surface">
@@ -232,101 +218,34 @@ export const ContactPage: React.FC = () => {
               </div>
             </div>
 
-            {submitted ? (
-              <div className="py-12 sm:py-16 text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-secondary/20 text-secondary mx-auto flex items-center justify-center">
-                  <CheckCircle2 className="w-9 h-9" />
+            <div className="py-12 sm:py-16 flex flex-col items-center text-center space-y-8">
+              <a
+                href="mailto:info@universalsparkksa.com"
+                className="group flex flex-col items-center gap-5 cursor-pointer"
+              >
+                <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-secondary/10 flex items-center justify-center transition-all duration-300 group-hover:bg-secondary group-hover:scale-105 group-active:scale-95 shadow-lg group-hover:shadow-secondary/25">
+                  <Mail className="w-12 h-12 sm:w-14 sm:h-14 text-secondary group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="text-2xl font-bold font-montserrat text-primary">
-                  Consultation Request Sent
-                </h3>
-                <p className="font-sans text-sm sm:text-base text-on-surface-variant max-w-md mx-auto">
-                  Thank you for reaching out. Our engineering and estimating team will review your requirements and coordinate with you promptly.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setSubmitted(false)}
-                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary-navy text-white font-montserrat text-xs font-bold tracking-wider uppercase px-6 py-3 rounded-xl transition-all mt-4 cursor-pointer"
-                >
-                  <span>Submit Another Inquiry</span>
-                </button>
+                
+                <div className="space-y-1.5">
+                  <h4 className="text-2xl font-montserrat font-extrabold text-primary tracking-wider uppercase group-hover:text-secondary transition-colors duration-300">
+                    Send us an Email
+                  </h4>
+                  <p className="font-sans text-base text-on-surface-variant font-medium">
+                    info@universalsparkksa.com
+                  </p>
+                </div>
+              </a>
+
+              <p className="font-sans text-[14.5px] text-on-surface-variant max-w-md mx-auto leading-relaxed mt-4">
+                Click the icon above to open your default email application. Our project estimators will review your requirements and coordinate with you promptly.
+              </p>
+
+              <div className="flex items-center justify-center gap-1.5 font-sans text-[11.5px] text-on-surface-variant/80 mt-6 text-center">
+                <ShieldCheck className="w-3.5 h-3.5 text-secondary" />
+                <span>Kingdom of Saudi Arabia Commercial Privacy &amp; Confidentiality Assured</span>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div>
-                    <label className="block font-sans text-xs uppercase text-primary tracking-wider mb-1.5 font-bold">
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Your name"
-                      className="w-full bg-slate-50 border border-slate-200 text-on-surface text-sm sm:text-[14px] rounded-xl px-4 py-3 focus:outline-none focus:bg-white focus:border-secondary focus:ring-1 focus:ring-secondary transition-all"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block font-sans text-xs uppercase text-primary tracking-wider mb-1.5 font-bold">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="email@company.com"
-                      className="w-full bg-slate-50 border border-slate-200 text-on-surface text-sm sm:text-[14px] rounded-xl px-4 py-3 focus:outline-none focus:bg-white focus:border-secondary focus:ring-1 focus:ring-secondary transition-all"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block font-sans text-xs uppercase text-primary tracking-wider mb-1.5 font-bold">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+966 50 000 0000"
-                    className="w-full bg-slate-50 border border-slate-200 text-on-surface text-sm sm:text-[14px] rounded-xl px-4 py-3 focus:outline-none focus:bg-white focus:border-secondary focus:ring-1 focus:ring-secondary transition-all"
-                  />
-                </div>
-
-                <div>
-                  <label className="block font-sans text-xs uppercase text-primary tracking-wider mb-1.5 font-bold">
-                    Project Scope Details
-                  </label>
-                  <textarea
-                    rows={4}
-                    required
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Brief description of your project scope, location, drawings, BOQ, or timeline..."
-                    className="w-full bg-slate-50 border border-slate-200 text-on-surface text-sm sm:text-[14px] rounded-xl px-4 py-3 focus:outline-none focus:bg-white focus:border-secondary focus:ring-1 focus:ring-secondary transition-all resize-none"
-                  />
-                </div>
-
-                <div className="pt-2">
-                  <button
-                    type="submit"
-                    className="w-full bg-primary hover:bg-primary-navy text-white font-montserrat text-xs sm:text-[13px] uppercase tracking-wider font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-lg cursor-pointer group"
-                  >
-                    <span>Send Project Consultation Request</span>
-                    <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </button>
-
-                  <div className="flex items-center justify-center gap-1.5 font-sans text-[11.5px] text-on-surface-variant/80 mt-3 text-center">
-                    <ShieldCheck className="w-3.5 h-3.5 text-secondary" />
-                    <span>Kingdom of Saudi Arabia Commercial Privacy &amp; Confidentiality Assured</span>
-                  </div>
-                </div>
-              </form>
-            )}
+            </div>
           </div>
         </div>
       </div>
